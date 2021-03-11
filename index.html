@@ -1,0 +1,822 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="CLI to automate the development workflow.">
+      
+      
+      
+        <meta name="author" content="Tom Fleet">
+      
+      
+        <link rel="canonical" href="https://FollowTheProcess.github.io/pytoil/index.html">
+      
+      <link rel="shortcut icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.8">
+    
+    
+      
+        <title>Home - pytoil</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.cb6bc1d0.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.39b8e14a.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#546d78">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CSF+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"SF Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="css/termynal.css">
+    
+      <link rel="stylesheet" href="css/custom.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="blue-grey" data-md-color-accent="blue">
+      
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#what-is-it" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="https://FollowTheProcess.github.io/pytoil/" title="pytoil" class="md-header-nav__button md-logo" aria-label="pytoil">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      <div class="md-header-nav__ellipsis">
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
+            pytoil
+          </span>
+        </div>
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
+            
+              Home
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/FollowTheProcess/pytoil/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://FollowTheProcess.github.io/pytoil/" title="pytoil" class="md-nav__button md-logo" aria-label="pytoil">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    pytoil
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/FollowTheProcess/pytoil/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Home
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="index.html" class="md-nav__link md-nav__link--active">
+        Home
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-it" class="md-nav__link">
+    What is it?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#background" class="md-nav__link">
+    Background
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quickstart" class="md-nav__link">
+    Quickstart
+  </a>
+  
+    <nav class="md-nav" aria-label="Quickstart">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#see-your-local-and-remote-projects" class="md-nav__link">
+    See your local and remote projects
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#see-which-ones-you-have-on-github-but-not-on-your-computer" class="md-nav__link">
+    See which ones you have on GitHub, but not on your computer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#easily-grab-a-project-regardless-of-where-it-is" class="md-nav__link">
+    Easily grab a project, regardless of where it is
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-new-project-and-virtual-environment-in-one-go" class="md-nav__link">
+    Create a new project and virtual environment in one go
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#and-even-do-this-from-a-cookiecutter-template" class="md-nav__link">
+    And even do this from a cookiecutter template
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#help" class="md-nav__link">
+    Help
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="config.html" class="md-nav__link">
+        Config
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" >
+      
+      <label class="md-nav__link" for="nav-3">
+        Commands
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Commands" data-md-level="1">
+        <label class="md-nav__title" for="nav-3">
+          <span class="md-nav__icon md-icon"></span>
+          Commands
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="commands/show.html" class="md-nav__link">
+        Show
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="commands/project.html" class="md-nav__link">
+        Project
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="commands/sync.html" class="md-nav__link">
+        Sync
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="contributing.html" class="md-nav__link">
+        Contributing
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="changelog.html" class="md-nav__link">
+        Changelog
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-it" class="md-nav__link">
+    What is it?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#background" class="md-nav__link">
+    Background
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quickstart" class="md-nav__link">
+    Quickstart
+  </a>
+  
+    <nav class="md-nav" aria-label="Quickstart">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#see-your-local-and-remote-projects" class="md-nav__link">
+    See your local and remote projects
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#see-which-ones-you-have-on-github-but-not-on-your-computer" class="md-nav__link">
+    See which ones you have on GitHub, but not on your computer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#easily-grab-a-project-regardless-of-where-it-is" class="md-nav__link">
+    Easily grab a project, regardless of where it is
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-new-project-and-virtual-environment-in-one-go" class="md-nav__link">
+    Create a new project and virtual environment in one go
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#and-even-do-this-from-a-cookiecutter-template" class="md-nav__link">
+    And even do this from a cookiecutter template
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#help" class="md-nav__link">
+    Help
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/FollowTheProcess/pytoil/edit/master/docs/index.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  <h1>Home</h1>
+                
+                <p><img alt="logo" src="img/logo.png" /></p>
+<p><a href="https://github.com/FollowTheProcess/pytoil"><img alt="License" src="https://img.shields.io/github/license/FollowTheProcess/pytoil" /></a>
+<a href="https://pypi.python.org/pypi/pytoil"><img alt="PyPI" src="https://img.shields.io/pypi/v/pytoil.svg" /></a>
+<a href="https://github.com/FollowTheProcess/pytoil"><img alt="Code Style" src="https://img.shields.io/badge/code%20style-black-black" /></a>
+<a href="https://github.com/FollowTheProcess/pytoil/actions?query=workflow%3ACI"><img alt="CI" src="https://github.com/FollowTheProcess/pytoil/workflows/CI/badge.svg" /></a>
+<a href="https://github.com/FollowTheProcess/pytoil"><img alt="Coverage" src="img/coverage.svg" /></a></p>
+<p><em>pytoil is a small, helpful CLI to help developers manage their local and remote projects with ease!</em></p>
+<ul>
+<li>
+<p><strong>Source Code</strong>: <a href="https://github.com/FollowTheProcess/pytoil">https://github.com/FollowTheProcess/pytoil</a></p>
+</li>
+<li>
+<p><strong>Documentation</strong>: <a href="https://FollowTheProcess.github.io/pytoil/">https://FollowTheProcess.github.io/pytoil/</a></p>
+</li>
+</ul>
+<h2 id="what-is-it">What is it?<a class="headerlink" href="#what-is-it" title="Permanent link">&para;</a></h2>
+<p><code>pytoil</code> is a handy tool that helps you stay on top of all your projects, remote or local. It's primarily aimed at python developers but you could easily use it to manage any project!</p>
+<p>pytoil is:</p>
+<ul>
+<li>Easy to use <img alt="✅" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2705.svg" title=":white_check_mark:" /></li>
+<li>Easy to configure <img alt="✅" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2705.svg" title=":white_check_mark:" /></li>
+<li>Safe (it won't edit your repos at all) <img alt="✅" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2705.svg" title=":white_check_mark:" /></li>
+<li>Useful! (I hope <img alt="😃" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f603.svg" title=":smiley:" />)</li>
+</ul>
+<p>Say goodbye to janky bash scripts <img alt="👋" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44b.svg" title=":wave:" /></p>
+<h2 id="background">Background<a class="headerlink" href="#background" title="Permanent link">&para;</a></h2>
+<p>Like many developers I suspect, I quickly became bored of typing repeated commands to manage my projects, create virtual environments, install packages, fire off <code>cURL</code> snippets to check if I had a certain repo etc.</p>
+<p>So I wrote some shell functions to do some of this for me...</p>
+<p>And these shell functions grew and grew and grew.</p>
+<p>Until one day I saw that the file I kept these functions in was over 1000 lines of bash (a lot of <code>printf</code>'s so it wasn't all logic but still). And 1000 lines of bash is <em>waaaay</em> too much!</p>
+<p>And because I'd basically hacked it all together, it was <strong>very</strong> fragile. If a part of a function failed, it would just carry on and wreak havoic! I'd have to do <code>rm -rf all_my_projects</code>... I mean careful forensic investigation to fix it.</p>
+<p>So I decided to make a robust CLI with the proper error handling and testability of python, and here it is! <img alt="🎉" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f389.svg" title=":tada:" /></p>
+<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
+<p>As pytoil is a CLI program, I'd recommend installing with <a href="https://pipxproject.github.io/pipx/">pipx</a></p>
+<div class="termy">
+
+<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pipx install pytoil
+<span class="go">---&gt; 100%</span>
+<span class="go">Successfully installed pytoil</span>
+</code></pre></div>
+
+</div>
+
+<p>If you don't know what pipx is, go check it out!</p>
+<p>You can always fall back to pip</p>
+<div class="termy">
+
+<div class="highlight"><pre><span></span><code><span class="gp">$ </span>python3 -m pip install pytoil
+<span class="go">---&gt; 100%</span>
+<span class="go">Successfully installed pytoil</span>
+</code></pre></div>
+
+</div>
+
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>keep in mind though, you'll have to install it globally for it to work so it might be better to use pipx</p>
+</div>
+<p>pytoil will install everything it needs <em>in python</em> to work. However, it's full feature set can only be accessed if you have the following external dependencies:</p>
+<ul>
+<li><a href="https://git-scm.com">git</a></li>
+<li><a href="https://docs.conda.io/en/latest/">conda</a> (if you work with conda environments)</li>
+<li><a href="https://code.visualstudio.com">VSCode</a> (if you want to use pytoil to automatically open your projects for you)</li>
+</ul>
+<h2 id="quickstart">Quickstart<a class="headerlink" href="#quickstart" title="Permanent link">&para;</a></h2>
+<p><code>pytoil</code> is super easy to get started with.</p>
+<p>After installation just run</p>
+<div class="termy">
+
+<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil init
+
+<span class="gp"># </span>GitHub username:$ YourGitHubUsername
+<span class="gp"># </span>GitHub personal access token:$ YourTokenHere
+<span class="gp"># </span>Absolute path to your projects directory:$ /Users/you/projects
+<span class="gp"># </span>Use VSCode to open projects?:$ True
+</code></pre></div>
+
+</div>
+
+<p>This will create a config file which can be found at <code>~/.pytoil.yml</code>, and will walk you through setting the tool up.</p>
+<p>Don't worry though, there's only a few options to configure! <img alt="😴" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f634.svg" title=":sleeping:" /></p>
+<p>After that you're good to go! You can do things like:</p>
+<h4 id="see-your-local-and-remote-projects">See your local and remote projects<a class="headerlink" href="#see-your-local-and-remote-projects" title="Permanent link">&para;</a></h4>
+<div class="termy">
+
+<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil show all
+
+<span class="go">Local Projects:</span>
+
+<span class="go">- Project1</span>
+<span class="go">- Project2</span>
+<span class="go">- Project3</span>
+
+<span class="go">Remote Projects:</span>
+
+<span class="go">- Remote1</span>
+<span class="go">- Remote2</span>
+<span class="go">- etc..</span>
+</code></pre></div>
+
+</div>
+
+<h4 id="see-which-ones-you-have-on-github-but-not-on-your-computer">See which ones you have on GitHub, but not on your computer<a class="headerlink" href="#see-which-ones-you-have-on-github-but-not-on-your-computer" title="Permanent link">&para;</a></h4>
+<div class="termy">
+
+<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil show diff
+
+<span class="go">Remote projects that are not local:</span>
+
+<span class="go">- Projectyoudonthave1</span>
+<span class="go">- Projectyoudonthave2</span>
+</code></pre></div>
+
+</div>
+
+<h4 id="easily-grab-a-project-regardless-of-where-it-is">Easily grab a project, regardless of where it is<a class="headerlink" href="#easily-grab-a-project-regardless-of-where-it-is" title="Permanent link">&para;</a></h4>
+<div class="termy">
+
+<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil project checkout myproject
+
+<span class="go">Resuming &#39;myproject&#39;...</span>
+
+<span class="go">// Will now either open that project if local</span>
+<span class="go">// or clone it if not</span>
+<span class="go">// Ensure virtual environments are set up etc.</span>
+</code></pre></div>
+
+</div>
+
+<h4 id="create-a-new-project-and-virtual-environment-in-one-go">Create a new project and virtual environment in one go<a class="headerlink" href="#create-a-new-project-and-virtual-environment-in-one-go" title="Permanent link">&para;</a></h4>
+<div class="termy">
+
+<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil project create myproject --venv virtualenv
+
+<span class="go">Creating project: &#39;myproject&#39; at &#39;/Users/you/projects/myproject&#39;</span>
+
+<span class="go">Creating virtualenv for: &#39;myproject&#39;</span>
+</code></pre></div>
+
+</div>
+
+<h4 id="and-even-do-this-from-a-cookiecutter-template">And even do this from a <a href="https://cookiecutter.readthedocs.io/en/1.7.2/">cookiecutter</a> template<a class="headerlink" href="#and-even-do-this-from-a-cookiecutter-template" title="Permanent link">&para;</a></h4>
+<div class="termy">
+
+<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil project create myproject --venv virtualenv --cookie https://github.com/some/cookie.git
+
+<span class="go">Creating project: &#39;myproject&#39; with cookiecutter template: &#39;https://github.com/some/cookie.git&#39;</span>
+
+<span class="go">// You&#39;ll then be asked all the cookiecutter questions defined in the template</span>
+<span class="go">// After which pytoil will take over and create the virtual environment as normal</span>
+</code></pre></div>
+
+</div>
+
+<h3 id="help">Help<a class="headerlink" href="#help" title="Permanent link">&para;</a></h3>
+<p>Like all good CLI programs, pytoil (aswell as all it's subcommands, and all <em>their</em> subcommands!) has a <code>--help</code> option to show you what to do.</p>
+<div class="termy">
+
+<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil --help
+
+<span class="go">Usage: pytoil [OPTIONS] COMMAND [ARGS]...</span>
+
+<span class="go">  Helpful CLI to automate the development workflow.</span>
+
+<span class="go">  - Create and manage your local and remote projects</span>
+
+<span class="go">  - Build projects from cookiecutter templates.</span>
+
+<span class="go">  - Easily create/manage virtual environments.</span>
+
+<span class="go">  - Minimal configuration required.</span>
+
+<span class="go">Options:</span>
+<span class="go">  -V, --version         Display pytoil version.</span>
+<span class="go">  --install-completion  Install completion for the current shell.</span>
+<span class="go">  --show-completion     Show completion for the current shell, to copy it or</span>
+<span class="go">                        customize the installation.</span>
+
+<span class="go">  --help                Show this message and exit.</span>
+
+<span class="go">Commands:</span>
+<span class="go">  config   Interact with pytoil&#39;s configuration.</span>
+<span class="go">  init     Initialise pytoil.</span>
+<span class="go">  project  Operate on a specific project.</span>
+<span class="go">  show     View your local/remote projects.</span>
+<span class="go">  sync     Synchronise your local and remote projects.</span>
+</code></pre></div>
+
+</div>
+
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>pytoil's CLI is designed such that if you don't specify any arguments, it won't do anything! just show you the <code>--help</code>. This is called being a 'well behaved' unix command line tool.</p>
+<p>This is true for any subcommand of pytoil so you won't accidently break anything if you don't specify arguments <img alt="🎉" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f389.svg" title=":tada:" />.</p>
+</div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+        
+          <a href="config.html" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Config
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="assets/javascripts/vendor.18f0862e.min.js"></script>
+      <script src="assets/javascripts/bundle.994580cf.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: ".",
+          features: [],
+          search: Object.assign({
+            worker: "assets/javascripts/worker/search.9c0e82ba.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="https://unpkg.com/mermaid@8.4.6/dist/mermaid.min.js"></script>
+      
+        <script src="js/termynal.js"></script>
+      
+        <script src="js/custom.js"></script>
+      
+    
+  </body>
+</html>
