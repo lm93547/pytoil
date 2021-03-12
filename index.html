@@ -581,7 +581,7 @@
 <p>So I wrote some shell functions to do some of this for me...</p>
 <p>And these shell functions grew and grew and grew.</p>
 <p>Until one day I saw that the file I kept these functions in was over 1000 lines of bash (a lot of <code>printf</code>'s so it wasn't all logic but still). And 1000 lines of bash is <em>waaaay</em> too much!</p>
-<p>And because I'd basically hacked it all together, it was <strong>very</strong> fragile. If a part of a function failed, it would just carry on and wreak havoic! I'd have to do <code>rm -rf all_my_projects</code>... I mean careful forensic investigation to fix it.</p>
+<p>And because I'd basically hacked it all together, it was <strong>very</strong> fragile. If a part of a function failed, it would just carry on and wreak havoc! I'd have to do <code>rm -rf all_my_projects</code>... I mean careful forensic investigation to fix it.</p>
 <p>So I decided to make a robust CLI with the proper error handling and testability of python, and here it is! <img alt="🎉" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f389.svg" title=":tada:" /></p>
 <h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
 <p>As pytoil is a CLI program, I'd recommend installing with <a href="https://pipxproject.github.io/pipx/">pipx</a></p>
@@ -594,7 +594,7 @@
 
 </div>
 
-<p>If you don't know what pipx is, go check it out!</p>
+<p>If you don't know what pipx is, go check it out! But basically it allows python CLI tools to be installed in their own sandboxed environments but you can still access the CLI as if it was installed globally!</p>
 <p>You can always fall back to pip</p>
 <div class="termy">
 
