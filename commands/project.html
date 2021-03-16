@@ -20,7 +20,7 @@
     
     
       
-        <title>Project - pytoil</title>
+        <title>Project Management - pytoil</title>
       
     
     
@@ -106,7 +106,7 @@
         <div class="md-header-nav__topic">
           <span class="md-ellipsis">
             
-              Project
+              Project Management
             
           </span>
         </div>
@@ -287,12 +287,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Project
+          Project Management
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="project.html" class="md-nav__link md-nav__link--active">
-        Project
+        Project Management
       </a>
       
         
@@ -307,13 +307,6 @@
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#help" class="md-nav__link">
-    Help
-  </a>
-  
-</li>
       
         <li class="md-nav__item">
   <a href="#create" class="md-nav__link">
@@ -451,13 +444,6 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#help" class="md-nav__link">
-    Help
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#create" class="md-nav__link">
     Create
   </a>
@@ -530,39 +516,10 @@
                 
                 
                 <h1 id="project">Project<a class="headerlink" href="#project" title="Permanent link">&para;</a></h1>
-<p>Now let's look at the <code>project</code> subcommand. This is the biggest subcommand in pytoil and probably the part you'll interact with the most. Again, we'll start with the help.</p>
-<h2 id="help">Help<a class="headerlink" href="#help" title="Permanent link">&para;</a></h2>
-<div class="termy">
-
-<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil project --help
-
-<span class="go">Usage: pytoil project [OPTIONS] COMMAND [ARGS]...</span>
-
-<span class="go">  Operate on a specific project.</span>
-
-<span class="go">  Set the &quot;projects_dir&quot; key in the config to control where this command</span>
-<span class="go">  looks on your local file system.</span>
-
-<span class="go">  Set the &quot;token&quot; key in the config to give pytoil access to your GitHub via</span>
-<span class="go">  the API.</span>
-
-<span class="go">  We only make GET requests, your repos are safe with pytoil!</span>
-
-<span class="go">Options:</span>
-<span class="go">  --help  Show this message and exit.</span>
-
-<span class="go">Commands:</span>
-<span class="go">  checkout  Checkout a development project, either locally or from GitHub.</span>
-<span class="go">  create    Create a new development project locally.</span>
-<span class="go">  info      Show useful information about a project.</span>
-<span class="go">  remove    Deletes a project from your local filesystem.</span>
-</code></pre></div>
-
-</div>
-
+<p>Now let's look at the commands you'll use to manage projects.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>Remember, each subcommand has its own help you can check out too. e.g. <code>pytoil project create --help</code> <img alt="👍" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44d.svg" title=":thumbsup:" /></p>
+<p>Remember, each subcommand has its own help you can check out too. e.g. <code>pytoil create --help</code> <img alt="👍" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44d.svg" title=":thumbsup:" /></p>
 </div>
 <h2 id="create">Create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h2>
 <p><code>create</code> will make you a new project locally. You have the option to create a new virtual environment with it and to create the project from a <a href="https://cookiecutter.readthedocs.io/en/1.7.2/">cookiecutter</a> template <img alt="🍪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f36a.svg" title=":cookie:" /></p>
@@ -571,7 +528,7 @@
 <p>In this sense, you don't have to be a python developer to use pytoil!</p>
 <div class="termy">
 
-<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil project create my_new_project
+<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil create my_new_project
 
 <span class="go">Creating new project: &#39;my_new_project&#39;</span>
 <span class="go">// Does some stuff...</span>
@@ -588,7 +545,7 @@
 <p>All you have to do is specify which virtual environment to create, using the <code>--venv/-v</code> option flag. You can choose from <code>virtualenv</code> or <code>conda</code>. The default is <code>None</code>.</p>
 <div class="termy">
 
-<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil project create my_new_project --venv virtualenv
+<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil create my_new_project --venv virtualenv
 
 <span class="go">Creating new project: &#39;my_new_project&#39;</span>
 <span class="go">Creating virtualenv for: &#39;my_new_project&#39;</span>
@@ -599,7 +556,7 @@
 <p>Or with conda...</p>
 <div class="termy">
 
-<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil project create my_new_project --venv conda
+<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil create my_new_project --venv conda
 
 <span class="go">Creating new project: &#39;my_new_project&#39;</span>
 <span class="go">Creating conda environment for: &#39;my_new_project&#39;</span>
@@ -619,7 +576,7 @@
 <div class="termy">
 
 <div class="highlight"><pre><span></span><code><span class="go">// Just pass a url to a cookiecutter template</span>
-<span class="gp">$ </span>pytoil project create my_new_project --cookie https://github.com/some/cookie.git
+<span class="gp">$ </span>pytoil create my_new_project --cookie https://github.com/some/cookie.git
 
 <span class="go">Creating new project: &#39;my_new_project&#39; from cookiecutter: &#39;https://github.com/some/cookie.git&#39;</span>
 </code></pre></div>
@@ -631,7 +588,7 @@
 <div class="termy">
 
 <div class="highlight"><pre><span></span><code><span class="go">// Let&#39;s get some info about pytoil</span>
-<span class="gp">$ </span>pytoil project info pytoil
+<span class="gp">$ </span>pytoil info pytoil
 
 <span class="go">Info for: pytoil</span>
 
@@ -652,7 +609,7 @@
 <div class="termy">
 
 <div class="highlight"><pre><span></span><code><span class="go">// Some project thats not on GitHub yet</span>
-<span class="gp">$ </span>pytoil project info my_local_project
+<span class="gp">$ </span>pytoil info my_local_project
 
 <span class="go">Info for: my_local_project</span>
 
@@ -676,7 +633,7 @@
 <div class="termy">
 
 <div class="highlight"><pre><span></span><code><span class="go">// Some project thats already local</span>
-<span class="gp">$ </span>pytoil project checkout my_local_project
+<span class="gp">$ </span>pytoil checkout my_local_project
 
 <span class="go">Project: &#39;my_local_project&#39; found locally!</span>
 
@@ -695,7 +652,7 @@
 <div class="termy">
 
 <div class="highlight"><pre><span></span><code><span class="go">// Some project thats on GitHub</span>
-<span class="gp">$ </span>pytoil project checkout my_github_project
+<span class="gp">$ </span>pytoil checkout my_github_project
 
 <span class="go">Project: &#39;my_github_project&#39; found on GitHub! Cloning...</span>
 <span class="go">// You might see some git clone output here</span>
@@ -725,7 +682,7 @@
 </div>
 <div class="termy">
 
-<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil project remove my_project
+<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil remove my_project
 
 <span class="gp"># </span>This will remove <span class="s1">&#39;my_project&#39;</span> from your <span class="nb">local</span> filesystem. Are you sure? <span class="o">[</span>y/N<span class="o">]</span>:$ y
 
@@ -739,7 +696,7 @@
 <p>And if you say no...</p>
 <div class="termy">
 
-<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil project remove my_project
+<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil remove my_project
 
 <span class="gp"># </span>This will remove <span class="s1">&#39;my_project&#39;</span> from your <span class="nb">local</span> filesystem. Are you sure? <span class="o">[</span>y/N<span class="o">]</span>:$ n
 

@@ -380,7 +380,7 @@
   
     <li class="md-nav__item">
       <a href="commands/project.html" class="md-nav__link">
-        Project
+        Project Management
       </a>
     </li>
   
@@ -669,7 +669,7 @@
 <h4 id="easily-grab-a-project-regardless-of-where-it-is">Easily grab a project, regardless of where it is<a class="headerlink" href="#easily-grab-a-project-regardless-of-where-it-is" title="Permanent link">&para;</a></h4>
 <div class="termy">
 
-<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil project checkout myproject
+<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil checkout myproject
 
 <span class="go">Resuming &#39;myproject&#39;...</span>
 
@@ -683,7 +683,7 @@
 <h4 id="create-a-new-project-and-virtual-environment-in-one-go">Create a new project and virtual environment in one go<a class="headerlink" href="#create-a-new-project-and-virtual-environment-in-one-go" title="Permanent link">&para;</a></h4>
 <div class="termy">
 
-<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil project create myproject --venv virtualenv
+<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil create myproject --venv virtualenv
 
 <span class="go">Creating project: &#39;myproject&#39; at &#39;/Users/you/projects/myproject&#39;</span>
 
@@ -695,7 +695,7 @@
 <h4 id="and-even-do-this-from-a-cookiecutter-template">And even do this from a <a href="https://cookiecutter.readthedocs.io/en/1.7.2/">cookiecutter</a> template<a class="headerlink" href="#and-even-do-this-from-a-cookiecutter-template" title="Permanent link">&para;</a></h4>
 <div class="termy">
 
-<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil project create myproject --venv virtualenv --cookie https://github.com/some/cookie.git
+<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil create myproject --venv virtualenv --cookie https://github.com/some/cookie.git
 
 <span class="go">Creating project: &#39;myproject&#39; with cookiecutter template: &#39;https://github.com/some/cookie.git&#39;</span>
 
@@ -732,11 +732,14 @@
 <span class="go">  --help                Show this message and exit.</span>
 
 <span class="go">Commands:</span>
-<span class="go">  config   Interact with pytoil&#39;s configuration.</span>
-<span class="go">  init     Initialise pytoil.</span>
-<span class="go">  project  Operate on a specific project.</span>
-<span class="go">  show     View your local/remote projects.</span>
-<span class="go">  sync     Synchronise your local and remote projects.</span>
+<span class="go">  checkout  Checkout a development project, either locally or from GitHub.</span>
+<span class="go">  config    Interact with pytoil&#39;s configuration.</span>
+<span class="go">  create    Create a new development project locally.</span>
+<span class="go">  info      Show useful information about a project.</span>
+<span class="go">  init      Initialise pytoil.</span>
+<span class="go">  remove    Deletes a project from your local filesystem.</span>
+<span class="go">  show      View your local/remote projects.</span>
+<span class="go">  sync      Synchronise your local and remote projects.</span>
 </code></pre></div>
 
 </div>
