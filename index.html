@@ -566,6 +566,7 @@
 <p><strong>Documentation</strong>: <a href="https://FollowTheProcess.github.io/pytoil/">https://FollowTheProcess.github.io/pytoil/</a></p>
 </li>
 </ul>
+<p><img alt="⚠" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/26a0.svg" title=":warning:" /> pytoil is still in Alpha and as such, the API may change without deprecation notices.</p>
 <h2 id="what-is-it">What is it?<a class="headerlink" href="#what-is-it" title="Permanent link">&para;</a></h2>
 <p><code>pytoil</code> is a handy tool that helps you stay on top of all your projects, remote or local. It's primarily aimed at python developers but you could easily use it to manage any project!</p>
 <p>pytoil is:</p>
@@ -620,17 +621,15 @@
 <p>After installation just run</p>
 <div class="termy">
 
-<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil init
+<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil config
 
-<span class="gp"># </span>GitHub username:$ YourGitHubUsername
-<span class="gp"># </span>GitHub personal access token:$ YourTokenHere
-<span class="gp"># </span>Absolute path to your projects directory:$ /Users/you/projects
-<span class="gp"># </span>Use VSCode to open projects?:$ True
+<span class="go">No config file yet!</span>
+<span class="go">Making you a default one...</span>
 </code></pre></div>
 
 </div>
 
-<p>This will create a config file which can be found at <code>~/.pytoil.yml</code>, and will walk you through setting the tool up.</p>
+<p>This will create a default config file which can be found at <code>~/.pytoil.yml</code>. See <a href="config.html">config</a> for what information you need to put in here.</p>
 <p>Don't worry though, there's only a few options to configure! <img alt="😴" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f634.svg" title=":sleeping:" /></p>
 <p>After that you're good to go! You can do things like:</p>
 <h4 id="see-your-local-and-remote-projects">See your local and remote projects<a class="headerlink" href="#see-your-local-and-remote-projects" title="Permanent link">&para;</a></h4>
@@ -711,8 +710,6 @@
 
 <div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil --help
 
-<span class="go">Usage: pytoil [OPTIONS] COMMAND [ARGS]...</span>
-
 <span class="go">  Helpful CLI to automate the development workflow.</span>
 
 <span class="go">  - Create and manage your local and remote projects</span>
@@ -733,10 +730,11 @@
 
 <span class="go">Commands:</span>
 <span class="go">  checkout  Checkout a development project, either locally or from GitHub.</span>
-<span class="go">  config    Interact with pytoil&#39;s configuration.</span>
+<span class="go">  config    Display pytoil&#39;s configuration.</span>
 <span class="go">  create    Create a new development project locally.</span>
+<span class="go">  docs      Open pytoil&#39;s documentation in your browser.</span>
+<span class="go">  gh        Opens a specified project on GitHub in your browser.</span>
 <span class="go">  info      Show useful information about a project.</span>
-<span class="go">  init      Initialise pytoil.</span>
 <span class="go">  remove    Deletes a project from your local filesystem.</span>
 <span class="go">  show      View your local/remote projects.</span>
 <span class="go">  sync      Synchronise your local and remote projects.</span>
@@ -748,6 +746,17 @@
 <p class="admonition-title">Info</p>
 <p>pytoil's CLI is designed such that if you don't specify any arguments, it won't do anything! just show you the <code>--help</code>. This is called being a 'well behaved' unix command line tool.</p>
 <p>This is true for any subcommand of pytoil so you won't accidently break anything if you don't specify arguments <img alt="🎉" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f389.svg" title=":tada:" />.</p>
+</div>
+<p>And if you get truly stuck, you can quickly open pytoil's documentation with:</p>
+<div class="termy">
+
+<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil docs
+
+<span class="go">Opening pytoil&#39;s documentation in your browser...</span>
+
+<span class="go">// Now you&#39;ll be on this page in whatever your default browser is!</span>
+</code></pre></div>
+
 </div>
                 
               

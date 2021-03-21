@@ -258,36 +258,23 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#the-config-file" class="md-nav__link">
-    The Config File
+  <a href="#required" class="md-nav__link">
+    Required
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#control-using-pytoil" class="md-nav__link">
-    Control using pytoil
-  </a>
-  
-    <nav class="md-nav" aria-label="Control using pytoil">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#view-current-config" class="md-nav__link">
-    View Current Config
+  <a href="#optional" class="md-nav__link">
+    Optional
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#set-a-config-value" class="md-nav__link">
-    Set a Config Value
+      
+        <li class="md-nav__item">
+  <a href="#the-config-file" class="md-nav__link">
+    The Config File
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -421,36 +408,23 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#the-config-file" class="md-nav__link">
-    The Config File
+  <a href="#required" class="md-nav__link">
+    Required
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#control-using-pytoil" class="md-nav__link">
-    Control using pytoil
-  </a>
-  
-    <nav class="md-nav" aria-label="Control using pytoil">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#view-current-config" class="md-nav__link">
-    View Current Config
+  <a href="#optional" class="md-nav__link">
+    Optional
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#set-a-config-value" class="md-nav__link">
-    Set a Config Value
+      
+        <li class="md-nav__item">
+  <a href="#the-config-file" class="md-nav__link">
+    The Config File
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -472,14 +446,42 @@
                 
                 
                 <h1 id="config">Config<a class="headerlink" href="#config" title="Permanent link">&para;</a></h1>
-<p>There's really not much to configure, all pytoil needs to know about is:</p>
+<h2 id="required">Required<a class="headerlink" href="#required" title="Permanent link">&para;</a></h2>
+<p>There's really not much to configure, all pytoil <em>needs</em> you to specify is:</p>
 <ul>
-<li>Where you keep your projects (<code>projects_dir</code>)</li>
 <li>What your GitHub username is (<code>username</code>)</li>
 <li>Your GitHub personal access token (<code>token</code>)</li>
-<li>Whether you want pytoil to open things in VSCode (<code>vscode</code>)</li>
 </ul>
 <p>If you don't know how to generate a GitHub token, check out the <a href="https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token">docs</a>.</p>
+<h2 id="optional">Optional<a class="headerlink" href="#optional" title="Permanent link">&para;</a></h2>
+<p>There are also some <em>optional</em> configurations you can tweak:</p>
+<table>
+<thead>
+<tr>
+<th align="center">Key</th>
+<th align="center">Definition</th>
+<th align="center">Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><code>projects_dir</code></td>
+<td align="center">Where you keep your projects</td>
+<td align="center"><code>$HOME/Development</code></td>
+</tr>
+<tr>
+<td align="center"><code>vscode</code></td>
+<td align="center">Whether you want pytoil to open things in VSCode</td>
+<td align="center">False</td>
+</tr>
+<tr>
+<td align="center"><code>common_packages</code></td>
+<td align="center">List of packages you want pytoil to inject in every environment it creates (linters, formatters etc.)</td>
+<td align="center"><code>None</code></td>
+</tr>
+</tbody>
+</table>
+<p>These optional settings don't have to be set if you're happy using the default settings!</p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
 <p>Don't worry about giving pytoil your personal token. All we do with it is make HTTP GET requests to the GitHub
@@ -492,62 +494,48 @@ API using your token to authenticate the requests so we can tell which repos you
 <p>If you want to help add support for more editors then PR's are always welcome!</p>
 </div>
 <h2 id="the-config-file">The Config File<a class="headerlink" href="#the-config-file" title="Permanent link">&para;</a></h2>
-<p>After you install pytoil, you should run the following command and follow the prompts</p>
+<p>After you install pytoil, you should run the following command:</p>
 <div class="termy">
 
-<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil init
+<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil config
 
-<span class="gp"># </span>GitHub username:$ YourGitHubUsername
-<span class="gp"># </span>GitHub personal access token:$ YourTokenHere
-<span class="gp"># </span>Absolute path to your projects directory:$ /Users/you/projects
-<span class="gp"># </span>Use VSCode to open projects with?:$ True
+<span class="go">No config file yet!</span>
+<span class="go">Making you a default one...</span>
 </code></pre></div>
 
 </div>
 
-<p>pytoil will then will write that config to a file: <code>~/.pytoil.yml</code>.</p>
+<p>pytoil will then will write a default config state to a file: <code>~/.pytoil.yml</code>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>You only need to run this command once on initial setup (or if you delete the config file). After that your config is saved.</p>
+<p>This command will only write a config file if it doesn't find one already. If one already exists, it will simply show you the settings from that file.</p>
 </div>
-<p>You could always just edit the file manually if you like, it will look like this:</p>
+<p>When you open the default config state you just wrote, it will look like this:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># ~/.pytoil.yml</span>
 
-<span class="nt">username</span><span class="p">:</span> <span class="s">&quot;FollowTheProcess&quot;</span>
-<span class="nt">projects_dir</span><span class="p">:</span> <span class="s">&quot;/Users/me/projects&quot;</span>
-<span class="nt">token</span><span class="p">:</span> <span class="s">&quot;thisismygithubtoken&quot;</span>
-<span class="nt">vscode</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="nt">projects_dir</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">/Users/you/Development</span>
+<span class="nt">token</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">UNSET</span>
+<span class="nt">username</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">UNSET</span>
+<span class="nt">vscode</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
 </code></pre></div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>The only thing that might trip you up is that <code>projects_dir</code> must be the <strong>absolute</strong> path to where you keep your projects. So you'll need to explicitly state the entire path (as in the example above) starting from the root.</p>
+<p><code>projects_dir</code> must be the <strong>absolute</strong> path to where you keep your projects. So you'll need to explicitly state the entire path (as in the example above) starting from the root.</p>
 </div>
-<h2 id="control-using-pytoil">Control using pytoil<a class="headerlink" href="#control-using-pytoil" title="Permanent link">&para;</a></h2>
-<p>Of course, even after you've run <code>pytoil init</code> you can still easily get and set the config through the <code>pytoil config</code> subcommand.</p>
-<h3 id="view-current-config">View Current Config<a class="headerlink" href="#view-current-config" title="Permanent link">&para;</a></h3>
-<div class="termy">
+<p>You should now edit the config file to your liking. Anything currently set to <code>UNSET</code> will cause an error on most pytoil operations so these must be filled out. Everything else is optional <img alt="👍" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44d.svg" title=":thumbsup:" /></p>
+<p>So as an example, your filled out config file might look like this:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># ~/.pytoil.yml</span>
 
-<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil config show
-
-<span class="go">Current pytoil config:</span>
-
-<span class="go">username: &#39;YourUsername&#39;</span>
-<span class="go">token: &#39;YourToken&#39;</span>
-<span class="go">projects_dir: &#39;/Users/you/projects&#39;</span>
-<span class="go">vscode: True</span>
+<span class="nt">projects_dir</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">/Users/me/Projects</span>
+<span class="nt">token</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">jbs822qbs982whbd97g</span> <span class="c1"># I&#39;ve made this up</span>
+<span class="nt">username</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">FollowTheProcess</span>
+<span class="nt">vscode</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="nt">common_packages</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">black</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">flake8</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">mypy&gt;=0.790</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">isort</span>
 </code></pre></div>
-
-</div>
-
-<h3 id="set-a-config-value">Set a Config Value<a class="headerlink" href="#set-a-config-value" title="Permanent link">&para;</a></h3>
-<div class="termy">
-
-<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil config <span class="nb">set</span> username mynewusername
-
-<span class="go">Configuration updated: &#39;username&#39; is now &#39;mynewusername&#39;.</span>
-</code></pre></div>
-
-</div>
                 
               
               
