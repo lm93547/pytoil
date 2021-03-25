@@ -692,13 +692,13 @@
 </div>
 <div class="admonition success">
 <p class="admonition-title">Don't Panic!</p>
-<p>Don't worry though, <code>remove</code> <strong>DOES NOT</strong> go near anything on your GitHub. pytoil only makes HTTP GET requests to the GitHub API so you couldn't even delete a repo if you wanted to, in fact you can't make any changes to any GitHub repo with pytoil whatsoever so you're completely safe! <img alt="😁" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f601.svg" title=":grin:" /></p>
+<p>Don't worry though, <code>remove</code> <strong>DOES NOT</strong> go near anything on your GitHub, only your local directories are affected by <code>remove</code>. pytoil only makes HTTP GET requests to the GitHub API so you couldn't even delete a repo if you wanted to, in fact you can't make any changes to any GitHub repo with pytoil whatsoever so you're completely safe! <img alt="😁" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f601.svg" title=":grin:" /></p>
 </div>
 <div class="termy">
 
 <div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil remove my_project
 
-<span class="gp"># </span>This will remove <span class="s1">&#39;my_project&#39;</span> from your <span class="nb">local</span> filesystem. Are you sure? <span class="o">[</span>y/N<span class="o">]</span>:$ y
+<span class="gp"># </span>This will remove <span class="o">[</span><span class="s1">&#39;my_project&#39;</span><span class="o">]</span> from your <span class="nb">local</span> filesystem. Are you sure? <span class="o">[</span>y/N<span class="o">]</span>:$ y
 
 <span class="go">Removing project: &#39;my_project&#39;.</span>
 
@@ -712,9 +712,41 @@
 
 <div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil remove my_project
 
-<span class="gp"># </span>This will remove <span class="s1">&#39;my_project&#39;</span> from your <span class="nb">local</span> filesystem. Are you sure? <span class="o">[</span>y/N<span class="o">]</span>:$ n
+<span class="gp"># </span>This will remove <span class="o">[</span><span class="s1">&#39;my_project&#39;</span><span class="o">]</span> from your <span class="nb">local</span> filesystem. Are you sure? <span class="o">[</span>y/N<span class="o">]</span>:$ n
 
 <span class="go">Aborted!</span>
+</code></pre></div>
+
+</div>
+
+<p><code>remove</code> also accepts a list of projects if you want to remove a few in one go:</p>
+<div class="termy">
+
+<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil remove remove1 remove2 remove3 remove4
+
+<span class="gp"># </span>This will remove <span class="o">[</span><span class="s1">&#39;remove1&#39;</span>, <span class="s1">&#39;remove2&#39;</span>, <span class="s1">&#39;remove3&#39;</span><span class="o">]</span> from your <span class="nb">local</span> filesystem. Are you sure? <span class="o">[</span>y/N<span class="o">]</span>:$ y
+
+<span class="go">Removing project: &#39;remove1&#39;.</span>
+<span class="go">Removing project: &#39;remove2&#39;.</span>
+<span class="go">Removing project: &#39;remove3&#39;.</span>
+
+<span class="go">Done!</span>
+</code></pre></div>
+
+</div>
+
+<p>And if you've completely given up and decided you don't want to be a developer anymore (we've all been there), you can erase all your local projects:</p>
+<div class="termy">
+
+<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil remove --all
+
+<span class="gp"># </span>This will remove all your projects. Are you okay? <span class="o">[</span>y/N<span class="o">]</span>:$ y
+
+<span class="go">Removing project: &#39;remove1&#39;.</span>
+<span class="go">Removing project: &#39;remove2&#39;.</span>
+<span class="go">Removing project: &#39;remove3&#39;.</span>
+
+<span class="go">Done!</span>
 </code></pre></div>
 
 </div>
