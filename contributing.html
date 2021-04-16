@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://FollowTheProcess.github.io/pytoil/contributing.html">
       
       <link rel="icon" href="assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.0">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.1">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.33e2939f.min.css">
+      <link rel="stylesheet" href="assets/stylesheets/main.9299cb39.min.css">
       
         
         <link rel="stylesheet" href="assets/stylesheets/palette.ef6f36e2.min.css">
@@ -274,8 +274,56 @@
   
   
     <li class="md-nav__item">
-      <a href="commands/project.html" class="md-nav__link">
-        Project Management
+      <a href="commands/new.html" class="md-nav__link">
+        New
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="commands/checkout.html" class="md-nav__link">
+        Checkout
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="commands/remove.html" class="md-nav__link">
+        Remove
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="commands/info.html" class="md-nav__link">
+        Info
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="commands/gh.html" class="md-nav__link">
+        GH
       </a>
     </li>
   
@@ -552,7 +600,7 @@
 <p>Now add the original pytoil repo as an upstream in your forked project:</p>
 <div class="highlight"><pre><span></span><code>git remote add upstream https://github.com/FollowTheProcess/pytoil.git
 </code></pre></div>
-<p>This makes the original version of pytoil 'upstream' but not 'origin'. Basically, this means that if your working on it for a while and the original project has changed in the meantime, you can do:</p>
+<p>This makes the original version of pytoil <code>upstream</code> but not <code>origin</code>. Basically, this means that if your working on it for a while and the original project has changed in the meantime, you can do:</p>
 <div class="highlight"><pre><span></span><code>git checkout main
 git fetch upstream
 git merge upstream/main
@@ -565,16 +613,19 @@ git push origin main
 <li>Merge those changes in with what you have</li>
 <li>Push those changes up to your fork so your fork stays up to date with the original.</li>
 </ul>
-<p><em>Good practice is to do this before you start doing anything every time you start work, then the chances of you getting conflicting commits later on is much lower!</em></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Good practice is to do this before you start doing anything every time you start work, then the chances of you getting conflicting commits later on is much lower!</p>
+</div>
 <h3 id="step-3-create-the-environment">Step 3: Create the Environment<a class="headerlink" href="#step-3-create-the-environment" title="Permanent link">&para;</a></h3>
 <p>The easiest way to get your development environment set up is run the <code>dev</code> makefile target:</p>
 <div class="highlight"><pre><span></span><code>make dev
 </code></pre></div>
-<p>This will create a virtual environment for you (if it doesn't already exist), install pytoil's dependencies, and install pytoil itself in editable mode so you can work on it!</p>
+<p>This will create a virtual environment for you (if it doesn't already exist), install pytoil's dependencies, install pytoil itself in editable mode so you can work on it and install the pre-commit hooks to catch pesky mistakes!</p>
 <p>If you want to do this manually though, just do the following:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Make the environment and activate it</span>
 python3 -m venv .venv
-<span class="nb">source</span> ./.venv/bin/activate
+<span class="nb">source</span> .venv/bin/activate
 
 <span class="c1"># Upgrade important stuff (tends to reduce install bugs etc.)</span>
 python3 -m pip install --upgrade pip setuptools wheel
@@ -584,20 +635,28 @@ python3 -m pip install -e .<span class="o">[</span>dev<span class="o">]</span>
 
 <span class="c1"># If you use zsh you might have to escape the square brackets</span>
 python3 -m pip install -e .<span class="se">\[</span>dev<span class="se">\]</span>
+
+<span class="c1"># Install pre-commit hooks</span>
+pre-commit install
 </code></pre></div>
 <h3 id="step-5-do-your-thing">Step 5: Do your thing<a class="headerlink" href="#step-5-do-your-thing" title="Permanent link">&para;</a></h3>
 <p><strong>Always checkout a new branch before changing anything</strong></p>
 <div class="highlight"><pre><span></span><code>git checkout -b &lt;name-of-your-bugfix-or-feature&gt;
 </code></pre></div>
-<p>So if I was going to fix a bug with the yield strength calculation I would do something like:</p>
-<div class="highlight"><pre><span></span><code>git checkout -b yield-strength-bugfix
-</code></pre></div>
 <p>Now you're ready to start working!</p>
-<p><em>Remember! pytoil aims for high test coverage. If you implement a new feature, make sure to write tests for it! Similarly, if you fix a bug, it's good practice to write a test that would have caught that bug so we can be sure it doesn't reappear in the future!</em></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Remember! pytoil aims for high test coverage. If you implement a new feature, make sure to write tests for it! Similarly, if you fix a bug, it's good practice to write a test that would have caught that bug so we can be sure it doesn't reappear in the future!</p>
+</div>
 <p>pytoil uses <a href="https://nox.thea.codes/en/stable/">nox</a> for automated testing, building the docs, formatting and linting etc. So when you've made your changes, just run:</p>
 <div class="highlight"><pre><span></span><code>nox
 </code></pre></div>
 <p>And it will tell you if something's wrong!</p>
+<p>Nox does everything in fresh virtual environments so it's a great tool but sometimes you want quicker feedback on test results. For this, I've included a makefile with little tasks like test, coverage etc.</p>
+<p>To run the tests this way:</p>
+<div class="highlight"><pre><span></span><code>make <span class="nb">test</span>
+</code></pre></div>
+<p>Run <code>make help</code> to see the tasks and the description of what they do</p>
 <h3 id="step-6-commit-your-changes">Step 6: Commit your changes<a class="headerlink" href="#step-6-commit-your-changes" title="Permanent link">&para;</a></h3>
 <p>Once you're happy with what you've done, add the files you've changed:</p>
 <div class="highlight"><pre><span></span><code>git add &lt;changed-file<span class="o">(</span>s<span class="o">)</span>&gt;
@@ -716,7 +775,7 @@ make autodocs
     <script id="__config" type="application/json">{"base": ".", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "assets/javascripts/workers/search.fe42c31b.min.js", "version": null}</script>
     
     
-      <script src="assets/javascripts/bundle.d892486b.min.js"></script>
+      <script src="assets/javascripts/bundle.7353b375.min.js"></script>
       
         <script src="https://unpkg.com/mermaid@8.4.6/dist/mermaid.min.js"></script>
       
