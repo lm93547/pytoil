@@ -13,14 +13,14 @@
         <meta name="author" content="Tom Fleet">
       
       
-        <link rel="canonical" href="https://FollowTheProcess.github.io/pytoil/commands/info.html">
+        <link rel="canonical" href="https://FollowTheProcess.github.io/pytoil/commands/config.html">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.8">
     
     
       
-        <title>Info - pytoil</title>
+        <title>Config - pytoil</title>
       
     
     
@@ -77,7 +77,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#info" class="md-skip">
+        <a href="#config" class="md-skip">
           Skip to content
         </a>
       
@@ -107,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Info
+              Config
             
           </span>
         </div>
@@ -312,21 +312,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="info.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="info.html" class="md-nav__link">
         Info
       </a>
-      
     </li>
   
 
@@ -358,11 +348,79 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="config.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Config
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="config.html" class="md-nav__link md-nav__link--active">
         Config
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#help" class="md-nav__link">
+    Help
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get" class="md-nav__link">
+    Get
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#set" class="md-nav__link">
+    Set
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#show" class="md-nav__link">
+    Show
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#help-the-other-help" class="md-nav__link">
+    Help (The other help)
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -422,6 +480,49 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#help" class="md-nav__link">
+    Help
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get" class="md-nav__link">
+    Get
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#set" class="md-nav__link">
+    Set
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#show" class="md-nav__link">
+    Show
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#help-the-other-help" class="md-nav__link">
+    Help (The other help)
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -432,54 +533,146 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/FollowTheProcess/pytoil/edit/master/docs/commands/info.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/FollowTheProcess/pytoil/edit/master/docs/commands/config.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="info">Info<a class="headerlink" href="#info" title="Permanent link">&para;</a></h1>
-<p>Another easy one! <code>info</code> simply shows you some summary information about whatever project you tell it to.</p>
+                <h1 id="config">Config<a class="headerlink" href="#config" title="Permanent link">&para;</a></h1>
+<p>The <code>config</code> subcommand is pytoil's programmatic access to it's own configuration file! Here you can get, set, show and get help about the configuration.</p>
+<h2 id="help">Help<a class="headerlink" href="#help" title="Permanent link">&para;</a></h2>
 <div class="termy">
 
-<div class="highlight"><pre><span></span><code><span class="go">// Let&#39;s get some info about pytoil</span>
-<span class="gp">$ </span>pytoil info pytoil
+<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil config --help
 
-<span class="go">Info for: pytoil</span>
+<span class="go">Usage: pytoil config [OPTIONS] COMMAND [ARGS]...</span>
 
-<span class="go">name: pytoil</span>
-<span class="go">description: CLI to automate the development workflow.</span>
-<span class="go">created_at: 2021-02-04T15:05:23Z</span>
-<span class="go">updated_at: 2021-03-02T11:09:08Z</span>
-<span class="go">size: 219</span>
-<span class="go">license: Apache License 2.0</span>
-<span class="go">remote: True</span>
-<span class="go">local: True</span>
+<span class="go">  Interact with pytoil&#39;s configuration.</span>
+
+<span class="go">  The config command group allows you to get, set, and show pytoil&#39;s</span>
+<span class="go">  configuration. Getting and showing obviously do not edit the config file</span>
+<span class="go">  ($HOME/.pytoil.yml).</span>
+
+<span class="go">  Setting a key value pair using the &#39;config set&#39; subcommand will cause the</span>
+<span class="go">  config file to be updated and overwritten. You will be prompted to confirm</span>
+<span class="go">  this however.</span>
+
+<span class="go">  Currently the only config key you cannot set on the command line is</span>
+<span class="go">  &#39;common_packages&#39;. If you want to change this, you&#39;ll have to do so in the</span>
+<span class="go">  config file itself.</span>
+
+<span class="go">Options:</span>
+<span class="go">  --help  Show this message and exit.</span>
+
+<span class="go">Commands:</span>
+<span class="go">  get   Get the currently set value for a config key.</span>
+<span class="go">  help  Print a list and description of pytoil config keys.</span>
+<span class="go">  set   Set a config key, value pair.</span>
+<span class="go">  show  Show pytoil&#39;s config.</span>
 </code></pre></div>
 
 </div>
 
-<p>What happens here is pytoil uses the GitHub personal access token we talked about in <a href="../config.html">config</a> and hits the GitHub API to find out some basic information about the repo you pass to it <img alt="✅" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2705.svg" title=":white_check_mark:" /></p>
-<p>pytoil will always prefer this way of doing it as we can get things like license information and description which is a bit more helpful to show. If however, the project you're asking for information about does not exist on GitHub yet, you'll still get some info back!</p>
+<h2 id="get">Get<a class="headerlink" href="#get" title="Permanent link">&para;</a></h2>
+<p><code>get</code> does what it says. It gets a valid config key-value pair from your file and shows it to you. Simple!</p>
 <div class="termy">
 
-<div class="highlight"><pre><span></span><code><span class="go">// Some project thats not on GitHub yet</span>
-<span class="gp">$ </span>pytoil info my_local_project
+<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil config get vscode
 
-<span class="go">Info for: my_local_project</span>
-
-<span class="go">name: my_local_project</span>
-<span class="go">created_at: 2021-02-27 12:37:18</span>
-<span class="go">updated_at: 2021-02-27 12:48:18</span>
-<span class="go">size: 256</span>
-<span class="go">local: True</span>
-<span class="go">remote: False</span>
+<span class="go">vscode: True</span>
 </code></pre></div>
 
 </div>
 
+<h2 id="set">Set<a class="headerlink" href="#set" title="Permanent link">&para;</a></h2>
+<p><code>set</code> allows you to set a config key-value pair from the command line. This change will be saved to the config file, overwriting it, but only if you agree to the confirmation!</p>
+<div class="termy">
+
+<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil config <span class="nb">set</span> projects_dir /Users/me/somewhereelse
+
+<span class="go">This will set &#39;projects_dir&#39; to /Users/me/somewhereelse. Are you sure? [y/N]: y</span>
+
+<span class="go">Config changed successfully!</span>
+
+<span class="go">&#39;projects_dir&#39; is now /Users/me/somewhereelse</span>
+</code></pre></div>
+
+</div>
+
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>You can again use the <code>--force/-f</code> flag here if you want to override the confirmation <img alt="👍" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44d.svg" title=":thumbsup:" /></p>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>pytoil grabs this data from your operating system by using the <code>Path.stat()</code> method from <a href="https://docs.python.org/3/library/pathlib.html">pathlib</a> <img alt="💻" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4bb.svg" title=":computer:" /></p>
+<p>Pytoil uses <a href="https://pydantic-docs.helpmanual.io">pydantic</a> under the hood to ensure the types of the values (e.g. bool, str, pathlib.Path etc.) are all handled properly so you basically can't go wrong!</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The only config key you can't currently set via the command line is <code>common_packages</code>. This is to do with the way shells and CLI apps handle lists and I don't see an easy way to solve it!</p>
+<p>If you want to change this config setting, you will have to do it in the config file itself unfortunately <img alt="😒" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f612.svg" title=":unamused:" /></p>
+</div>
+<h2 id="show">Show<a class="headerlink" href="#show" title="Permanent link">&para;</a></h2>
+<p><code>show</code> is just a handy way of seeing what the current config is without having to go to the config file!</p>
+<div class="termy">
+
+<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil config show
+
+<span class="go">Pytoil Config:</span>
+
+<span class="go">projects_dir: &#39;/Users/you/Development&#39;</span>
+<span class="go">token: &#39;ljnbasbasbisyvo8&#39;</span>
+<span class="go">username: &#39;FollowTheProcess&#39;</span>
+<span class="go">vscode: True</span>
+<span class="go">common_packages: [&#39;black&#39;, &#39;mypy&#39;, &#39;isort&#39;, &#39;flake8&#39;]</span>
+<span class="go">init_on_new: True</span>
+</code></pre></div>
+
+</div>
+
+<h2 id="help-the-other-help">Help (The other help)<a class="headerlink" href="#help-the-other-help" title="Permanent link">&para;</a></h2>
+<p>This help (<code>pytoil config help</code> not <code>pytoil config --help</code>) outputs a (hopefully) helpful description of the pytoil configuration schema.</p>
+<div class="termy">
+
+<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil config <span class="nb">help</span>
+
+<span class="go">======================= The &#39;.pytoil.yml&#39; config file =======================</span>
+
+
+<span class="go">- projects_dir (bool)</span>
+
+<span class="go">    The absolute path to where you keep your development projects</span>
+<span class="go">    (e.g. /Users/you/Projects)</span>
+
+<span class="go">- token (str)</span>
+
+<span class="go">    Your GitHub personal access token. This must have a minimum of repo</span>
+<span class="go">    read access. See the documentation here:</span>
+<span class="go">    https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token</span>
+
+<span class="go">    Pytoil will try and get this from the config file initially, then fall back to the $GITHUB_TOKEN environment</span>
+<span class="go">    variable. If neither of these places are set, you will not be able to use pytoil commands that rely on the</span>
+<span class="go">    GitHub API. Pytoil will notify you of this when any of these commands are called.</span>
+
+<span class="go">- username (str)</span>
+
+<span class="go">    Your GitHub username.</span>
+
+<span class="go">- vscode (bool)</span>
+
+<span class="go">    Whether you want pytoil to open projects up using VSCode. This will happen on &#39;new&#39; and &#39;checkout&#39;.</span>
+
+<span class="go">- common_packages (List[str])</span>
+
+<span class="go">    A list of python package names to inject into every virtual environment pytoil creates</span>
+<span class="go">    (e.g. linters, formatters and other dev dependencies).</span>
+
+<span class="go">- init_on_new (bool)</span>
+
+<span class="go">    Whether or not you want pytoil to create an empty git repo when you make a new project with</span>
+<span class="go">    &#39;pytoil new&#39;. This can also be disabled on a per use basis using the &#39;--no-git&#39; flag.</span>
+</code></pre></div>
+
 </div>
                 
               
@@ -500,7 +693,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="remove.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Remove" rel="prev">
+        <a href="pull.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Pull" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -509,20 +702,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Remove
+              Pull
             </div>
           </div>
         </a>
       
       
         
-        <a href="gh.html" class="md-footer__link md-footer__link--next" aria-label="Next: GH" rel="next">
+        <a href="../contributing.html" class="md-footer__link md-footer__link--next" aria-label="Next: Contributing" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              GH
+              Contributing
             </div>
           </div>
           <div class="md-footer__button md-icon">

@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://FollowTheProcess.github.io/pytoil/commands/show.html">
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.5">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.8">
     
     
       
@@ -24,10 +24,10 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.bde7dde4.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.ca7ac06f.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.ef6f36e2.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.f1a3b89f.min.css">
         
           
           
@@ -54,6 +54,8 @@
     
     
       
+
+
     
     
   </head>
@@ -86,7 +88,7 @@
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="pytoil" class="md-header__button md-logo" aria-label="pytoil" data-md-component="logo">
+    <a href="../index.html" title="pytoil" class="md-header__button md-logo" aria-label="pytoil" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -179,7 +181,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="pytoil" class="md-nav__button md-logo" aria-label="pytoil" data-md-component="logo">
+    <a href="../index.html" title="pytoil" class="md-nav__button md-logo" aria-label="pytoil" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -404,8 +406,20 @@
   
   
     <li class="md-nav__item">
-      <a href="sync.html" class="md-nav__link">
-        Sync
+      <a href="pull.html" class="md-nav__link">
+        Pull
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="config.html" class="md-nav__link">
+        Config
       </a>
     </li>
   
@@ -525,9 +539,9 @@
                 
                 
                 <h1 id="show">Show<a class="headerlink" href="#show" title="Permanent link">&para;</a></h1>
-<p>We've seen some pytoil commands but these are <em>meta</em> and control pytoil itself.</p>
+<p>We've seen a hint at some pytoil commands but lets dive in properly.</p>
 <p>Let's look at how you can use pytoil to help <em>you</em> <img alt="👍" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44d.svg" title=":thumbsup:" /></p>
-<p>The first subcommand we will look at is <code>pytoil show</code>. </p>
+<p>The first subcommand we will look at is <code>pytoil show</code>.</p>
 <p><code>show</code> does what it says on the tin and provides a nice way of showing your local and remote projects.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -543,14 +557,23 @@
 
 <span class="go">  View your local/remote projects.</span>
 
+<span class="go">  The show command provides an easy way of listing of the projects you have</span>
+<span class="go">  locally in your configured development directory and/or of those you have</span>
+<span class="go">  on GitHub (known in pytoil-land as &#39;remote&#39; projects).</span>
+
+<span class="go">  Local projects will be the names of subdirectories in your configured</span>
+<span class="go">  projects directory.</span>
+
+<span class="go">  The remote projects listed here will be those owned by you on GitHub.</span>
+
 <span class="go">Options:</span>
 <span class="go">  --help  Show this message and exit.</span>
 
 <span class="go">Commands:</span>
-<span class="go">  all     Show both local and remote projects.</span>
+<span class="go">  all     Show all your projects, grouped by local and remote.</span>
 <span class="go">  diff    Show the difference in local/remote projects.</span>
-<span class="go">  local   Show all your local projects.</span>
-<span class="go">  remote  Show all your remote projects.</span>
+<span class="go">  local   Show your local projects.</span>
+<span class="go">  remote  Show your remote projects.</span>
 </code></pre></div>
 
 </div>
@@ -587,7 +610,7 @@
 <p>In this snippet, the user has already cloned <code>Cloned1</code> and <code>Cloned2</code> so they show up in both sections. If you want to only show remote projects that you don't have locally, you need the <code>diff</code> command. Keep scrolling <img alt="👇" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f447.svg" title=":point_down:" /></p>
 </div>
 <h2 id="local">Local<a class="headerlink" href="#local" title="Permanent link">&para;</a></h2>
-<p><code>local</code> shows all the projects you already have in your configured projects directory (see <a href="../config.html">config</a> for how to set this!).</p>
+<p><code>local</code> shows all the projects you already have in your configured projects directory (see <a href="../config.html">config</a> for how to set this!). If you don't have any local projects yet, pytoil will let you know.</p>
 <div class="termy">
 
 <div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil show <span class="nb">local</span>
@@ -604,7 +627,7 @@
 </div>
 
 <h2 id="remote">Remote<a class="headerlink" href="#remote" title="Permanent link">&para;</a></h2>
-<p><code>remote</code> shows all the projects on your GitHub (you may or may not have some of these locally too).</p>
+<p><code>remote</code> shows all the projects on your GitHub (you may or may not have some of these locally too). If you don't have any remote projects yet, pytoil will let you know.</p>
 <div class="termy">
 
 <div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil show remote
@@ -619,12 +642,12 @@
 </div>
 
 <h2 id="diff">Diff<a class="headerlink" href="#diff" title="Permanent link">&para;</a></h2>
-<p><code>diff</code> shows all the projects you have on GitHub, but don't yet exist locally. If your local projects folder has all your GitHub projects in it, nothing will be shown.</p>
+<p><code>diff</code> shows all the projects you have on GitHub, but don't yet exist locally. If your local projects folder has all your GitHub projects in it, pytoil will let you know this too.</p>
 <div class="termy">
 
 <div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil show diff
 
-<span class="go">Remote projects that are not local:</span>
+<span class="go">Diff: Remote - Local</span>
 
 <span class="go">- Remote1</span>
 <span class="go">- etc...</span>
@@ -649,7 +672,8 @@
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../config.html" class="md-footer__link md-footer__link--prev" rel="prev">
+        
+        <a href="../config.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Config" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -664,7 +688,8 @@
         </a>
       
       
-        <a href="new.html" class="md-footer__link md-footer__link--next" rel="next">
+        
+        <a href="new.html" class="md-footer__link md-footer__link--next" aria-label="Next: New" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
@@ -699,10 +724,10 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.d351de03.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.b0710199.min.js", "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.a1609d9a.min.js"></script>
+      <script src="../assets/javascripts/bundle.76f349be.min.js"></script>
       
         <script src="https://unpkg.com/mermaid@8.4.6/dist/mermaid.min.js"></script>
       

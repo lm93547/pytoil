@@ -16,18 +16,18 @@
         <link rel="canonical" href="https://FollowTheProcess.github.io/pytoil/index.html">
       
       <link rel="icon" href="assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.5">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.8">
     
     
       
-        <title>Home - pytoil</title>
+        <title>pytoil</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.bde7dde4.min.css">
+      <link rel="stylesheet" href="assets/stylesheets/main.ca7ac06f.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.ef6f36e2.min.css">
+        <link rel="stylesheet" href="assets/stylesheets/palette.f1a3b89f.min.css">
         
           
           
@@ -54,6 +54,8 @@
     
     
       
+
+
     
     
   </head>
@@ -86,7 +88,7 @@
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="pytoil" class="md-header__button md-logo" aria-label="pytoil" data-md-component="logo">
+    <a href="index.html" title="pytoil" class="md-header__button md-logo" aria-label="pytoil" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -179,7 +181,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="pytoil" class="md-nav__button md-logo" aria-label="pytoil" data-md-component="logo">
+    <a href="index.html" title="pytoil" class="md-nav__button md-logo" aria-label="pytoil" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -439,8 +441,20 @@
   
   
     <li class="md-nav__item">
-      <a href="commands/sync.html" class="md-nav__link">
-        Sync
+      <a href="commands/pull.html" class="md-nav__link">
+        Pull
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="commands/config.html" class="md-nav__link">
+        Config
       </a>
     </li>
   
@@ -635,7 +649,7 @@
 <p>And because I'd basically hacked it all together, it was <strong>very</strong> fragile. If a part of a function failed, it would just carry on and wreak havoc! I'd have to do <code>rm -rf all_my_projects</code>... I mean careful forensic investigation to fix it.</p>
 <p>So I decided to make a robust CLI with the proper error handling and testability of python, and here it is! <img alt="🎉" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f389.svg" title=":tada:" /></p>
 <h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
-<p>As pytoil is a CLI program, I'd recommend installing with <a href="https://pipxproject.github.io/pipx/">pipx</a></p>
+<p>As pytoil is a CLI program, I'd recommend installing with <a href="https://pipxproject.github.io/pipx/">pipx</a>.</p>
 <div class="termy">
 
 <div class="highlight"><pre><span></span><code><span class="gp">$ </span>pipx install pytoil
@@ -645,7 +659,10 @@
 
 </div>
 
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>If you don't know what pipx is, go check it out! But basically it allows python CLI tools to be installed in their own sandboxed environments but you can still access the CLI as if it was installed globally!</p>
+</div>
 <p>You can always fall back to pip</p>
 <div class="termy">
 
@@ -668,10 +685,10 @@
 </ul>
 <h2 id="quickstart">Quickstart<a class="headerlink" href="#quickstart" title="Permanent link">&para;</a></h2>
 <p><code>pytoil</code> is super easy to get started with.</p>
-<p>After installation just run</p>
+<p>After installation, the first time you run it it will make you a config file.</p>
 <div class="termy">
 
-<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil config
+<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil
 
 <span class="go">No config file yet!</span>
 <span class="go">Making you a default one...</span>
@@ -681,7 +698,7 @@
 
 <p>This will create a default config file which can be found at <code>~/.pytoil.yml</code>. See <a href="config.html">config</a> for what information you need to put in here.</p>
 <p>Don't worry though, there's only a few options to configure! <img alt="😴" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f634.svg" title=":sleeping:" /></p>
-<p>After that you're good to go! You can do things like:</p>
+<p>After you've set your config, you're good to go! You can do things like:</p>
 <h4 id="see-your-local-and-remote-projects">See your local and remote projects<a class="headerlink" href="#see-your-local-and-remote-projects" title="Permanent link">&para;</a></h4>
 <div class="termy">
 
@@ -707,7 +724,7 @@
 
 <div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil show diff
 
-<span class="go">Remote projects that are not local:</span>
+<span class="go">Diff: Remote - Local:</span>
 
 <span class="go">- Projectyoudonthave1</span>
 <span class="go">- Projectyoudonthave2</span>
@@ -723,7 +740,7 @@
 <span class="go">Resuming &#39;myproject&#39;...</span>
 
 <span class="go">// Will now either open that project if local</span>
-<span class="go">// or clone it if not</span>
+<span class="go">// or clone it, then open it if not</span>
 </code></pre></div>
 
 </div>
@@ -731,11 +748,11 @@
 <h4 id="create-a-new-project-and-virtual-environment-in-one-go">Create a new project and virtual environment in one go<a class="headerlink" href="#create-a-new-project-and-virtual-environment-in-one-go" title="Permanent link">&para;</a></h4>
 <div class="termy">
 
-<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil new myproject --venv virtualenv
+<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil new myproject --venv venv
 
 <span class="go">Creating project: &#39;myproject&#39; at &#39;/Users/you/projects/myproject&#39;</span>
 
-<span class="go">Creating virtualenv for: &#39;myproject&#39;</span>
+<span class="go">Creating virtual environment for: &#39;myproject&#39;</span>
 </code></pre></div>
 
 </div>
@@ -743,7 +760,7 @@
 <h4 id="and-even-do-this-from-a-cookiecutter-template">And even do this from a <a href="https://cookiecutter.readthedocs.io/en/1.7.2/">cookiecutter</a> template<a class="headerlink" href="#and-even-do-this-from-a-cookiecutter-template" title="Permanent link">&para;</a></h4>
 <div class="termy">
 
-<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil new myproject --venv virtualenv --cookie https://github.com/some/cookie.git
+<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil new myproject --venv venv --cookie https://github.com/some/cookie.git
 
 <span class="go">Creating project: &#39;myproject&#39; with cookiecutter template: &#39;https://github.com/some/cookie.git&#39;</span>
 
@@ -758,6 +775,8 @@
 <div class="termy">
 
 <div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil --help
+
+<span class="go">Usage: pytoil [OPTIONS] COMMAND [ARGS]...</span>
 
 <span class="go">  Helpful CLI to automate the development workflow.</span>
 
@@ -778,15 +797,15 @@
 <span class="go">  --help                Show this message and exit.</span>
 
 <span class="go">Commands:</span>
-<span class="go">  checkout  Checkout a development project, either locally or from GitHub.</span>
-<span class="go">  config    Display pytoil&#39;s configuration.</span>
-<span class="go">  new       Create a new development project locally.</span>
+<span class="go">  checkout  Checkout an existing development project.</span>
+<span class="go">  config    Interact with pytoil&#39;s configuration.</span>
 <span class="go">  docs      Open pytoil&#39;s documentation in your browser.</span>
-<span class="go">  gh        Opens a specified project on GitHub in your browser.</span>
-<span class="go">  info      Show useful information about a project.</span>
-<span class="go">  remove    Deletes a project from your local filesystem.</span>
+<span class="go">  gh        Open one of your projects on GitHub.</span>
+<span class="go">  info      Get useful info for a project.</span>
+<span class="go">  new       Create a new development project.</span>
+<span class="go">  pull      Pull down your remote projects.</span>
+<span class="go">  remove    Remove projects from your local filesystem.</span>
 <span class="go">  show      View your local/remote projects.</span>
-<span class="go">  sync      Synchronise your local and remote projects.</span>
 </code></pre></div>
 
 </div>
@@ -826,7 +845,8 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
       
-        <a href="config.html" class="md-footer__link md-footer__link--next" rel="next">
+        
+        <a href="config.html" class="md-footer__link md-footer__link--next" aria-label="Next: Config" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
@@ -861,10 +881,10 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": ".", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "assets/javascripts/workers/search.d351de03.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": ".", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "assets/javascripts/workers/search.b0710199.min.js", "version": null}</script>
     
     
-      <script src="assets/javascripts/bundle.a1609d9a.min.js"></script>
+      <script src="assets/javascripts/bundle.76f349be.min.js"></script>
       
         <script src="https://unpkg.com/mermaid@8.4.6/dist/mermaid.min.js"></script>
       

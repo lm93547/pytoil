@@ -13,21 +13,21 @@
         <meta name="author" content="Tom Fleet">
       
       
-        <link rel="canonical" href="https://FollowTheProcess.github.io/pytoil/commands/sync.html">
+        <link rel="canonical" href="https://FollowTheProcess.github.io/pytoil/commands/pull.html">
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.5">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.8">
     
     
       
-        <title>Sync - pytoil</title>
+        <title>Pull - pytoil</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.bde7dde4.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.ca7ac06f.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.ef6f36e2.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.f1a3b89f.min.css">
         
           
           
@@ -54,6 +54,8 @@
     
     
       
+
+
     
     
   </head>
@@ -75,7 +77,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#sync" class="md-skip">
+        <a href="#pull" class="md-skip">
           Skip to content
         </a>
       
@@ -86,7 +88,7 @@
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="pytoil" class="md-header__button md-logo" aria-label="pytoil" data-md-component="logo">
+    <a href="../index.html" title="pytoil" class="md-header__button md-logo" aria-label="pytoil" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -105,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Sync
+              Pull
             
           </span>
         </div>
@@ -179,7 +181,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="pytoil" class="md-nav__button md-logo" aria-label="pytoil" data-md-component="logo">
+    <a href="../index.html" title="pytoil" class="md-nav__button md-logo" aria-label="pytoil" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -346,12 +348,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Sync
+          Pull
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <a href="sync.html" class="md-nav__link md-nav__link--active">
-        Sync
+      <a href="pull.html" class="md-nav__link md-nav__link--active">
+        Pull
       </a>
       
         
@@ -393,6 +395,18 @@
   
 </nav>
       
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="config.html" class="md-nav__link">
+        Config
+      </a>
     </li>
   
 
@@ -491,41 +505,56 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/FollowTheProcess/pytoil/edit/master/docs/commands/sync.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/FollowTheProcess/pytoil/edit/master/docs/commands/pull.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="sync">Sync<a class="headerlink" href="#sync" title="Permanent link">&para;</a></h1>
-<p><code>sync</code> does exactly what it sounds like, it provides a nice easy way to pull down multiple projects at once and saves you having to type <code>git clone</code> like a million times <img alt="😴" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f634.svg" title=":sleeping:" /></p>
-<p>Any projects you already have locally will be completely skipped by <code>sync</code> so it's impossible to overwrite any local changes to projects <img alt="✅" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2705.svg" title=":white_check_mark:" /></p>
+                <h1 id="pull">Pull<a class="headerlink" href="#pull" title="Permanent link">&para;</a></h1>
+<p><code>pull</code> does exactly what it sounds like, it provides a nice easy way to pull down multiple projects at once and saves you having to type <code>git clone</code> like a million times <img alt="😴" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f634.svg" title=":sleeping:" /></p>
+<p>Any projects you already have locally will be completely skipped by <code>pull</code> so it's impossible to overwrite any local changes to projects <img alt="✅" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2705.svg" title=":white_check_mark:" /></p>
 <h2 id="help">Help<a class="headerlink" href="#help" title="Permanent link">&para;</a></h2>
 <div class="termy">
 
-<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil sync --help
+<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil pull --help
 
-<span class="go">Usage: pytoil sync [OPTIONS] COMMAND [ARGS]...</span>
+<span class="go">Usage: pytoil pull [OPTIONS] COMMAND [ARGS]...</span>
 
-<span class="go">  Synchronise your local and remote projects.</span>
+<span class="go">  Pull down your remote projects.</span>
 
-<span class="go">  sync is a safe method in that existing local projects will not be modified</span>
-<span class="go">  in any way.</span>
+<span class="go">  The pull command provides easy methods for pulling down remote projects.</span>
+
+<span class="go">  It is effectively a nice wrapper around git clone but you don&#39;t have to</span>
+<span class="go">  worry about urls or what your cwd is, pull will grab your remote projects</span>
+<span class="go">  by name and clone them to your configured projects directory.</span>
+
+<span class="go">  You can also use pull to batch clone multiple repos, even all of them if</span>
+<span class="go">  you&#39;re into that sorta thing.</span>
+
+<span class="go">  Any remote project that already exists locally will be skipped and none of</span>
+<span class="go">  your local projects are changed in any way.</span>
+
+<span class="go">  It&#39;s very possible to accidentally clone a lot of repos when using pull so</span>
+<span class="go">  you will be prompted for confirmation before pytoil does anything.</span>
+
+<span class="go">  The &quot;--force/-f&quot; flag can be used to override this confirmation prompt if</span>
+<span class="go">  desired.</span>
 
 <span class="go">Options:</span>
 <span class="go">  --help  Show this message and exit.</span>
 
 <span class="go">Commands:</span>
-<span class="go">  all    Pull down all your remote projects that aren&#39;t already local.</span>
-<span class="go">  these  Only pull down specified remote projects.</span>
+<span class="go">  all    Pull down all your remote projects.</span>
+<span class="go">  these  Pull down specified remote projects.</span>
 </code></pre></div>
 
 </div>
 
 <h2 id="all">All<a class="headerlink" href="#all" title="Permanent link">&para;</a></h2>
-<p>When you run <code>pytoil sync all</code> pytoil will scan your projects directory and your GitHub repos to calculate what's missing locally and then go and grab the missing projects from GitHub one by one.</p>
+<p>When you run <code>pytoil pull all</code> pytoil will scan your projects directory and your GitHub repos to calculate what's missing locally and then go and grab the missing projects from GitHub one by one.</p>
 <div class="termy">
 
-<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil sync all
+<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil pull all
 
 <span class="gp"># </span>This will clone <span class="m">7</span> repos. Are you sure you wish to proceed? <span class="o">[</span>y/N<span class="o">]</span>:$ y
 
@@ -540,12 +569,12 @@
 
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>If you have lots of GitHub repos this could take a while, you might be better off selecting specific repos to sync by using <code>pytoil sync these</code>. More on that down here <img alt="👇" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f447.svg" title=":point_down:" /></p>
+<p>If you have lots of GitHub repos this could take a while, you might be better off selecting specific repos to pull by using <code>pytoil pull these</code>. More on that down here <img alt="👇" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f447.svg" title=":point_down:" /></p>
 <p>However, it will prompt you telling you exactly how many repos it is going to clone and ask you to confirm! This confirmation can be disabled by using the <code>--force/-f</code> flag.</p>
 </div>
 <div class="termy">
 
-<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil sync all
+<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil pull all
 
 <span class="go">// This person has a LOT of repos</span>
 
@@ -557,11 +586,11 @@
 </div>
 
 <h2 id="these">These<a class="headerlink" href="#these" title="Permanent link">&para;</a></h2>
-<p>If you have a lot of repos or you only want a few of them, <code>pytoil sync these</code> is what you want!</p>
+<p>If you have a lot of repos or you only want a few of them, <code>pytoil pull these</code> is what you want!</p>
 <p><code>these</code> accepts a space-separated list of repo names as an argument and it will again check if you already have any of these locally (and skip them if you do) and finally do the cloning. Like so:</p>
 <div class="termy">
 
-<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil sync these repo1 repo2 repo3 cloned1
+<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil pull these repo1 repo2 repo3 cloned1
 
 <span class="go">// In this snippet, our user already has &#39;cloned1&#39; locally so it&#39;s skipped</span>
 
@@ -579,7 +608,7 @@
 <p>And just like <code>all</code> you can abort the whole operation by entering <code>n</code> when prompted.</p>
 <div class="termy">
 
-<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil sync these repo1 repo2 repo3 cloned1
+<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil pull these repo1 repo2 repo3 cloned1
 
 <span class="go">// In this snippet, our user already has &#39;cloned1&#39; locally so it&#39;s skipped</span>
 
@@ -607,7 +636,8 @@
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="gh.html" class="md-footer__link md-footer__link--prev" rel="prev">
+        
+        <a href="gh.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: GH" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -622,13 +652,14 @@
         </a>
       
       
-        <a href="../contributing.html" class="md-footer__link md-footer__link--next" rel="next">
+        
+        <a href="config.html" class="md-footer__link md-footer__link--next" aria-label="Next: Config" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Contributing
+              Config
             </div>
           </div>
           <div class="md-footer__button md-icon">
@@ -657,10 +688,10 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.d351de03.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.b0710199.min.js", "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.a1609d9a.min.js"></script>
+      <script src="../assets/javascripts/bundle.76f349be.min.js"></script>
       
         <script src="https://unpkg.com/mermaid@8.4.6/dist/mermaid.min.js"></script>
       

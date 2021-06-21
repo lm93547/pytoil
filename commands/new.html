@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://FollowTheProcess.github.io/pytoil/commands/new.html">
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.5">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.8">
     
     
       
@@ -24,10 +24,10 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.bde7dde4.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.ca7ac06f.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.ef6f36e2.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.f1a3b89f.min.css">
         
           
           
@@ -54,6 +54,8 @@
     
     
       
+
+
     
     
   </head>
@@ -86,7 +88,7 @@
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="pytoil" class="md-header__button md-logo" aria-label="pytoil" data-md-component="logo">
+    <a href="../index.html" title="pytoil" class="md-header__button md-logo" aria-label="pytoil" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -179,7 +181,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="pytoil" class="md-nav__button md-logo" aria-label="pytoil" data-md-component="logo">
+    <a href="../index.html" title="pytoil" class="md-nav__button md-logo" aria-label="pytoil" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -313,6 +315,19 @@
     No Options
   </a>
   
+    <nav class="md-nav" aria-label="No Options">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-git-repo" class="md-nav__link">
+    New Git Repo
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -323,8 +338,22 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#install-packages-at-creation" class="md-nav__link">
+    Install Packages at Creation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#build-a-project-from-a-cookiecutter-template" class="md-nav__link">
     Build a project from a Cookiecutter Template
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#all-in-one-go" class="md-nav__link">
+    All in One Go
   </a>
   
 </li>
@@ -390,8 +419,20 @@
   
   
     <li class="md-nav__item">
-      <a href="sync.html" class="md-nav__link">
-        Sync
+      <a href="pull.html" class="md-nav__link">
+        Pull
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="config.html" class="md-nav__link">
+        Config
       </a>
     </li>
   
@@ -463,6 +504,19 @@
     No Options
   </a>
   
+    <nav class="md-nav" aria-label="No Options">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-git-repo" class="md-nav__link">
+    New Git Repo
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -473,8 +527,22 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#install-packages-at-creation" class="md-nav__link">
+    Install Packages at Creation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#build-a-project-from-a-cookiecutter-template" class="md-nav__link">
     Build a project from a Cookiecutter Template
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#all-in-one-go" class="md-nav__link">
+    All in One Go
   </a>
   
 </li>
@@ -511,19 +579,45 @@
 
 </div>
 
-<h2 id="include-virtual-environment">Include Virtual Environment<a class="headerlink" href="#include-virtual-environment" title="Permanent link">&para;</a></h2>
-<p>If you are a python developer though, chances are you'll want to create a virtual environment with your project. pytoil supports both <a href="https://virtualenv.pypa.io/en/latest/">virtualenv</a> and <a href="https://docs.conda.io/en/latest/">conda</a> environments, although for the latter you'll have to have the conda package manager already installed on your system. I personally recommend <a href="https://docs.conda.io/en/latest/miniconda.html">miniconda</a> as you get the package manager but none of the bundled packages (which can be quite large!).</p>
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p>If you don't know what conda is: as a general rule, you'll want to use virtualenv on most python projects (particularly packages i.e. things that can be pip installed). If you do a lot of work with data (think pandas, numpy, scikit-learn) you'll probably want to use conda as a lot of python data tools include native C libraries which require compiling, and conda makes this happen seamlessly <img alt="🤓" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f913.svg" title=":nerd_face:" /></p>
-</div>
-<p>All you have to do is specify which virtual environment to create, using the <code>--venv/-v</code> option flag. You can choose from <code>virtualenv</code> or <code>conda</code>. The default is <code>None</code>.</p>
+<h3 id="new-git-repo">New Git Repo<a class="headerlink" href="#new-git-repo" title="Permanent link">&para;</a></h3>
+<p>By default, pytoil will also create an empty git repository in this folder for you. You can disable this behaviour by changing the value for <code>init_on_new</code> in your config file, or on a per use basis by using the <code>--no-git</code> flag.</p>
+<p>You will need <code>git</code> installed to be able to use this feature.</p>
 <div class="termy">
 
-<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil new my_new_project --venv virtualenv
+<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil new my_new_project --no-git
 
 <span class="go">Creating new project: &#39;my_new_project&#39;</span>
-<span class="go">Creating virtualenv for: &#39;my_new_project&#39;</span>
+<span class="go">// Does some stuff...but not git</span>
+</code></pre></div>
+
+</div>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A lot of modern language tools (e.g. rust's <code>cargo</code>) initialise a git repo by default and I liked the idea so here it is <img alt="😃" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f603.svg" title=":smiley:" /></p>
+</div>
+<h2 id="include-virtual-environment">Include Virtual Environment<a class="headerlink" href="#include-virtual-environment" title="Permanent link">&para;</a></h2>
+<p>If you are a python developer though, chances are you'll want to create a virtual environment with your project. pytoil supports both <a href="https://docs.python.org/3/library/venv.html">venv</a> and <a href="https://docs.conda.io/en/latest/">conda</a> environments, although for the latter you'll have to have the conda package manager already installed on your system. I personally recommend <a href="https://docs.conda.io/en/latest/miniconda.html">miniconda</a> as you get the package manager but none of the bundled packages (which can be quite large!).</p>
+<p>For standard python virtual environments, pytoil uses the standard library <code>venv</code> module so you don't need to install anything external.</p>
+<p>If you want to use conda environments though, you'll need to have a <code>conda</code> package manager installed and available on $PATH.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>If you don't know what conda is: as a general rule, you'll want to use venv on most python projects (particularly packages i.e. things that can be pip installed). If you do a lot of work with data (think pandas, numpy, scikit-learn) you'll probably want to use conda as a lot of python data tools include native C libraries which require compiling, and conda makes this happen seamlessly <img alt="🤓" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f913.svg" title=":nerd_face:" /></p>
+</div>
+<p>Pytoil has been tested and supports the following conda distributions:</p>
+<ul>
+<li>Anaconda</li>
+<li>Miniconda</li>
+<li>Miniforge</li>
+<li>Mambaforge</li>
+</ul>
+<p>All you have to do is specify which virtual environment to create, using the <code>--venv/-v</code> option flag. You can choose from <code>venv</code> or <code>conda</code>. The default is <code>None</code>.</p>
+<div class="termy">
+
+<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil new my_new_project --venv venv
+
+<span class="go">Creating new project: &#39;my_new_project&#39;</span>
+<span class="go">Creating virtual environment for: &#39;my_new_project&#39;</span>
 </code></pre></div>
 
 </div>
@@ -540,6 +634,24 @@
 
 </div>
 
+<h2 id="install-packages-at-creation">Install Packages at Creation<a class="headerlink" href="#install-packages-at-creation" title="Permanent link">&para;</a></h2>
+<p>A blank virtual environment isn't really much use yet! <code>pytoil</code> lets you inject packages at environment creation time! All you have to do is pass packages you want to install into the new environment as additional command line arguments and pytoil will figure this all out for you.</p>
+<div class="termy">
+
+<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil new my_new_project --venv conda pandas numpy scikit-learn
+
+<span class="go">Creating new project: &#39;my_new_project&#39;</span>
+<span class="go">Creating conda environment for: &#39;my_new_project&#39;</span>
+<span class="go">Including packages: pandas, numpy, scikit-learn</span>
+<span class="go">// Conda environments typically take a bit longer to make as it has to do a bit more work!</span>
+</code></pre></div>
+
+</div>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is also where the <code>common_packages</code> setting from the config file comes in! If you specify packages here, these will automatically get injected into every environment pytoil creates, whether its a python virtual environment or a conda environment. This is particularly useful for development dependencies like linters and formatters etc.</p>
+</div>
 <h2 id="build-a-project-from-a-cookiecutter-template">Build a project from a Cookiecutter Template<a class="headerlink" href="#build-a-project-from-a-cookiecutter-template" title="Permanent link">&para;</a></h2>
 <p>If you don't know what <a href="https://cookiecutter.readthedocs.io/en/1.7.2/">cookiecutter</a> is, go and check them out! Essentially, it is a templating engine for development projects and, after asking you a few questions, it can dynamically insert and modify text inside your project, set up directory structure and all sorts of cool automation stuff!</p>
 <p>It means that if you find a template you like (or make your own) you can use it as the base for development projects without having to create so much boilerplate at the beginning, they're great <img alt="👍" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44d.svg" title=":thumbsup:" /></p>
@@ -557,6 +669,27 @@
 </code></pre></div>
 
 </div>
+
+<h2 id="all-in-one-go">All in One Go<a class="headerlink" href="#all-in-one-go" title="Permanent link">&para;</a></h2>
+<p>Because pytoil uses <a href="https://typer.tiangolo.com">typer</a> for it's CLI, the arguments and options to CLI commands are all resolved really intelligently so you can specify all of them in one go if you like to get complex behaviour!</p>
+<div class="termy">
+
+<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil new my_new_project --cookie https://github.com/some/cookie.git --venv venv --no-git requests <span class="s2">&quot;flask&gt;=1.0.0&quot;</span> sqlalchemy
+
+<span class="go">// Many things will now happen!</span>
+</code></pre></div>
+
+</div>
+
+<p>In this snippet we've:</p>
+<ul>
+<li>Created a new project in the correct folder called 'my_new_project'</li>
+<li>Built this project from a cookiecutter template hosted on GitHub</li>
+<li>Created a fresh python virtual environment for the project</li>
+<li>Told pytoil not to initialise an empty git repo (it actually doesn't do this on cookiecutter projects anyway but you get the point)</li>
+<li>Passed a list of additional packages to install into the new environment (along with any we've specified in the config file)</li>
+</ul>
+<p>That's better than doing all this yourself isn't it! <img alt="👍" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44d.svg" title=":thumbsup:" /></p>
                 
               
               
@@ -575,7 +708,8 @@
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="show.html" class="md-footer__link md-footer__link--prev" rel="prev">
+        
+        <a href="show.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Show" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -590,7 +724,8 @@
         </a>
       
       
-        <a href="checkout.html" class="md-footer__link md-footer__link--next" rel="next">
+        
+        <a href="checkout.html" class="md-footer__link md-footer__link--next" aria-label="Next: Checkout" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
@@ -625,10 +760,10 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.d351de03.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.b0710199.min.js", "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.a1609d9a.min.js"></script>
+      <script src="../assets/javascripts/bundle.76f349be.min.js"></script>
       
         <script src="https://unpkg.com/mermaid@8.4.6/dist/mermaid.min.js"></script>
       
