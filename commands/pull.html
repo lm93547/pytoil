@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://FollowTheProcess.github.io/pytoil/commands/pull.html">
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.8">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.9">
     
     
       
@@ -385,8 +385,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#these" class="md-nav__link">
-    These
+  <a href="#some" class="md-nav__link">
+    Some
   </a>
   
 </li>
@@ -487,8 +487,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#these" class="md-nav__link">
-    These
+  <a href="#some" class="md-nav__link">
+    Some
   </a>
   
 </li>
@@ -518,7 +518,7 @@
 
 <div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil pull --help
 
-<span class="go">Usage: pytoil pull [OPTIONS] COMMAND [ARGS]...</span>
+<span class="go">Usage: pytoil pull [OPTIONS] [PROJECTS]...</span>
 
 <span class="go">  Pull down your remote projects.</span>
 
@@ -528,11 +528,12 @@
 <span class="go">  worry about urls or what your cwd is, pull will grab your remote projects</span>
 <span class="go">  by name and clone them to your configured projects directory.</span>
 
-<span class="go">  You can also use pull to batch clone multiple repos, even all of them if</span>
-<span class="go">  you&#39;re into that sorta thing.</span>
+<span class="go">  You can also use pull to batch clone multiple repos, even all of them (&quot;--</span>
+<span class="go">  all/-a&quot;) if you&#39;re into that sorta thing.</span>
 
 <span class="go">  Any remote project that already exists locally will be skipped and none of</span>
-<span class="go">  your local projects are changed in any way.</span>
+<span class="go">  your local projects are changed in any way. pytoil will only pull down</span>
+<span class="go">  those projects that don&#39;t already exist locally.</span>
 
 <span class="go">  It&#39;s very possible to accidentally clone a lot of repos when using pull so</span>
 <span class="go">  you will be prompted for confirmation before pytoil does anything.</span>
@@ -540,21 +541,32 @@
 <span class="go">  The &quot;--force/-f&quot; flag can be used to override this confirmation prompt if</span>
 <span class="go">  desired.</span>
 
-<span class="go">Options:</span>
-<span class="go">  --help  Show this message and exit.</span>
+<span class="go">  Examples:</span>
 
-<span class="go">Commands:</span>
-<span class="go">  all    Pull down all your remote projects.</span>
-<span class="go">  these  Pull down specified remote projects.</span>
+<span class="gp">    $ </span>pytoil pull project1 project2 project3
+
+<span class="gp">    $ </span>pytoil pull project1 project2 project3 --force
+
+<span class="gp">    $ </span>pytoil pull --all
+
+<span class="gp">    $ </span>pytoil pull --all --force
+
+<span class="go">Arguments:</span>
+<span class="go">  [PROJECTS]...  Name of the project(s) to pull down.</span>
+
+<span class="go">Options:</span>
+<span class="go">  -f, --force  Force pull without confirmation.</span>
+<span class="go">  -a, --all    Pull down all of your projects.</span>
+<span class="go">  --help       Show this message and exit.</span>
 </code></pre></div>
 
 </div>
 
 <h2 id="all">All<a class="headerlink" href="#all" title="Permanent link">&para;</a></h2>
-<p>When you run <code>pytoil pull all</code> pytoil will scan your projects directory and your GitHub repos to calculate what's missing locally and then go and grab the missing projects from GitHub one by one.</p>
+<p>When you run <code>pytoil pull --all</code> pytoil will scan your projects directory and your GitHub repos to calculate what's missing locally and then go and grab the missing projects from GitHub one by one.</p>
 <div class="termy">
 
-<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil pull all
+<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil pull --all
 
 <span class="gp"># </span>This will clone <span class="m">7</span> repos. Are you sure you wish to proceed? <span class="o">[</span>y/N<span class="o">]</span>:$ y
 
@@ -569,12 +581,12 @@
 
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>If you have lots of GitHub repos this could take a while, you might be better off selecting specific repos to pull by using <code>pytoil pull these</code>. More on that down here <img alt="👇" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f447.svg" title=":point_down:" /></p>
+<p>If you have lots of GitHub repos this could take a while, you might be better off selecting specific repos to pull by using <code>pytoil pull [project(s)]</code>. More on that down here <img alt="👇" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f447.svg" title=":point_down:" /></p>
 <p>However, it will prompt you telling you exactly how many repos it is going to clone and ask you to confirm! This confirmation can be disabled by using the <code>--force/-f</code> flag.</p>
 </div>
 <div class="termy">
 
-<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil pull all
+<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil pull --all
 
 <span class="go">// This person has a LOT of repos</span>
 
@@ -585,12 +597,12 @@
 
 </div>
 
-<h2 id="these">These<a class="headerlink" href="#these" title="Permanent link">&para;</a></h2>
-<p>If you have a lot of repos or you only want a few of them, <code>pytoil pull these</code> is what you want!</p>
-<p><code>these</code> accepts a space-separated list of repo names as an argument and it will again check if you already have any of these locally (and skip them if you do) and finally do the cloning. Like so:</p>
+<h2 id="some">Some<a class="headerlink" href="#some" title="Permanent link">&para;</a></h2>
+<p>If you have a lot of repos or you only want a few of them, <code>pytoil pull</code> accepts a space separated list of projects as arguments.</p>
+<p>Doing it this way, it will again check if you already have any of these locally (and skip them if you do) and finally do the cloning. Like so:</p>
 <div class="termy">
 
-<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil pull these repo1 repo2 repo3 cloned1
+<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil pull repo1 repo2 repo3 cloned1
 
 <span class="go">// In this snippet, our user already has &#39;cloned1&#39; locally so it&#39;s skipped</span>
 
@@ -605,10 +617,10 @@
 
 </div>
 
-<p>And just like <code>all</code> you can abort the whole operation by entering <code>n</code> when prompted.</p>
+<p>And just like <code>--all</code> you can abort the whole operation by entering <code>n</code> when prompted.</p>
 <div class="termy">
 
-<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil pull these repo1 repo2 repo3 cloned1
+<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil pull repo1 repo2 repo3 cloned1
 
 <span class="go">// In this snippet, our user already has &#39;cloned1&#39; locally so it&#39;s skipped</span>
 
@@ -688,10 +700,10 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.b0710199.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.477d984a.min.js", "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.76f349be.min.js"></script>
+      <script src="../assets/javascripts/bundle.82b56eb2.min.js"></script>
       
         <script src="https://unpkg.com/mermaid@8.4.6/dist/mermaid.min.js"></script>
       

@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://FollowTheProcess.github.io/pytoil/commands/new.html">
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.8">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.9">
     
     
       
@@ -311,6 +311,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#help" class="md-nav__link">
+    Help
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#no-options" class="md-nav__link">
     No Options
   </a>
@@ -347,6 +354,13 @@
         <li class="md-nav__item">
   <a href="#build-a-project-from-a-cookiecutter-template" class="md-nav__link">
     Build a project from a Cookiecutter Template
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-from-a-starter" class="md-nav__link">
+    Create from a starter
   </a>
   
 </li>
@@ -500,6 +514,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#help" class="md-nav__link">
+    Help
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#no-options" class="md-nav__link">
     No Options
   </a>
@@ -541,6 +562,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#create-from-a-starter" class="md-nav__link">
+    Create from a starter
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#all-in-one-go" class="md-nav__link">
     All in One Go
   </a>
@@ -566,6 +594,85 @@
                 
                 <h1 id="new">New<a class="headerlink" href="#new" title="Permanent link">&para;</a></h1>
 <p><code>new</code> will make you a new project locally. You have the option to create a new virtual environment with it and to create the project from a <a href="https://cookiecutter.readthedocs.io/en/1.7.2/">cookiecutter</a> template <img alt="🍪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f36a.svg" title=":cookie:" /></p>
+<h2 id="help">Help<a class="headerlink" href="#help" title="Permanent link">&para;</a></h2>
+<div class="termy">
+
+<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil new --help
+
+<span class="go">Usage: pytoil new [OPTIONS] PROJECT</span>
+
+<span class="go">  Create a new development project.</span>
+
+<span class="go">  Bare usage will simply create an empty folder in your configured projects</span>
+<span class="go">  directory.</span>
+
+<span class="go">  You can also create a project from a cookiecutter template by passing a</span>
+<span class="go">  valid url to the &#39;--cookie/-c&#39; flag.</span>
+
+<span class="go">  If you just want a very simple, language-specific starting template, use</span>
+<span class="go">  the &#39;--starter/-s&#39; option.</span>
+
+<span class="go">  By default, pytoil will initialise an empty git repo in the folder,</span>
+<span class="go">  following the style of modern language build tools such as rust&#39;s cargo.</span>
+<span class="go">  You can disable this behaviour by setting &#39;init_on_new&#39; to false in</span>
+<span class="go">  pytoil&#39;s config file or by passing the &#39;--no-git/-n&#39; flag here.</span>
+
+<span class="go">  If you want pytoil to create a new virtual environment for your project,</span>
+<span class="go">  you can use the &#39;--venv/-v&#39; flag. Standard python and conda virtual</span>
+<span class="go">  environments are supported.</span>
+
+<span class="go">  If the &#39;--venv/-v&#39; flag is used, you may also pass a list of python</span>
+<span class="go">  packages to install into the created virtual environment. These will be</span>
+<span class="go">  delegated to the appropriate tool (pip or conda) depending on what</span>
+<span class="go">  environment was created. If the environment is conda, the packages will be</span>
+<span class="go">  passed at environment creation time meaning they will have their</span>
+<span class="go">  dependencies resolved together. Normal python environments will first be</span>
+<span class="go">  created and then have specified packages installed.</span>
+
+<span class="go">  If &#39;common_packages&#39; is specified in pytoil&#39;s config file, these will</span>
+<span class="go">  automatically be included in the environment.</span>
+
+<span class="go">  To specify versions of packages via the command line, you must enclose</span>
+<span class="go">  them in double quotes e.g. &quot;flask&gt;=1.0.0&quot; not flask&gt;=1.0.0 otherwise this</span>
+<span class="go">  will be interpreted by the shell as a command redirection.</span>
+
+<span class="go">  Examples:</span>
+
+<span class="gp">  $ </span>pytoil new my_project
+
+<span class="gp">  $ </span>pytoil new my_project --cookie https://github.com/some/cookie.git
+
+<span class="gp">  $ </span>pytoil new my_project --venv conda
+
+<span class="gp">  $ </span>pytoil new my_project -c https://github.com/some/cookie.git -v conda
+<span class="go">  --no-git</span>
+
+<span class="gp">  $ </span>pytoil new my_project -v venv requests <span class="s2">&quot;flask&gt;=1.0.0&quot;</span>
+
+<span class="gp">  $ </span>pytoil new my_project --starter python
+
+<span class="go">Arguments:</span>
+<span class="go">  PROJECT  Name of the project to create.  [required]</span>
+
+<span class="go">Options:</span>
+<span class="go">  -c, --cookie TEXT               URL to a cookiecutter template repo from</span>
+<span class="go">                                  which to build the project.</span>
+
+<span class="go">  -s, --starter [python|go|rust|none]</span>
+<span class="go">                                  Use a language-specific starter template</span>
+<span class="go">                                  [default: none]</span>
+
+<span class="go">  -v, --venv [venv|conda|none]    Which type of virtual environment to create</span>
+<span class="go">                                  for the project.  [default: none]</span>
+
+<span class="go">  -n, --no-git                    Don&#39;t initialise an empty git repo in the</span>
+<span class="go">                                  app of the project.  [default: False]</span>
+
+<span class="go">  --help                          Show this message and exit.</span>
+</code></pre></div>
+
+</div>
+
 <h2 id="no-options">No Options<a class="headerlink" href="#no-options" title="Permanent link">&para;</a></h2>
 <p>If you don't give any options, the default behaviour is to just make a new empty folder with no virtual environment for you to do whatever you want with!</p>
 <p>In this sense, you don't have to be a python developer to use pytoil!</p>
@@ -670,6 +777,55 @@
 
 </div>
 
+<h2 id="create-from-a-starter">Create from a starter<a class="headerlink" href="#create-from-a-starter" title="Permanent link">&para;</a></h2>
+<p>pytoil also comes with a few basic starter templates for some common languages. How it creates these templates is specific to the language, but you can use them like this....</p>
+<div class="termy">
+
+<div class="highlight"><pre><span></span><code><span class="go">// Just pass a valid starter</span>
+<span class="gp">$ </span>pytoil new my_new_python_project --starter python
+
+<span class="go">Creating new project: &#39;my_new_python_project&#39; from starter: &#39;python&#39;</span>
+</code></pre></div>
+
+</div>
+
+<div class="termy">
+
+<div class="highlight"><pre><span></span><code><span class="go">// Just pass a valid starter</span>
+<span class="gp">$ </span>pytoil new my_new_go_project --starter go
+
+<span class="go">Creating new project: &#39;my_new_go_project&#39; from starter: &#39;go&#39;</span>
+</code></pre></div>
+
+</div>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Currently pytoil supports python, go and rust starter templates. The starters are super easy to implement though so if you want more languages supported, maybe throw us a PR <img alt="😉" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f609.svg" title=":wink:" /></p>
+</div>
+<p>The table below shows what happens under the hood when a starter is given to <code>pytoil new</code>:</p>
+<table>
+<thead>
+<tr>
+<th align="center">Starter</th>
+<th align="center">Implementation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><code>python</code></td>
+<td align="center">Creates everything internally using pathlib</td>
+</tr>
+<tr>
+<td align="center"><code>go</code></td>
+<td align="center">Creates the root directory and main.go internally. Then calls <code>go mod init</code></td>
+</tr>
+<tr>
+<td align="center"><code>rust</code></td>
+<td align="center">Creates the root directory internally. Then calls <code>cargo init</code></td>
+</tr>
+</tbody>
+</table>
 <h2 id="all-in-one-go">All in One Go<a class="headerlink" href="#all-in-one-go" title="Permanent link">&para;</a></h2>
 <p>Because pytoil uses <a href="https://typer.tiangolo.com">typer</a> for it's CLI, the arguments and options to CLI commands are all resolved really intelligently so you can specify all of them in one go if you like to get complex behaviour!</p>
 <div class="termy">
@@ -760,10 +916,10 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.b0710199.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.477d984a.min.js", "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.76f349be.min.js"></script>
+      <script src="../assets/javascripts/bundle.82b56eb2.min.js"></script>
       
         <script src="https://unpkg.com/mermaid@8.4.6/dist/mermaid.min.js"></script>
       

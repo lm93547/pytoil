@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://FollowTheProcess.github.io/pytoil/changelog.html">
       
       <link rel="icon" href="assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.8">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.9">
     
     
       
@@ -417,6 +417,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#060" class="md-nav__link">
+    0.6.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#050" class="md-nav__link">
     0.5.0
   </a>
@@ -513,6 +520,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#060" class="md-nav__link">
+    0.6.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#050" class="md-nav__link">
     0.5.0
   </a>
@@ -593,6 +607,22 @@
                 
                 
                 <h1 id="changelog">Changelog<a class="headerlink" href="#changelog" title="Permanent link">&para;</a></h1>
+<h2 id="060">0.6.0<a class="headerlink" href="#060" title="Permanent link">&para;</a></h2>
+<ul>
+<li>NEW: User can now initialise basic starter templates for multiple languages (currently support python, go and rust)</li>
+<li>
+<p>NEW: <code>pytoil remove</code> and <code>pytoil pull</code> changed to take projects as arguments, <code>remove|pull all</code> functionality is now in the <code>--all</code> option.</p>
+</li>
+<li>
+<p>FIX: pytoil now supports the <code>python.defaultInterpreterPath</code> workspace setting rather than the soon to be deprecated <code>python.pythonPath</code>. See: <a href="https://github.com/microsoft/vscode-python/issues/12313">https://github.com/microsoft/vscode-python/issues/12313</a></p>
+</li>
+<li>
+<p>FIX: On checking out a local project, pytoil no longer needs to call the GitHub API to determine if it exists remotely, improving performance of this command.</p>
+</li>
+<li>
+<p>MAINT: Refactored CLI so that each command has it's own file</p>
+</li>
+</ul>
 <h2 id="050">0.5.0<a class="headerlink" href="#050" title="Permanent link">&para;</a></h2>
 <p>Complete rewrite from the ground up!</p>
 <ul>
@@ -719,10 +749,10 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": ".", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "assets/javascripts/workers/search.b0710199.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": ".", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "assets/javascripts/workers/search.477d984a.min.js", "version": null}</script>
     
     
-      <script src="assets/javascripts/bundle.76f349be.min.js"></script>
+      <script src="assets/javascripts/bundle.82b56eb2.min.js"></script>
       
         <script src="https://unpkg.com/mermaid@8.4.6/dist/mermaid.min.js"></script>
       

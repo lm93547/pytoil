@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://FollowTheProcess.github.io/pytoil/commands/remove.html">
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.8">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.9">
     
     
       
@@ -335,6 +335,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#help" class="md-nav__link">
+    Help
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#remove-individual-projects" class="md-nav__link">
     Remove Individual Projects
   </a>
@@ -473,6 +480,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#help" class="md-nav__link">
+    Help
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#remove-individual-projects" class="md-nav__link">
     Remove Individual Projects
   </a>
@@ -520,12 +534,54 @@
 <p class="admonition-title">Don't Panic!</p>
 <p>Don't worry though, <code>remove</code> <strong>DOES NOT</strong> go near anything on your GitHub, only your local directories are affected by <code>remove</code>. pytoil only makes HTTP GET requests to the GitHub API so you couldn't even delete a repo if you wanted to, in fact you can't make any changes to any GitHub repo with pytoil whatsoever so you're completely safe! <img alt="😁" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f601.svg" title=":grin:" /></p>
 </div>
-<h2 id="remove-individual-projects">Remove Individual Projects<a class="headerlink" href="#remove-individual-projects" title="Permanent link">&para;</a></h2>
-<p>If you want to remove one or more specific projects, you need the <code>these</code> subcommand.</p>
-<p><code>remove these</code> takes a space separated list of 1 or more projects to remove.</p>
+<h2 id="help">Help<a class="headerlink" href="#help" title="Permanent link">&para;</a></h2>
 <div class="termy">
 
-<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil remove these my_project my_other_project this_one_too
+<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil remove --help
+
+<span class="go">Usage: pytoil remove [OPTIONS] [PROJECTS]...</span>
+
+<span class="go">  Remove projects from your local filesystem.</span>
+
+<span class="go">  The remove command provides an easy interface for decluttering your local</span>
+<span class="go">  projects directory.</span>
+
+<span class="go">  You can selectively remove any number of projects by passing them as</span>
+<span class="go">  arguments or nuke the whole lot with &quot;--all/-a&quot; if you want.</span>
+
+<span class="go">  As with most programmatic deleting, the directories are deleted instantly</span>
+<span class="go">  and not sent to trash. As such, pytoil will prompt you for confirmation</span>
+<span class="go">  before doing anything.</span>
+
+<span class="go">  The &quot;--force/-f&quot; flag can be used to force deletion without the</span>
+<span class="go">  confirmation prompt. Use with caution!</span>
+
+<span class="go">  Examples:</span>
+
+<span class="gp">  $ </span>pytoil remove project1 project2 project3
+
+<span class="gp">  $ </span>pytoil remove project1 project2 project3 --force
+
+<span class="gp">  $ </span>pytoil remove --all
+
+<span class="gp">  $ </span>pytoil remove --all --force
+
+<span class="go">Arguments:</span>
+<span class="go">  [PROJECTS]...  Name of the project(s) to delete.</span>
+
+<span class="go">Options:</span>
+<span class="go">  -f, --force  Force delete without confirmation.</span>
+<span class="go">  -a, --all    Delete all of your local projects.</span>
+<span class="go">  --help       Show this message and exit.</span>
+</code></pre></div>
+
+</div>
+
+<h2 id="remove-individual-projects">Remove Individual Projects<a class="headerlink" href="#remove-individual-projects" title="Permanent link">&para;</a></h2>
+<p>If you want to remove one or more specific projects, just pass them to <code>remove</code> as arguments.</p>
+<div class="termy">
+
+<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil remove my_project my_other_project this_one_too
 
 <span class="gp"># </span>This will remove my_project, my_other_project, this_one_too from your <span class="nb">local</span> filesystem. Are you sure? <span class="o">[</span>y/N<span class="o">]</span>:$ y
 
@@ -541,7 +597,7 @@
 <p>And if you say no...</p>
 <div class="termy">
 
-<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil remove these my_project my_other_project this_one_too
+<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil remove my_project my_other_project this_one_too
 
 <span class="gp"># </span>This will remove my_project, my_other_project, this_one_too from your <span class="nb">local</span> filesystem. Are you sure? <span class="o">[</span>y/N<span class="o">]</span>:$ n
 
@@ -554,7 +610,7 @@
 <p>And if you've completely given up and decided you don't want to be a developer anymore (we've all been there), you can erase all your local projects:</p>
 <div class="termy">
 
-<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil remove all
+<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil remove --all
 
 <span class="gp"># </span>This will remove ALL your projects. Are you okay? <span class="o">[</span>y/N<span class="o">]</span>:$ y
 
@@ -571,7 +627,7 @@
 <p>If you're really sure what you're doing, you can get around the confirmation prompt by using the <code>--force/-f</code> flag.</p>
 <div class="termy">
 
-<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil remove these project1 project2 --force
+<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil remove project1 project2 --force
 
 <span class="go">Removing project: &#39;remove1&#39;.</span>
 <span class="go">Removing project: &#39;remove2&#39;.</span>
@@ -651,10 +707,10 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.b0710199.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.477d984a.min.js", "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.76f349be.min.js"></script>
+      <script src="../assets/javascripts/bundle.82b56eb2.min.js"></script>
       
         <script src="https://unpkg.com/mermaid@8.4.6/dist/mermaid.min.js"></script>
       
