@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://FollowTheProcess.github.io/pytoil/commands/checkout.html">
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.9">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.10">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.ca7ac06f.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.1fe995fd.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.f1a3b89f.min.css">
@@ -344,6 +344,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#someone-elses-project" class="md-nav__link">
+    Someone else's project
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#automatically-create-a-virtual-environment" class="md-nav__link">
     Automatically Create a Virtual Environment
   </a>
@@ -501,6 +508,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#someone-elses-project" class="md-nav__link">
+    Someone else's project
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#automatically-create-a-virtual-environment" class="md-nav__link">
     Automatically Create a Virtual Environment
   </a>
@@ -544,11 +558,17 @@
 <span class="go">  config file it will open it for you. If not, it will just tell you it</span>
 <span class="go">  already exists locally and where to find it.</span>
 
-<span class="go">  If your project is on GitHub, pytoil will clone it for you and then open</span>
-<span class="go">  it (or tell you where it cloned it if you dont have VSCode set up).</span>
+<span class="go">  If your project is on your GitHub, pytoil will clone it for you and then</span>
+<span class="go">  open it (or tell you where it cloned it if you dont have VSCode set up).</span>
 
 <span class="go">  Finally, if checkout can&#39;t find a match after searching locally and on</span>
 <span class="go">  GitHub, it will prompt you to use &#39;pytoil new&#39; to create a new one.</span>
+
+<span class="go">  If you pass the shorthand to someone elses repo e.g. &#39;someoneelse/repo&#39;</span>
+<span class="go">  pytoil will detect this and automatically create a fork of this repo for</span>
+<span class="go">  you. Forking happens asynchronously so we can&#39;t clone your fork straight</span>
+<span class="go">  away. Give it a few seconds then a &#39;pytoil checkout repo&#39; will bring it</span>
+<span class="go">  down as normal.</span>
 
 <span class="go">  You can also ask pytoil to automatically create a virtual environment on</span>
 <span class="go">  checkout with the &#39;--venv/-v&#39; flag. This only happens for projects pulled</span>
@@ -564,6 +584,8 @@
 <span class="gp">  $ </span>pytoil checkout my_project
 
 <span class="gp">  $ </span>pytoil checkout my_project --venv
+
+<span class="gp">  $ </span>pytoil checkout someoneelse/project
 
 <span class="go">Arguments:</span>
 <span class="go">  PROJECT  Name of the project to checkout.  [required]</span>
@@ -612,6 +634,26 @@
 <p class="admonition-title">Why just VSCode?</p>
 <p>When developing pytoil I was debating how to handle this. I use VSCode for everything but I know other people have different editor preferences. Initially I looked at using the <code>$EDITOR</code> environment variable but working out how best to launch a variety of possible editors from a CLI was tricky. Plus pytoil does things like alter workspace settings to point at the right virtual environment, and I only know how to do this with VSCode.</p>
 <p>PR's are very welcome though if you think you can introduce support for your preferred editor! <img alt="😁" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f601.svg" title=":grin:" /></p>
+</div>
+<h2 id="someone-elses-project">Someone else's project<a class="headerlink" href="#someone-elses-project" title="Permanent link">&para;</a></h2>
+<p>A common workflow in open source is to fork someone elses project and then work on your fork. With <code>pytoil</code> this can be done in the same command! If you provide the shorthand repo path to <code>pytoil checkout</code> e.g. <code>someoneelse/repo</code>, <code>pytoil</code> will fork the repo for you!</p>
+<div class="termy">
+
+<div class="highlight"><pre><span></span><code><span class="go">// Someone else&#39;s project</span>
+<span class="gp">$ </span>pytoil checkout someone/their_github_project
+
+<span class="go">Project: &#39;someone/their_github_project&#39; belongs to &#39;someone&#39;. Making you a fork.</span>
+
+<span class="go">Done!</span>
+<span class="go">Note: Forking happens asynchronously on GitHub which means it may not be available to clone right away</span>
+</code></pre></div>
+
+</div>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>As it says in the command line above, <code>pytoil</code> can't clone your fork right away because it happens in the background on GitHub's end
+which means when we get the <code>202: Accepted</code> response from the API, there's no guarantee that your fork exists yet. The best bet is to give it a few seconds and then try checking it out as normal <img alt="👍" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44d.svg" title=":thumbsup:" /></p>
 </div>
 <h2 id="automatically-create-a-virtual-environment">Automatically Create a Virtual Environment<a class="headerlink" href="#automatically-create-a-virtual-environment" title="Permanent link">&para;</a></h2>
 <p>If you pass the <code>--venv</code> option, <code>checkout</code> will also:</p>
@@ -718,7 +760,7 @@
     <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.477d984a.min.js", "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.82b56eb2.min.js"></script>
+      <script src="../assets/javascripts/bundle.ddd52ceb.min.js"></script>
       
         <script src="https://unpkg.com/mermaid@8.4.6/dist/mermaid.min.js"></script>
       
