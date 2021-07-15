@@ -355,6 +355,61 @@
     Automatically Create a Virtual Environment
   </a>
   
+    <nav class="md-nav" aria-label="Automatically Create a Virtual Environment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-pytoil-knows-what-to-install" class="md-nav__link">
+    How pytoil Knows What to Install
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#environmentyml" class="md-nav__link">
+    environment.yml
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requirementstxt-or-requirements_devtxt" class="md-nav__link">
+    requirements.txt or requirements_dev.txt
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setupcfg-or-setuppy" class="md-nav__link">
+    setup.cfg or setup.py
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyprojecttoml-specifying-poetry-as-a-build-tool" class="md-nav__link">
+    pyproject.toml specifying poetry as a build tool
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyprojecttoml-specifying-flit-as-a-build-tool" class="md-nav__link">
+    pyproject.toml specifying flit as a build tool
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#else" class="md-nav__link">
+    Else
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -446,21 +501,6 @@
   
 
     
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../changelog.html" class="md-nav__link">
-        Changelog
-      </a>
-    </li>
-  
-
-    
   </ul>
 </nav>
                   </div>
@@ -519,6 +559,61 @@
     Automatically Create a Virtual Environment
   </a>
   
+    <nav class="md-nav" aria-label="Automatically Create a Virtual Environment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-pytoil-knows-what-to-install" class="md-nav__link">
+    How pytoil Knows What to Install
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#environmentyml" class="md-nav__link">
+    environment.yml
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requirementstxt-or-requirements_devtxt" class="md-nav__link">
+    requirements.txt or requirements_dev.txt
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setupcfg-or-setuppy" class="md-nav__link">
+    setup.cfg or setup.py
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyprojecttoml-specifying-poetry-as-a-build-tool" class="md-nav__link">
+    pyproject.toml specifying poetry as a build tool
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyprojecttoml-specifying-flit-as-a-build-tool" class="md-nav__link">
+    pyproject.toml specifying flit as a build tool
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#else" class="md-nav__link">
+    Else
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -543,8 +638,7 @@
 <h2 id="help">Help<a class="headerlink" href="#help" title="Permanent link">&para;</a></h2>
 <div class="termy">
 
-<div class="highlight"><pre><span></span><code><span class="go">// Some project thats already local</span>
-<span class="gp">$ </span>pytoil checkout --help
+<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil checkout --help
 
 <span class="go">Usage: pytoil checkout [OPTIONS] PROJECT</span>
 
@@ -575,9 +669,14 @@
 <span class="go">  down from GitHub to avoid accidentally screwing up local projects.</span>
 
 <span class="go">  If the &#39;--venv/-v&#39; flag is used, pytoil will look at your project to try</span>
-<span class="go">  and detect which type of environment to create (conda or standard python).</span>
+<span class="go">  and detect which type of environment to create e.g. conda, flit, poetry,</span>
+<span class="go">  standard python etc.</span>
 
-<span class="go">  More info can be found in the documentation.</span>
+<span class="go">  The &#39;--venv/-v&#39; flag will also attempt to detect if the project you&#39;re</span>
+<span class="go">  checking out is a python package, in which case it will install it&#39;s</span>
+<span class="go">  requirements into the created environment.</span>
+
+<span class="go">  More info about this can be found in the documentation.</span>
 
 <span class="go">  Examples:</span>
 
@@ -636,30 +735,39 @@
 <p>PR's are very welcome though if you think you can introduce support for your preferred editor! <img alt="😁" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f601.svg" title=":grin:" /></p>
 </div>
 <h2 id="someone-elses-project">Someone else's project<a class="headerlink" href="#someone-elses-project" title="Permanent link">&para;</a></h2>
-<p>A common workflow in open source is to fork someone elses project and then work on your fork. With <code>pytoil</code> this can be done in the same command! If you provide the shorthand repo path to <code>pytoil checkout</code> e.g. <code>someoneelse/repo</code>, <code>pytoil</code> will fork the repo for you!</p>
+<p>A common workflow in open source is to fork someone elses project and then work on your fork. With <code>pytoil</code> this can be done in the same command! If you provide the shorthand repo path to <code>pytoil checkout</code> e.g. <code>someoneelse/repo</code>, <code>pytoil</code> will:</p>
+<ul>
+<li>Fork the repo for you</li>
+<li>Clone your fork</li>
+<li>Add the original repo as remote 'upstream'</li>
+</ul>
+<p>Basically all the chores you would have to do to work on a open source project! <img alt="🎉" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f389.svg" title=":tada:" /></p>
 <div class="termy">
 
 <div class="highlight"><pre><span></span><code><span class="go">// Someone else&#39;s project</span>
 <span class="gp">$ </span>pytoil checkout someone/their_github_project
 
-<span class="go">Project: &#39;someone/their_github_project&#39; belongs to &#39;someone&#39;. Making you a fork.</span>
+<span class="go">Project: &#39;someone/their_github_project&#39; belongs to &#39;someone&#39;</span>
 
-<span class="go">Done!</span>
-<span class="go">Note: Forking happens asynchronously on GitHub which means it may not be available to clone right away</span>
+<span class="go">Forking...</span>
+
+<span class="go">Cloning...</span>
+
+<span class="go">More awesome stuff!</span>
 </code></pre></div>
 
 </div>
 
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>As it says in the command line above, <code>pytoil</code> can't clone your fork right away because it happens in the background on GitHub's end
-which means when we get the <code>202: Accepted</code> response from the API, there's no guarantee that your fork exists yet. The best bet is to give it a few seconds and then try checking it out as normal <img alt="👍" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44d.svg" title=":thumbsup:" /></p>
+<p>Forking happens asynchronously on GitHub's end so we make a best effort here to wait for GitHub's internal state to synchronise and check if the fork was a success. However, this can sometimes time out, in which case pytoil will let you know and handle this gracefully <img alt="👍" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44d.svg" title=":thumbsup:" /></p>
 </div>
 <h2 id="automatically-create-a-virtual-environment">Automatically Create a Virtual Environment<a class="headerlink" href="#automatically-create-a-virtual-environment" title="Permanent link">&para;</a></h2>
 <p>If you pass the <code>--venv</code> option, <code>checkout</code> will also:</p>
 <ul>
-<li>Try to detect what environment would work best for the project (conda or virtualenv)</li>
-<li>Auto create this virtual environment and install any configured common packages</li>
+<li>Try to detect what environment would work best for the project (conda, venv, flit, poetry)</li>
+<li>Auto create this virtual environment</li>
+<li>Look for requirements files that specify dependencies such as <code>environment.yml</code> for conda, <code>setup.cfg</code> or <code>setup.py</code> for normal python packages etc.</li>
 <li>If you have VSCode configured, <code>pytoil</code> will also set your workspace <code>python.defaultInterpreterPath</code></li>
 </ul>
 <div class="admonition note">
@@ -686,6 +794,30 @@ which means when we get the <code>202: Accepted</code> response from the API, th
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>pytoil looks for certain files in your project (like <code>setup.py</code>, <code>setup.cfg</code>, <code>environment.yml</code> etc.) and that's how it decides which environment to create. If it isn't totally sure what environment to create, it will just skip this step and let you know!</p>
+</div>
+<h3 id="how-pytoil-knows-what-to-install">How pytoil Knows What to Install<a class="headerlink" href="#how-pytoil-knows-what-to-install" title="Permanent link">&para;</a></h3>
+<p>The <code>--venv</code> implementation is quite complex (and it took me a while to get it right!) but effectively, <code>pytoil</code> will look at the contents of your cloned project to decide what to do, create the matching virtual environment, then delegate to the appropriate tool to install dependencies.</p>
+<p>A summary of what <code>pytoil</code> does when it finds certain files is found below, the search priority is in the same order as presented and <code>pytoil</code> will match on the first found condition to create the environment:</p>
+<h3 id="environmentyml"><code>environment.yml</code><a class="headerlink" href="#environmentyml" title="Permanent link">&para;</a></h3>
+<p>Must mean it's a conda project, delegate to conda using <code>conda env create --file environment.yml</code></p>
+<h3 id="requirementstxt-or-requirements_devtxt"><code>requirements.txt</code> or <code>requirements_dev.txt</code><a class="headerlink" href="#requirementstxt-or-requirements_devtxt" title="Permanent link">&para;</a></h3>
+<p>Python project, delegate to pip using <code>pip install -r requirements</code></p>
+<p>Prefers dev if present as it will have everything needed to work on the project, falls back to <code>requirements.txt</code> if not.</p>
+<h3 id="setupcfg-or-setuppy"><code>setup.cfg</code> or <code>setup.py</code><a class="headerlink" href="#setupcfg-or-setuppy" title="Permanent link">&para;</a></h3>
+<p>Python package, again delegate to pip using <code>pip install -e .[dev]</code></p>
+<p>Defaults to using the [dev] target for convention, if this isn't present it falls back to <code>pip install -e .</code></p>
+<h3 id="pyprojecttoml-specifying-poetry-as-a-build-tool"><code>pyproject.toml</code> specifying poetry as a build tool<a class="headerlink" href="#pyprojecttoml-specifying-poetry-as-a-build-tool" title="Permanent link">&para;</a></h3>
+<p>Python package managed with <a href="https://python-poetry.org">poetry</a>, here we basically delegate everything to poetry as it handles both the virtual environment and installation of dependencies.</p>
+<p><code>pytoil</code> is effectively doing <code>poetry install</code> as you might yourself.</p>
+<h3 id="pyprojecttoml-specifying-flit-as-a-build-tool"><code>pyproject.toml</code> specifying flit as a build tool<a class="headerlink" href="#pyprojecttoml-specifying-flit-as-a-build-tool" title="Permanent link">&para;</a></h3>
+<p>Python package managed with <a href="https://flit.readthedocs.io/en/latest/">flit</a>, here we create a virtual environment the normal python way, then delegate to flit to install dependencies.</p>
+<p>Something like <code>flit install</code> called from the directory of the project. (We actually do a bit more than this to make sure it only targets your local environment for that project, but thats the gist of it!)</p>
+<h3 id="else">Else<a class="headerlink" href="#else" title="Permanent link">&para;</a></h3>
+<p>If we get here, <code>pytoil</code> gives up and will tell you something along the lines of "could not detect correct virtual environment. skipping". Your project will still be checked out, but you'll have to do the virtual environment stuff yourself I'm afraid! <img alt="😔" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f614.svg" title=":pensive:" /> But we gave it our best shot!</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Although we've tried to make the implementation of this as robust as possible, it's quite complex and there's bound to be edge cases lurking here somewhere. If you hit any, please file an issue and maybe even try and fix it yourself and throw us a PR <img alt="🎉" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f389.svg" title=":tada:" /></p>
+<p>Remember if you need more custom behaviour than this, you can just plain <code>pytoil checkout</code> without the <code>--venv</code> and <code>pytoil</code> won't try and be clever, it will just straight up clone the project for you to do whatever you want with!</p>
 </div>
                 
               
