@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://FollowTheProcess.github.io/pytoil/commands/pull.html">
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.10">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.1.11">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.1fe995fd.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.3754935a.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.f1a3b89f.min.css">
@@ -516,6 +516,9 @@
 <span class="go">  You can also use pull to batch clone multiple repos, even all of them (&quot;--</span>
 <span class="go">  all/-a&quot;) if you&#39;re into that sorta thing.</span>
 
+<span class="go">  If more than 1 repo is passed (or if &quot;--all/-a&quot; is used) pytoil will pull</span>
+<span class="go">  the repos concurrently, speeding up the process.</span>
+
 <span class="go">  Any remote project that already exists locally will be skipped and none of</span>
 <span class="go">  your local projects are changed in any way. pytoil will only pull down</span>
 <span class="go">  those projects that don&#39;t already exist locally.</span>
@@ -528,13 +531,13 @@
 
 <span class="go">  Examples:</span>
 
-<span class="gp">    $ </span>pytoil pull project1 project2 project3
+<span class="gp">  $ </span>pytoil pull project1 project2 project3
 
-<span class="gp">    $ </span>pytoil pull project1 project2 project3 --force
+<span class="gp">  $ </span>pytoil pull project1 project2 project3 --force
 
-<span class="gp">    $ </span>pytoil pull --all
+<span class="gp">  $ </span>pytoil pull --all
 
-<span class="gp">    $ </span>pytoil pull --all --force
+<span class="gp">  $ </span>pytoil pull --all --force
 
 <span class="go">Arguments:</span>
 <span class="go">  [PROJECTS]...  Name of the project(s) to pull down.</span>
@@ -548,16 +551,16 @@
 </div>
 
 <h2 id="all">All<a class="headerlink" href="#all" title="Permanent link">&para;</a></h2>
-<p>When you run <code>pytoil pull --all</code> pytoil will scan your projects directory and your GitHub repos to calculate what's missing locally and then go and grab the missing projects from GitHub one by one.</p>
+<p>When you run <code>pytoil pull --all</code> pytoil will scan your projects directory and your GitHub repos to calculate what's missing locally and then go and grab the required repos concurrently so it's as fast as possible (useful if you have a lot of repos!) <img alt="💨" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4a8.svg" title=":dash:" /></p>
 <div class="termy">
 
 <div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil pull --all
 
 <span class="gp"># </span>This will clone <span class="m">7</span> repos. Are you sure you wish to proceed? <span class="o">[</span>y/N<span class="o">]</span>:$ y
 
-<span class="go">Cloning &#39;repo1&#39;...</span>
+<span class="go">Cloned &#39;repo1&#39;...</span>
 
-<span class="go">Cloning &#39;repo2&#39;...</span>
+<span class="go">Cloned &#39;repo2&#39;...</span>
 
 <span class="go">etc...</span>
 </code></pre></div>
@@ -566,7 +569,7 @@
 
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>If you have lots of GitHub repos this could take a while, you might be better off selecting specific repos to pull by using <code>pytoil pull [project(s)]</code>. More on that down here <img alt="👇" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f447.svg" title=":point_down:" /></p>
+<p>Even though this is done concurrently, if you have lots of GitHub repos (&gt; 50 or so) this could still take a few seconds, you might be better off selecting specific repos to pull by using <code>pytoil pull [project(s)]</code>. More on that down here <img alt="👇" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f447.svg" title=":point_down:" /></p>
 <p>However, it will prompt you telling you exactly how many repos it is going to clone and ask you to confirm! This confirmation can be disabled by using the <code>--force/-f</code> flag.</p>
 </div>
 <div class="termy">
@@ -614,6 +617,11 @@
 <span class="go">Aborted!</span>
 </code></pre></div>
 
+</div>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you pass more than 1 repo as an argument, it will also be cloned concurrently <img alt="💨" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4a8.svg" title=":dash:" /></p>
 </div>
                 
               
