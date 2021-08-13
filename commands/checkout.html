@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://FollowTheProcess.github.io/pytoil/commands/checkout.html">
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.2">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.4">
     
     
       
@@ -24,10 +24,10 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.1118c9be.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.f7f47774.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.ba0d045b.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.3f5d1f46.min.css">
         
           
           
@@ -664,9 +664,11 @@
 
 <span class="go">  If you pass the shorthand to someone elses repo e.g. &#39;someoneelse/repo&#39;</span>
 <span class="go">  pytoil will detect this and automatically create a fork of this repo for</span>
-<span class="go">  you. Forking happens asynchronously so we can&#39;t clone your fork straight</span>
-<span class="go">  away. Give it a few seconds then a &#39;pytoil checkout repo&#39; will bring it</span>
-<span class="go">  down as normal.</span>
+<span class="go">  you. Forking happens asynchronously so we give it a few seconds, then</span>
+<span class="go">  check whether or not your fork exists yet. If it does, all is well and we</span>
+<span class="go">  can clone it for you automatically. If not, (which is totally normal),</span>
+<span class="go">  we&#39;ll let you know. In which case just give it a few seconds then a</span>
+<span class="go">  &#39;pytoil checkout repo&#39; will bring it down as normal.</span>
 
 <span class="go">  You can also ask pytoil to automatically create a virtual environment on</span>
 <span class="go">  checkout with the &#39;--venv/-v&#39; flag. This only happens for projects pulled</span>
@@ -715,7 +717,7 @@
 </div>
 
 <h2 id="remote-project">Remote Project<a class="headerlink" href="#remote-project" title="Permanent link">&para;</a></h2>
-<p>If pytoil can't find your project locally, <code>checkout</code> will:</p>
+<p>If pytoil can't find your project locally, but it is on your GitHub <code>checkout</code> will:</p>
 <ul>
 <li>Clone it to your projects directory</li>
 <li>Open it for you (if you configure VSCode in <a href="../config.html">config</a>)</li>
@@ -764,7 +766,8 @@
 
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Forking happens asynchronously on GitHub's end so we make a best effort here to wait for GitHub's internal state to synchronise and check if the fork was a success. However, this can sometimes time out, in which case pytoil will let you know and handle this gracefully <img alt="👍" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44d.svg" title=":thumbsup:" /></p>
+<p>Forking happens asynchronously on GitHub's end and there is no guarantee on a timeline (although GitHub is very well engineered and this normally happens pretty much straight away) so we make a best effort here to wait for GitHub's internal state to synchronise and check if the fork was a success. However, this can sometimes time out, in which case pytoil will let you know and handle this gracefully <img alt="👍" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44d.svg" title=":thumbsup:" /></p>
+<p>If this happens to you, all you need to do is wait a few seconds and then try <code>pytoil checkout &lt;project&gt;</code> again.</p>
 </div>
 <h2 id="automatically-create-a-virtual-environment">Automatically Create a Virtual Environment<a class="headerlink" href="#automatically-create-a-virtual-environment" title="Permanent link">&para;</a></h2>
 <p>If you pass the <code>--venv</code> option, <code>checkout</code> will also:</p>
@@ -797,7 +800,8 @@
 
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>pytoil looks for certain files in your project (like <code>setup.py</code>, <code>setup.cfg</code>, <code>environment.yml</code> etc.) and that's how it decides which environment to create. If it isn't totally sure what environment to create, it will just skip this step and let you know!</p>
+<p>pytoil looks for certain files in your project (like <code>setup.py</code>, <code>setup.cfg</code>, <code>pyproject.toml</code>, <code>environment.yml</code> etc.) and that's how it decides which environment to create. If it isn't totally sure what environment to create, it will just skip this step and let you know!</p>
+<p>I've personally tested this on every type of environment pytoil supports and it works really well!</p>
 </div>
 <h3 id="how-pytoil-knows-what-to-install">How pytoil Knows What to Install<a class="headerlink" href="#how-pytoil-knows-what-to-install" title="Permanent link">&para;</a></h3>
 <p>The <code>--venv</code> implementation is quite complex (and it took me a while to get it right!) but effectively, <code>pytoil</code> will look at the contents of your cloned project to decide what to do, create the matching virtual environment, then delegate to the appropriate tool to install dependencies.</p>
@@ -805,11 +809,11 @@
 <h3 id="environmentyml"><code>environment.yml</code><a class="headerlink" href="#environmentyml" title="Permanent link">&para;</a></h3>
 <p>Must mean it's a conda project, delegate to conda using <code>conda env create --file environment.yml</code></p>
 <h3 id="requirementstxt-or-requirements_devtxt"><code>requirements.txt</code> or <code>requirements_dev.txt</code><a class="headerlink" href="#requirementstxt-or-requirements_devtxt" title="Permanent link">&para;</a></h3>
-<p>Python project, delegate to pip using <code>pip install -r requirements</code></p>
-<p>Prefers dev if present as it will have everything needed to work on the project, falls back to <code>requirements.txt</code> if not.</p>
+<p>Python script or non-package project e.g. django web app, delegate to pip using <code>pip install -r &lt;file&gt;</code></p>
+<p>Prefers <code>requirements_dev.txt</code> if present as it will have everything needed to work on the project, falls back to <code>requirements.txt</code> if not.</p>
 <h3 id="setupcfg-or-setuppy"><code>setup.cfg</code> or <code>setup.py</code><a class="headerlink" href="#setupcfg-or-setuppy" title="Permanent link">&para;</a></h3>
 <p>Python package, again delegate to pip using <code>pip install -e .[dev]</code></p>
-<p>Defaults to using the [dev] target for convention, if this isn't present it falls back to <code>pip install -e .</code></p>
+<p>Defaults to using the [dev] target for convention and to ensure the entire dev environment is set up, if this isn't present pip automatically falls back to <code>pip install -e .</code></p>
 <h3 id="pyprojecttoml-specifying-poetry-as-a-build-tool"><code>pyproject.toml</code> specifying poetry as a build tool<a class="headerlink" href="#pyprojecttoml-specifying-poetry-as-a-build-tool" title="Permanent link">&para;</a></h3>
 <p>Python package managed with <a href="https://python-poetry.org">poetry</a>, here we basically delegate everything to poetry as it handles both the virtual environment and installation of dependencies.</p>
 <p><code>pytoil</code> is effectively doing <code>poetry install</code> as you might yourself.</p>
@@ -896,7 +900,7 @@
     <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.709b4209.min.js", "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.2b46852b.min.js"></script>
+      <script src="../assets/javascripts/bundle.febc23d1.min.js"></script>
       
         <script src="https://unpkg.com/mermaid@8.4.6/dist/mermaid.min.js"></script>
       
