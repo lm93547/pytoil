@@ -805,7 +805,7 @@
 </ul>
 <div class="termy">
 
-<div class="highlight"><pre><span></span><code><span class="go">// Some project thats on GitHub</span>
+<div class="highlight"><pre><span></span><code><span class="go">// Some project that&#39;s on GitHub</span>
 <span class="gp">$ </span>pytoil checkout my_github_project
 
 <span class="go">Project: &#39;my_github_project&#39; found on GitHub! Cloning...</span>
@@ -865,7 +865,7 @@
 </div>
 <div class="termy">
 
-<div class="highlight"><pre><span></span><code><span class="go">// Some project thats on GitHub</span>
+<div class="highlight"><pre><span></span><code><span class="go">// Some project that&#39;s on GitHub</span>
 <span class="gp">$ </span>pytoil checkout my_github_project --venv
 
 <span class="go">Project: &#39;my_github_project&#39; found on GitHub! Cloning...</span>
@@ -900,7 +900,7 @@
 <p><code>pytoil</code> is effectively doing <code>poetry install</code> as you might yourself.</p>
 <h3 id="pyprojecttoml-specifying-flit-as-a-build-tool"><code>pyproject.toml</code> specifying flit as a build tool<a class="headerlink" href="#pyprojecttoml-specifying-flit-as-a-build-tool" title="Permanent link">&para;</a></h3>
 <p>Python package managed with <a href="https://flit.readthedocs.io/en/latest/">flit</a>, here we create a virtual environment the normal python way, then delegate to flit to install dependencies.</p>
-<p>Something like <code>flit install</code> called from the directory of the project. (We actually do a bit more than this to make sure it only targets your local environment for that project, but thats the gist of it!)</p>
+<p>Something like <code>flit install</code> called from the directory of the project. (We actually do a bit more than this to make sure it only targets your local environment for that project, but that's the gist of it!)</p>
 <h3 id="else">Else<a class="headerlink" href="#else" title="Permanent link">&para;</a></h3>
 <p>If we get here, <code>pytoil</code> gives up and will tell you something along the lines of "could not detect correct virtual environment. skipping". Your project will still be checked out, but you'll have to do the virtual environment stuff yourself I'm afraid! <img alt="😔" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f614.svg" title=":pensive:" /> But we gave it our best shot!</p>
 <div class="admonition note">
