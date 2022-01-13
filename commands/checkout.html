@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://FollowTheProcess.github.io/pytoil/commands/checkout.html">
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.5">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.6">
     
     
       
@@ -23,7 +23,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.ee0f47ba.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.cd566b2a.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.e6a45f82.min.css">
@@ -745,18 +745,18 @@
 
 <span class="go">  If you pass the shorthand to someone elses repo e.g. &#39;someoneelse/repo&#39;</span>
 <span class="go">  pytoil will detect this and automatically create a fork of this repo for</span>
-<span class="go">  you. Forking happens asynchronously so we give it a few seconds, then</span>
-<span class="go">  check whether or not your fork exists yet. If it does, all is well and we</span>
-<span class="go">  can clone it for you automatically. If not, (which is totally normal),</span>
-<span class="go">  we&#39;ll let you know. In which case just give it a few seconds then a</span>
-<span class="go">  &#39;pytoil checkout repo&#39; will bring it down as normal.</span>
+<span class="go">  you. Forking happens asynchronously so we give it a few seconds, then check</span>
+<span class="go">  whether or not your fork exists yet. If it does, all is well and we can</span>
+<span class="go">  clone it for you automatically. If not, (which is totally normal), we&#39;ll let</span>
+<span class="go">  you know. In which case just give it a few seconds then a &#39;pytoil checkout</span>
+<span class="go">  repo&#39; will bring it down as normal.</span>
 
 <span class="go">  You can also ask pytoil to automatically create a virtual environment on</span>
 <span class="go">  checkout with the &#39;--venv/-v&#39; flag. This only happens for projects pulled</span>
 <span class="go">  down from GitHub to avoid accidentally screwing up local projects.</span>
 
-<span class="go">  If the &#39;--venv/-v&#39; flag is used, pytoil will look at your project to try</span>
-<span class="go">  and detect which type of environment to create e.g. conda, flit, poetry,</span>
+<span class="go">  If the &#39;--venv/-v&#39; flag is used, pytoil will look at your project to try and</span>
+<span class="go">  detect which type of environment to create e.g. conda, flit, poetry,</span>
 <span class="go">  standard python etc.</span>
 
 <span class="go">  The &#39;--venv/-v&#39; flag will also attempt to detect if the project you&#39;re</span>
@@ -773,9 +773,6 @@
 
 <span class="gp">  $ </span>pytoil checkout someoneelse/project
 
-<span class="go">Arguments:</span>
-<span class="go">  PROJECT  Name of the project to checkout.  [required]</span>
-
 <span class="go">Options:</span>
 <span class="go">  -v, --venv  Attempt to auto-create a virtual environment.</span>
 <span class="go">  --help      Show this message and exit.</span>
@@ -787,7 +784,7 @@
 <p>If the project is available locally, <code>checkout</code> will simply open it for you</p>
 <div class="termy">
 
-<div class="highlight"><pre><span></span><code><span class="go">// Some project thats already local</span>
+<div class="highlight"><pre><span></span><code><span class="go">// Some project that&#39;s already local</span>
 <span class="gp">$ </span>pytoil checkout my_local_project
 
 <span class="go">Project: &#39;my_local_project&#39; found locally!</span>
@@ -882,7 +879,6 @@
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>pytoil looks for certain files in your project (like <code>setup.py</code>, <code>setup.cfg</code>, <code>pyproject.toml</code>, <code>environment.yml</code> etc.) and that's how it decides which environment to create. If it isn't totally sure what environment to create, it will just skip this step and let you know!</p>
-<p>I've personally tested this on every type of environment pytoil supports and it works really well!</p>
 </div>
 <h3 id="how-pytoil-knows-what-to-install">How pytoil Knows What to Install<a class="headerlink" href="#how-pytoil-knows-what-to-install" title="Permanent link">&para;</a></h3>
 <p>The <code>--venv</code> implementation is quite complex (and it took me a while to get it right!) but effectively, <code>pytoil</code> will look at the contents of your cloned project to decide what to do, create the matching virtual environment, then delegate to the appropriate tool to install dependencies.</p>
@@ -973,10 +969,10 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.b6ff8c07.min.js"}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.22074ed6.min.js"}</script>
     
     
-      <script src="../assets/javascripts/bundle.5e13d264.min.js"></script>
+      <script src="../assets/javascripts/bundle.1514a9a0.min.js"></script>
       
         <script src="https://unpkg.com/mermaid@8.4.6/dist/mermaid.min.js"></script>
       

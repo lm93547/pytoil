@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://FollowTheProcess.github.io/pytoil/commands/config.html">
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.5">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.6">
     
     
       
@@ -23,7 +23,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.ee0f47ba.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.cd566b2a.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.e6a45f82.min.css">
@@ -605,25 +605,16 @@
 
 <span class="go">  Interact with pytoil&#39;s configuration.</span>
 
-<span class="go">  The config command group allows you to get, set, and show pytoil&#39;s</span>
-<span class="go">  configuration. Getting and showing obviously do not edit the config file</span>
-<span class="go">  ($HOME/.pytoil.yml).</span>
-
-<span class="go">  Setting a key value pair using the &#39;config set&#39; subcommand will cause the</span>
-<span class="go">  config file to be updated and overwritten. You will be prompted to confirm</span>
-<span class="go">  this however.</span>
-
-<span class="go">  Currently the only config key you cannot set on the command line is</span>
-<span class="go">  &#39;common_packages&#39;. If you want to change this, you&#39;ll have to do so in the</span>
-<span class="go">  config file itself.</span>
+<span class="go">  The config command group allows you to get, show and explain pytoil&#39;s</span>
+<span class="go">  configuration.</span>
 
 <span class="go">Options:</span>
 <span class="go">  --help  Show this message and exit.</span>
 
 <span class="go">Commands:</span>
-<span class="go">  get   Get the currently set value for a config key.</span>
-<span class="go">  help  Print a list and description of pytoil config keys.</span>
-<span class="go">  show  Show pytoil&#39;s config.</span>
+<span class="go">  explain  Print a list and description of pytoil config values.</span>
+<span class="go">  get      Get the currently set value for a config key.</span>
+<span class="go">  show     Show pytoil&#39;s config.</span>
 </code></pre></div>
 
 </div>
@@ -663,7 +654,7 @@
 
 <div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil config explain
 
-<span class="go">======================= The &#39;.pytoil.yml&#39; config file =======================</span>
+<span class="go">======================= The &#39;.pytoil.yml&#39; config file =======================</span>
 
 
 <span class="go">- projects_dir (bool)</span>
@@ -688,6 +679,10 @@
 <span class="go">- vscode (bool)</span>
 
 <span class="go">    Whether you want pytoil to open projects up using VSCode. This will happen on &#39;new&#39; and &#39;checkout&#39;.</span>
+
+<span class="go">- code_bin (str)</span>
+
+<span class="go">    The name of the VSCode binary (&#39;code&#39; or &#39;code-insiders&#39;)</span>
 
 <span class="go">- common_packages (List[str])</span>
 
@@ -766,10 +761,10 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.b6ff8c07.min.js"}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.22074ed6.min.js"}</script>
     
     
-      <script src="../assets/javascripts/bundle.5e13d264.min.js"></script>
+      <script src="../assets/javascripts/bundle.1514a9a0.min.js"></script>
       
         <script src="https://unpkg.com/mermaid@8.4.6/dist/mermaid.min.js"></script>
       
