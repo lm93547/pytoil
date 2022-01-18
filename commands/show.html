@@ -336,13 +336,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#all" class="md-nav__link">
-    All
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#local" class="md-nav__link">
     Local
   </a>
@@ -366,13 +359,6 @@
         <li class="md-nav__item">
   <a href="#forks" class="md-nav__link">
     Forks
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#count" class="md-nav__link">
-    Count
   </a>
   
 </li>
@@ -600,13 +586,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#all" class="md-nav__link">
-    All
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#local" class="md-nav__link">
     Local
   </a>
@@ -630,13 +609,6 @@
         <li class="md-nav__item">
   <a href="#forks" class="md-nav__link">
     Forks
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#count" class="md-nav__link">
-    Count
   </a>
   
 </li>
@@ -686,13 +658,13 @@
 
 <span class="go">  The remote projects listed here will be those owned by you on GitHub.</span>
 
-<span class="go">  The &quot;--count/-c&quot; flag can be used if you just want to see a count.</span>
+<span class="go">  The &quot;--limit/-l&quot; flag can be used if you only want to see a certain number</span>
+<span class="go">  of results.</span>
 
 <span class="go">Options:</span>
 <span class="go">  --help  Show this message and exit.</span>
 
 <span class="go">Commands:</span>
-<span class="go">  all     Show all your projects, grouped by local and remote.</span>
 <span class="go">  diff    Show the difference in local/remote projects.</span>
 <span class="go">  forks   Show your forked projects.</span>
 <span class="go">  local   Show your local projects.</span>
@@ -705,46 +677,20 @@
 <p class="admonition-title">Tip</p>
 <p>Remember, each subcommand has its own help you can check out too. e.g. <code>pytoil show local --help</code> <img alt="👍" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44d.svg" title=":thumbsup:" /></p>
 </div>
-<h2 id="all">All<a class="headerlink" href="#all" title="Permanent link">&para;</a></h2>
-<p><code>all</code> will show you... well <em>all</em> of your projects, separated by whether they are local (already available on your computer) or remote (on your GitHub, may or may not also be local).</p>
-<div class="termy">
-
-<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil show all
-
-<span class="go">Local Projects:</span>
-
-<span class="go">- Local1</span>
-<span class="go">- Local2</span>
-<span class="go">- Local3</span>
-<span class="go">- Cloned1</span>
-<span class="go">- Cloned2</span>
-
-<span class="go">Remote Projects:</span>
-
-<span class="go">- Cloned1</span>
-<span class="go">- Cloned2</span>
-<span class="go">- Remote1</span>
-</code></pre></div>
-
-</div>
-
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>In this snippet, the user has already cloned <code>Cloned1</code> and <code>Cloned2</code> so they show up in both sections. If you want to only show remote projects that you don't have locally, you need the <code>diff</code> command. Keep scrolling <img alt="👇" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f447.svg" title=":point_down:" /></p>
-</div>
 <h2 id="local">Local<a class="headerlink" href="#local" title="Permanent link">&para;</a></h2>
 <p><code>local</code> shows all the projects you already have in your configured projects directory (see <a href="../config.html">config</a> for how to set this!). If you don't have any local projects yet, pytoil will let you know.</p>
 <div class="termy">
 
 <div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil show <span class="nb">local</span>
+<span class="go">Local Projects</span>
 
-<span class="go">Local Projects:</span>
+<span class="go">Showing 3 out of 3 local projects</span>
 
-<span class="go">- Local1</span>
-<span class="go">- Local2</span>
-<span class="go">- Local3</span>
-<span class="go">- Cloned1</span>
-<span class="go">- Cloned2</span>
+<span class="go">  Name              Created          Modified</span>
+<span class="go"> ───────────────────────────────────────────────────</span>
+<span class="go">  project 1         13 days ago      9 days ago</span>
+<span class="go">  project 2         a day ago        a minute ago</span>
+<span class="go">  project 3         a month ago      a month ago</span>
 </code></pre></div>
 
 </div>
@@ -754,12 +700,17 @@
 <div class="termy">
 
 <div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil show remote
+<span class="go">Remote Projects</span>
 
-<span class="go">Remote Projects:</span>
+<span class="go">Showing 5 out of 31 remote projects</span>
 
-<span class="go">- Cloned1</span>
-<span class="go">- Cloned2</span>
-<span class="go">- Remote1</span>
+<span class="go">  Name                  Size       Created                Modified</span>
+<span class="go"> ───────────────────────────────────────────────────────────────────────</span>
+<span class="go">  advent_of_code_2020   46.1 kB    12 days ago            9 days ago</span>
+<span class="go">  advent_of_code_2021   154.6 kB   a month ago            29 days ago</span>
+<span class="go">  aircraft_crashes      2.1 MB     1 year, 15 days ago    11 months ago</span>
+<span class="go">  cookie_pypackage      753.7 kB   1 year, 6 months ago   a month ago</span>
+<span class="go">  cv                    148.5 kB   2 months ago           7 days ago</span>
 </code></pre></div>
 
 </div>
@@ -769,11 +720,17 @@
 <div class="termy">
 
 <div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil show diff
-
 <span class="go">Diff: Remote - Local</span>
 
-<span class="go">- Remote1</span>
-<span class="go">- etc...</span>
+<span class="go">Showing 5 out of 26 projects</span>
+
+<span class="go">  Name                  Size       Created                Modified</span>
+<span class="go"> ─────────────────────────────────────────────────────────────────────────────</span>
+<span class="go">  advent_of_code_2021   154.6 kB   a month ago            29 days ago</span>
+<span class="go">  aircraft_crashes      2.1 MB     1 year, 15 days ago    11 months ago</span>
+<span class="go">  cookie_pypackage      753.7 kB   1 year, 6 months ago   a month ago</span>
+<span class="go">  cv                    148.5 kB   2 months ago           7 days ago</span>
+<span class="go">  eu_energy_analysis    1.9 MB     1 year, 1 month ago    1 year, 25 days ago</span>
 </code></pre></div>
 
 </div>
@@ -783,29 +740,14 @@
 <div class="termy">
 
 <div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil show forks
+<span class="go">Forked Projects</span>
 
-<span class="go">Forked Projects:</span>
+<span class="go">Showing 2 out of 2 forked projects</span>
 
-<span class="go">cool_project: Forked from &#39;someoneelse/cool_project&#39; Local</span>
-<span class="go">other: Forked from &#39;other/other&#39; Local</span>
-</code></pre></div>
-
-</div>
-
-<h2 id="count">Count<a class="headerlink" href="#count" title="Permanent link">&para;</a></h2>
-<p>Every <code>show</code> subcommand has a <code>--count/-c</code> flag which, if used, will simply show you a count of the projects in that category.</p>
-<p>For example:</p>
-<div class="termy">
-
-<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil show all --count
-
-<span class="go">Local Projects:</span>
-
-<span class="go">You have 6 local projects. 27.27% of total.</span>
-
-<span class="go">Remote Projects:</span>
-
-<span class="go">You have 16 remote projects. 72.73% of total.</span>
+<span class="go">  Name              Size       Forked         Modified       Parent</span>
+<span class="go"> ────────────────────────────────────────────────────────────────────────────────────────</span>
+<span class="go">  nox               5.2 MB     6 months ago   10 days ago    theacodes/nox</span>
+<span class="go">  python-launcher   843.8 kB   2 months ago   2 months ago   brettcannon/python-launcher</span>
 </code></pre></div>
 
 </div>

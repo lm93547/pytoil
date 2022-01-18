@@ -462,6 +462,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#edit" class="md-nav__link">
+    Edit
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#explain" class="md-nav__link">
     Explain
   </a>
@@ -593,6 +600,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#edit" class="md-nav__link">
+    Edit
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#explain" class="md-nav__link">
     Explain
   </a>
@@ -634,6 +648,7 @@
 <span class="go">  --help  Show this message and exit.</span>
 
 <span class="go">Commands:</span>
+<span class="go">  edit     Open pytoil&#39;s config file in $EDITOR.</span>
 <span class="go">  explain  Print a list and description of pytoil config values.</span>
 <span class="go">  get      Get the currently set value for a config key.</span>
 <span class="go">  show     Show pytoil&#39;s config.</span>
@@ -658,14 +673,26 @@
 
 <div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil config show
 
-<span class="go">Pytoil Config:</span>
+<span class="go">               Key   Value</span>
+<span class="go"> ─────────────────────────────────────────────────────────────</span>
+<span class="go">     projects_dir:   /Users/tomfleet/Development</span>
+<span class="go">            token:   jsbsljas72j2kx0ub</span>
+<span class="go">         username:   FollowTheProcess</span>
+<span class="go">           vscode:   True</span>
+<span class="go">         code_bin:   code</span>
+<span class="go">  common_packages:   [&#39;black&#39;, &#39;mypy&#39;, &#39;isort&#39;, &#39;flake8&#39;]</span>
+<span class="go">      init_on_new:   True</span>
+</code></pre></div>
 
-<span class="go">projects_dir: &#39;/Users/you/Development&#39;</span>
-<span class="go">token: &#39;ljnbasbasbisyvo8&#39;</span>
-<span class="go">username: &#39;FollowTheProcess&#39;</span>
-<span class="go">vscode: True</span>
-<span class="go">common_packages: [&#39;black&#39;, &#39;mypy&#39;, &#39;isort&#39;, &#39;flake8&#39;]</span>
-<span class="go">init_on_new: True</span>
+</div>
+
+<h2 id="edit">Edit<a class="headerlink" href="#edit" title="Permanent link">&para;</a></h2>
+<p><code>edit</code> simply opens up the pytoil config file in your $EDITOR so you can make any changes you like!</p>
+<div class="termy">
+
+<div class="highlight"><pre><span></span><code><span class="gp">$</span>pytoil config edit
+
+<span class="go">Opening ~/.pytoil.yml in your $EDITOR</span>
 </code></pre></div>
 
 </div>

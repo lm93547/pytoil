@@ -685,7 +685,7 @@
 
 
 <h1 id="new">New<a class="headerlink" href="#new" title="Permanent link">&para;</a></h1>
-<p><code>new</code> will make you a new project locally. You have the option to create a new virtual environment with it and to create the project from a <a href="https://cookiecutter.readthedocs.io/en/1.7.2/">cookiecutter</a> template <img alt="🍪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f36a.svg" title=":cookie:" /></p>
+<p><code>new</code> will make you a new project locally. You have the option to create a new virtual environment with it and to create the project from a <a href="https://cookiecutter.readthedocs.io/en/1.7.2/">cookiecutter</a> template 🍪</p>
 <h2 id="help">Help<a class="headerlink" href="#help" title="Permanent link">&para;</a></h2>
 <div class="termy">
 
@@ -704,9 +704,9 @@
 <span class="go">  If you just want a very simple, language-specific starting template, use the</span>
 <span class="go">  &#39;--starter/-s&#39; option.</span>
 
-<span class="go">  By default, pytoil will initialise an empty git repo in the folder,</span>
-<span class="go">  following the style of modern language build tools such as rust&#39;s cargo. You</span>
-<span class="go">  can disable this behaviour by setting &#39;init_on_new&#39; to false in pytoil&#39;s</span>
+<span class="go">  By default, pytoil will initialise a local git repo in the folder and commit</span>
+<span class="go">  it, following the style of modern language build tools such as rust&#39;s cargo.</span>
+<span class="go">  You can disable this behaviour by setting &#39;init_on_new&#39; to false in pytoil&#39;s</span>
 <span class="go">  config file or by passing the &#39;--no-git/-n&#39; flag here.</span>
 
 <span class="go">  If you want pytoil to create a new virtual environment for your project, you</span>
@@ -736,8 +736,7 @@
 
 <span class="gp">  $ </span>pytoil new my_project --venv conda
 
-<span class="gp">  $ </span>pytoil new my_project -c https://github.com/some/cookie.git -v conda --no-
-<span class="go">  git</span>
+<span class="gp">  $ </span>pytoil new my_project -c https://github.com/some/cookie.git -v conda --no-git
 
 <span class="gp">  $ </span>pytoil new my_project -v venv requests <span class="s2">&quot;flask&gt;=1.0.0&quot;</span>
 
@@ -748,7 +747,7 @@
 <span class="go">                                  build the project.</span>
 <span class="go">  -s, --starter [python|go|rust]  Use a language-specific starter template.</span>
 <span class="go">  -v, --venv [venv|conda]         Which type of virtual environment to create.</span>
-<span class="go">  -n, --no-git                    Don&#39;t initialise a new git repo.</span>
+<span class="go">  -n, --no-git                    Don&#39;t do any git stuff.</span>
 <span class="go">  --help                          Show this message and exit.</span>
 </code></pre></div>
 
@@ -768,7 +767,7 @@
 </div>
 
 <h3 id="new-git-repo">New Git Repo<a class="headerlink" href="#new-git-repo" title="Permanent link">&para;</a></h3>
-<p>By default, pytoil will also create an empty git repository in this folder for you. You can disable this behaviour by changing the value for <code>init_on_new</code> in your config file, or on a per use basis by using the <code>--no-git</code> flag.</p>
+<p>By default, pytoil will also create a local git repository in this folder for you. You can disable this behaviour by changing the value for <code>init_on_new</code> in your config file, or on a per use basis by using the <code>--no-git</code> flag.</p>
 <p>You will need <code>git</code> installed to be able to use this feature.</p>
 <div class="termy">
 

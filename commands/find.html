@@ -622,7 +622,7 @@
 <span class="go">  Useful if you have a lot of projects and you can&#39;t quite remember what the</span>
 <span class="go">  one you want is called!</span>
 
-<span class="go">  The &quot;-r/--results&quot; flag can be used to alter the number of returned search</span>
+<span class="go">  The &quot;-l/--limit&quot; flag can be used to alter the number of returned search</span>
 <span class="go">  results, but bare in mind that matches with sufficient match score are</span>
 <span class="go">  returned anyway so the results flag only limits the maximum number of</span>
 <span class="go">  results shown.</span>
@@ -631,11 +631,11 @@
 
 <span class="gp">  $ </span>pytoil find my
 
-<span class="gp">  $ </span>pytoil find proj --results <span class="m">5</span>
+<span class="gp">  $ </span>pytoil find proj --limit <span class="m">5</span>
 
 <span class="go">Options:</span>
-<span class="go">  -r, --results INTEGER  Limit results to maximum number.  [default: 3]</span>
-<span class="go">  --help                 Show this message and exit.</span>
+<span class="go">  -l, --limit INTEGER  Limit results to maximum number.  [default: 3]</span>
+<span class="go">  --help               Show this message and exit.</span>
 </code></pre></div>
 
 </div>
@@ -646,10 +646,11 @@
 <div class="highlight"><pre><span></span><code><span class="go">// I swear it was called python... something</span>
 <span class="gp">$ </span>pytoil find python
 
-<span class="go">      Project       Similarity   Where</span>
+
+<span class="go">  Project           Similarity   Where</span>
 <span class="go"> ───────────────────────────────────────</span>
-<span class="go">  python-launcher       90       Remote</span>
-<span class="go">        py              90       Local</span>
+<span class="go">  py                90           Remote</span>
+<span class="go">  python-launcher   90           Remote</span>
 </code></pre></div>
 
 </div>
