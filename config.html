@@ -640,8 +640,8 @@
 <td align="center"><code>None</code></td>
 </tr>
 <tr>
-<td align="center"><code>init_on_new</code></td>
-<td align="center">Whether you want pytoil to initialise an empty git repo when it makes a fresh project</td>
+<td align="center"><code>git</code></td>
+<td align="center">Whether you want pytoil to initialise and commit a git repo when it makes a fresh project</td>
 <td align="center">True</td>
 </tr>
 </tbody>
@@ -674,20 +674,22 @@ API using your token to authenticate the requests. This is essential to pytoil's
 
 </div>
 
-<p>pytoil will then will write a default config state to a file: <code>~/.pytoil.yml</code>.</p>
+<p>pytoil will then will write a default config state to a file: <code>~/.pytoil.toml</code>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This command will only write a config file if it doesn't find one already. If one already exists, running <code>pytoil config show</code> will show you the settings from that file.</p>
 </div>
 <p>When you open the default config state you just wrote, it will look like this:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># ~/.pytoil.yml</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="c1"># ~/.pytoil.toml</span><span class="w"></span>
 
-<span class="nt">projects_dir</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/Users/you/Development</span><span class="w"></span>
-<span class="nt">token</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">This is your GitHub personal access token</span><span class="w"></span>
-<span class="nt">username</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">This is your GitHub username</span><span class="w"></span>
-<span class="nt">code_bin</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">code</span><span class="w"></span>
-<span class="nt">vscode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
-<span class="nt">init_on_new</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<span class="k">[pytoil]</span><span class="w"></span>
+<span class="n">code_bin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;code&quot;</span><span class="w"></span>
+<span class="n">common_packages</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[]</span><span class="w"></span>
+<span class="n">git</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="w"></span>
+<span class="n">projects_dir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;/Users/you/Development&quot;</span><span class="w"></span>
+<span class="n">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Your GitHub personal access token&quot;</span><span class="w"></span>
+<span class="n">username</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Your GitHub username&quot;</span><span class="w"></span>
+<span class="n">vscode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="w"></span>
 </code></pre></div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -695,19 +697,16 @@ API using your token to authenticate the requests. This is essential to pytoil's
 </div>
 <p>You should now edit the config file to your liking. Your username and token are required for GitHub API access and will cause an error on most pytoil operations so these must be filled out. Everything else is optional <img alt="👍" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f44d.svg" title=":thumbsup:" /></p>
 <p>So as an example, your filled out config file might look like this:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># ~/.pytoil.yml</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="c1"># ~/.pytoil.toml</span><span class="w"></span>
 
-<span class="nt">projects_dir</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/Users/me/Projects</span><span class="w"></span>
-<span class="nt">token</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">jbs822qbs982whbd97g</span><span class="w"> </span><span class="c1"># I&#39;ve made this up</span><span class="w"></span>
-<span class="nt">username</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">FollowTheProcess</span><span class="w"></span>
-<span class="nt">vscode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
-<span class="nt">code_bin</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">code</span><span class="w"></span>
-<span class="nt">common_packages</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">black</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">flake8</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mypy&gt;=0.790</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">isort</span><span class="w"></span>
-<span class="nt">init_on_new</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<span class="k">[pytoil]</span><span class="w"></span>
+<span class="n">code_bin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;code&quot;</span><span class="w"></span>
+<span class="n">common_packages</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;black&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;mypy&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;isort&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;flake8&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="n">git</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="w"></span>
+<span class="n">projects_dir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;/Users/you/Development&quot;</span><span class="w"></span>
+<span class="n">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;asljas98ghefiub29e8b&quot;</span><span class="w"> </span><span class="c1"># I&#39;ve made this up</span><span class="w"></span>
+<span class="n">username</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;FollowTheProcess&quot;</span><span class="w"></span>
+<span class="n">vscode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="w"></span>
 </code></pre></div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>

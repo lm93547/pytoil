@@ -681,7 +681,7 @@
 <span class="go">           vscode:   True</span>
 <span class="go">         code_bin:   code</span>
 <span class="go">  common_packages:   [&#39;black&#39;, &#39;mypy&#39;, &#39;isort&#39;, &#39;flake8&#39;]</span>
-<span class="go">      init_on_new:   True</span>
+<span class="go">              git:   True</span>
 </code></pre></div>
 
 </div>
@@ -692,7 +692,7 @@
 
 <div class="highlight"><pre><span></span><code><span class="gp">$</span>pytoil config edit
 
-<span class="go">Opening ~/.pytoil.yml in your $EDITOR</span>
+<span class="go">Opening ~/.pytoil.toml in your $EDITOR</span>
 </code></pre></div>
 
 </div>
@@ -738,7 +738,7 @@
 <span class="go">    A list of python package names to inject into every virtual environment pytoil creates</span>
 <span class="go">    (e.g. linters, formatters and other dev dependencies).</span>
 
-<span class="go">- init_on_new (bool)</span>
+<span class="go">- git (bool)</span>
 
 <span class="go">    Whether or not you want pytoil to create an empty git repo when you make a new project with</span>
 <span class="go">    &#39;pytoil new&#39;. This can also be disabled on a per use basis using the &#39;--no-git&#39; flag.</span>
