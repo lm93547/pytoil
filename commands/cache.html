@@ -12,14 +12,14 @@
         <meta name="author" content="Tom Fleet">
       
       
-        <link rel="canonical" href="https://FollowTheProcess.github.io/pytoil/commands/config.html">
+        <link rel="canonical" href="https://FollowTheProcess.github.io/pytoil/commands/cache.html">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.7">
     
     
       
-        <title>Config - pytoil</title>
+        <title>Cache - pytoil</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#config" class="md-skip">
+        <a href="#cache" class="md-skip">
           Skip to content
         </a>
       
@@ -105,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Config
+              Cache
             
           </span>
         </div>
@@ -405,6 +405,20 @@
               
   
   
+  
+    <li class="md-nav__item">
+      <a href="config.html" class="md-nav__link">
+        Config
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
     
   
   
@@ -417,12 +431,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Config
+          Cache
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <a href="config.html" class="md-nav__link md-nav__link--active">
-        Config
+      <a href="cache.html" class="md-nav__link md-nav__link--active">
+        Cache
       </a>
       
         
@@ -448,29 +462,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#get" class="md-nav__link">
-    Get
+  <a href="#clear" class="md-nav__link">
+    Clear
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#show" class="md-nav__link">
-    Show
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#edit" class="md-nav__link">
-    Edit
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#explain" class="md-nav__link">
-    Explain
+  <a href="#refresh" class="md-nav__link">
+    Refresh
   </a>
   
 </li>
@@ -479,20 +479,6 @@
   
 </nav>
       
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="cache.html" class="md-nav__link">
-        Cache
-      </a>
     </li>
   
 
@@ -600,29 +586,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#get" class="md-nav__link">
-    Get
+  <a href="#clear" class="md-nav__link">
+    Clear
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#show" class="md-nav__link">
-    Show
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#edit" class="md-nav__link">
-    Edit
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#explain" class="md-nav__link">
-    Explain
+  <a href="#refresh" class="md-nav__link">
+    Refresh
   </a>
   
 </li>
@@ -639,125 +611,93 @@
             <article class="md-content__inner md-typeset">
               
                 
-<a href="https://github.com/FollowTheProcess/pytoil/edit/master/docs/commands/config.md" title="Edit this page" class="md-content__button md-icon">
+<a href="https://github.com/FollowTheProcess/pytoil/edit/master/docs/commands/cache.md" title="Edit this page" class="md-content__button md-icon">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
 </a>
 
 
-<h1 id="config">Config<a class="headerlink" href="#config" title="Permanent link">&para;</a></h1>
-<p>The <code>config</code> subcommand is pytoil's programmatic access to it's own configuration file! Here you can get, show and get help about the configuration.</p>
+<h1 id="cache">Cache<a class="headerlink" href="#cache" title="Permanent link">&para;</a></h1>
+<p>In order to work correctly and show you about your repos on GitHub, pytoil must interact with GitHub. To be precise, it
+makes requests to the <a href="https://docs.github.com/en/graphql">GitHub GraphQL API</a>.</p>
+<p>However, pytoil does not hit this API <strong>every time</strong> you make a request, it's a bit smarter than that! 🧠</p>
+<p>It instead saves responses to the requests it's made to disk, so that the next time you need that information it can quickly pull it from a file rather than reach out over the internet and hit the API again.</p>
+<p>This saves you time (particularly if your network connection isn't great) and it saves making many identical requests to the GitHub API (which is always good practice! 👍🏻)</p>
+<p>This cache has a default timeout of 120 seconds (which you can tweak if you like, see <a href="../config.html">config</a>).</p>
+<p>This means that if you invoke a pytoil command that uses the GitHub API, it's response will be cached on disk for 120 seconds.</p>
+<p>So if you were to execute that same command at any point in the next 120 seconds, the information you see will be from the cache, <strong>not</strong> from the GitHub API.</p>
+<p>The cache is absolutely tiny and is totally self-managing so 99% of the time you won't have to worry about it, it simply does it's job in the background for you!</p>
+<p>However, sometimes you might want to ensure you get the most up to date response, just want to clear the whole cache, or maybe ensure that the cache itself contains the most up to date data.</p>
+<p>This is where the <code>pytoil cache</code> subcommand comes in!</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The pytoil commands that make use of these cached responses are:</p>
+<ul>
+<li><code>show remote</code></li>
+<li><code>show diff</code></li>
+<li><code>show forks</code></li>
+<li><code>find</code></li>
+</ul>
+</div>
 <h2 id="help">Help<a class="headerlink" href="#help" title="Permanent link">&para;</a></h2>
 <div class="termy">
 
-<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil config --help
+<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil cache --help
 
-<span class="go">Usage: pytoil config [OPTIONS] COMMAND [ARGS]...</span>
+<span class="go">Usage: pytoil cache [OPTIONS] COMMAND [ARGS]...</span>
 
-<span class="go">  Interact with pytoil&#39;s configuration.</span>
+<span class="go">  Interact with pytoil&#39;s cache.</span>
 
-<span class="go">  The config command group allows you to get, show and explain pytoil&#39;s</span>
-<span class="go">  configuration.</span>
+<span class="go">  Pytoil caches the responses from the GitHub API so that it doesn&#39;t have to</span>
+<span class="go">  hit it so often and so a user gets the snappiest experience possible using</span>
+<span class="go">  the CLI.</span>
+
+<span class="go">  The cache subcommand allows you to interact with this cache, either forcing</span>
+<span class="go">  a manual refresh or flushing it entirely.</span>
 
 <span class="go">Options:</span>
 <span class="go">  --help  Show this message and exit.</span>
 
 <span class="go">Commands:</span>
-<span class="go">  edit     Open pytoil&#39;s config file in $EDITOR.</span>
-<span class="go">  explain  Print a list and description of pytoil config values.</span>
-<span class="go">  get      Get the currently set value for a config key.</span>
-<span class="go">  show     Show pytoil&#39;s config.</span>
+<span class="go">  clear    Clear pytoil&#39;s cache.</span>
+<span class="go">  refresh  Force a manual refresh of the cache.</span>
 </code></pre></div>
 
 </div>
 
-<h2 id="get">Get<a class="headerlink" href="#get" title="Permanent link">&para;</a></h2>
-<p><code>get</code> does what it says. It gets a valid config key-value pair from your file and shows it to you. Simple!</p>
+<p>As you can see, the <code>pytoil cache</code> subcommand group has two commands: <code>clear</code> and <code>refresh</code>.</p>
+<h2 id="clear">Clear<a class="headerlink" href="#clear" title="Permanent link">&para;</a></h2>
+<p>Clear does one thing. It simply removes the entire cache directory from disk, ensuring that the next API call will come directly from GitHub and a brand new cache will be created.</p>
 <div class="termy">
 
-<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil config get vscode
+<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil cache clear
 
-<span class="go">vscode: True</span>
+<span class="go">✔ Cache cleared successfully</span>
 </code></pre></div>
 
 </div>
 
-<h2 id="show">Show<a class="headerlink" href="#show" title="Permanent link">&para;</a></h2>
-<p><code>show</code> is just a handy way of seeing what the current config is without having to go to the config file!</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>You'd use <code>clear</code> if you wanted the next request you made to have the most up to date information in it.</p>
+</div>
+<h2 id="refresh">Refresh<a class="headerlink" href="#refresh" title="Permanent link">&para;</a></h2>
+<p>The other command, <code>refresh</code> does two things!</p>
+<ul>
+<li>Clears the cache completely</li>
+<li>Calls every API endpoint pytoil knows about concurrently to re-populate the cache with the latest data</li>
+</ul>
 <div class="termy">
 
-<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil config show
+<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil cache refresh
 
-<span class="go">               Key   Value</span>
-<span class="go"> ─────────────────────────────────────────────────────────────</span>
-<span class="go">     projects_dir:   /Users/tomfleet/Development</span>
-<span class="go">            token:   jsbsljas72j2kx0ub</span>
-<span class="go">         username:   FollowTheProcess</span>
-<span class="go">           vscode:   True</span>
-<span class="go">         code_bin:   code</span>
-<span class="go">  common_packages:   [&#39;black&#39;, &#39;mypy&#39;, &#39;isort&#39;, &#39;flake8&#39;]</span>
-<span class="go">              git:   True</span>
+<span class="go">✔ Cache refreshed successfully</span>
 </code></pre></div>
 
 </div>
 
-<h2 id="edit">Edit<a class="headerlink" href="#edit" title="Permanent link">&para;</a></h2>
-<p><code>edit</code> simply opens up the pytoil config file in your $EDITOR so you can make any changes you like!</p>
-<div class="termy">
-
-<div class="highlight"><pre><span></span><code><span class="gp">$</span>pytoil config edit
-
-<span class="go">Opening ~/.pytoil.toml in your $EDITOR</span>
-</code></pre></div>
-
-</div>
-
-<h2 id="explain">Explain<a class="headerlink" href="#explain" title="Permanent link">&para;</a></h2>
-<p>The command <code>pytoil config explain</code> outputs a (hopefully) helpful description of the pytoil configuration schema.</p>
-<div class="termy">
-
-<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil config explain
-
-<span class="go">======================= The &#39;.pytoil.yml&#39; config file =======================</span>
-
-
-<span class="go">- projects_dir (bool)</span>
-
-<span class="go">    The absolute path to where you keep your development projects</span>
-<span class="go">    (e.g. /Users/you/Projects)</span>
-
-<span class="go">- token (str)</span>
-
-<span class="go">    Your GitHub personal access token. This must have a minimum of repo</span>
-<span class="go">    read access. See the documentation here:</span>
-<span class="go">    https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token</span>
-
-<span class="go">    Pytoil will try and get this from the config file initially, then fall back to the $GITHUB_TOKEN environment</span>
-<span class="go">    variable. If neither of these places are set, you will not be able to use pytoil commands that rely on the</span>
-<span class="go">    GitHub API. Pytoil will notify you of this when any of these commands are called.</span>
-
-<span class="go">- username (str)</span>
-
-<span class="go">    Your GitHub username.</span>
-
-<span class="go">- vscode (bool)</span>
-
-<span class="go">    Whether you want pytoil to open projects up using VSCode. This will happen on &#39;new&#39; and &#39;checkout&#39;.</span>
-
-<span class="go">- code_bin (str)</span>
-
-<span class="go">    The name of the VSCode binary (&#39;code&#39; or &#39;code-insiders&#39;)</span>
-
-<span class="go">- common_packages (List[str])</span>
-
-<span class="go">    A list of python package names to inject into every virtual environment pytoil creates</span>
-<span class="go">    (e.g. linters, formatters and other dev dependencies).</span>
-
-<span class="go">- git (bool)</span>
-
-<span class="go">    Whether or not you want pytoil to create an empty git repo when you make a new project with</span>
-<span class="go">    &#39;pytoil new&#39;. This can also be disabled on a per use basis using the &#39;--no-git&#39; flag.</span>
-</code></pre></div>
-
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>You'd use <code>refresh</code> if you wanted to guarantee that the cache contained the most up to date data in it.</p>
 </div>
 
               
@@ -772,7 +712,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="pull.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Pull" rel="prev">
+        <a href="config.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Config" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -781,20 +721,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Pull
+              Config
             </div>
           </div>
         </a>
       
       
         
-        <a href="cache.html" class="md-footer__link md-footer__link--next" aria-label="Next: Cache" rel="next">
+        <a href="../contributing/contributing.html" class="md-footer__link md-footer__link--next" aria-label="Next: Guide" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Cache
+              Guide
             </div>
           </div>
           <div class="md-footer__button md-icon">

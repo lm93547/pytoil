@@ -468,6 +468,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="commands/cache.html" class="md-nav__link">
+        Cache
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -640,6 +654,11 @@
 <td align="center"><code>None</code></td>
 </tr>
 <tr>
+<td align="center"><code>cache_timeout</code></td>
+<td align="center">Maximum duration you want pytoil to keep a cache of API responses for (seconds)</td>
+<td align="center">120</td>
+</tr>
+<tr>
 <td align="center"><code>git</code></td>
 <td align="center">Whether you want pytoil to initialise and commit a git repo when it makes a fresh project</td>
 <td align="center">True</td>
@@ -668,21 +687,22 @@ API using your token to authenticate the requests. This is essential to pytoil's
 
 <div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil
 
-<span class="go">No config file yet!</span>
-<span class="go">Making you a default one...</span>
+<span class="go">No pytoil config file detected!</span>
+<span class="go">? Interactively configure pytoil? [y/n]</span>
 </code></pre></div>
 
 </div>
 
-<p>pytoil will then will write a default config state to a file: <code>~/.pytoil.toml</code>.</p>
+<p>If you say yes, pytoil will walk you through a few questions and fill out your config file with the values you enter. If you'd rather not do this interactively, just say no and it will instead put a default config file in the right place for you to edit later.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This command will only write a config file if it doesn't find one already. If one already exists, running <code>pytoil config show</code> will show you the settings from that file.</p>
+<p>This command will only write a config file if it doesn't find one already. If one already exists, running <code>pytoil config show</code> will show you the settings from that file. Remember, you can always quickly edit your pytoil config file using <code>pytoil config edit</code> 🔥</p>
 </div>
-<p>When you open the default config state you just wrote, it will look like this:</p>
+<p>When you open the config file, it will look something like this:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># ~/.pytoil.toml</span><span class="w"></span>
 
 <span class="k">[pytoil]</span><span class="w"></span>
+<span class="n">cache_timeout</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">120</span><span class="w"></span>
 <span class="n">code_bin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;code&quot;</span><span class="w"></span>
 <span class="n">common_packages</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[]</span><span class="w"></span>
 <span class="n">git</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="w"></span>
@@ -700,6 +720,7 @@ API using your token to authenticate the requests. This is essential to pytoil's
 <div class="highlight"><pre><span></span><code><span class="c1"># ~/.pytoil.toml</span><span class="w"></span>
 
 <span class="k">[pytoil]</span><span class="w"></span>
+<span class="n">cache_timeout</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">500</span><span class="w"></span>
 <span class="n">code_bin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;code&quot;</span><span class="w"></span>
 <span class="n">common_packages</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;black&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;mypy&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;isort&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;flake8&quot;</span><span class="p">]</span><span class="w"></span>
 <span class="n">git</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="w"></span>

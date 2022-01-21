@@ -484,6 +484,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="cache.html" class="md-nav__link">
+        Cache
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -750,6 +764,12 @@
 <span class="go">  python-launcher   843.8 kB   2 months ago   2 months ago   brettcannon/python-launcher</span>
 </code></pre></div>
 
+</div>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Pytoil caches the responses from the GitHub API so repeated calls in that time period will hit the cache not the GitHub API directly, this is good for you because you'll see the results quicker and it's generally good behaviour for us so we don't excessively hit the GitHub API 👍🏻</p>
+<p>The cache timeout defaults to 120 seconds but is configurable (see <a href="../config.html">config</a>) and you can manually force a refresh or a clear using the <code>pytoil cache</code> subcommand group (see <a href="cache.html">cache</a>)</p>
 </div>
 
               
