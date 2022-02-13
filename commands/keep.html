@@ -12,14 +12,14 @@
         <meta name="author" content="Tom Fleet">
       
       
-        <link rel="canonical" href="https://FollowTheProcess.github.io/pytoil/commands/info.html">
+        <link rel="canonical" href="https://FollowTheProcess.github.io/pytoil/commands/keep.html">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.11">
     
     
       
-        <title>Info - pytoil</title>
+        <title>Keep - pytoil</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#info" class="md-skip">
+        <a href="#keep" class="md-skip">
           Skip to content
         </a>
       
@@ -105,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Info
+              Keep
             
           </span>
         </div>
@@ -349,20 +349,6 @@
               
   
   
-  
-    <li class="md-nav__item">
-      <a href="keep.html" class="md-nav__link">
-        Keep
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
     
   
   
@@ -374,10 +360,69 @@
         
       
       
-      <a href="info.html" class="md-nav__link md-nav__link--active">
-        Info
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Keep
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="keep.html" class="md-nav__link md-nav__link--active">
+        Keep
       </a>
       
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#help" class="md-nav__link">
+    Help
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    Usage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#force-deletion" class="md-nav__link">
+    Force Deletion
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="info.html" class="md-nav__link">
+        Info
+      </a>
     </li>
   
 
@@ -541,6 +586,35 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#help" class="md-nav__link">
+    Help
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    Usage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#force-deletion" class="md-nav__link">
+    Force Deletion
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -551,57 +625,86 @@
             <article class="md-content__inner md-typeset">
               
                 
-<a href="https://github.com/FollowTheProcess/pytoil/edit/master/docs/commands/info.md" title="Edit this page" class="md-content__button md-icon">
+<a href="https://github.com/FollowTheProcess/pytoil/edit/master/docs/commands/keep.md" title="Edit this page" class="md-content__button md-icon">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
 </a>
 
 
-<h1 id="info">Info<a class="headerlink" href="#info" title="Permanent link">&para;</a></h1>
-<p>Another easy one! <code>info</code> simply shows you some summary information about whatever project you tell it to.</p>
+<h1 id="keep">Keep<a class="headerlink" href="#keep" title="Permanent link">&para;</a></h1>
+<p><code>keep</code> is effectively the opposite of <a href="remove.html">remove</a>, it deletes everything <strong>except</strong> the projects you specify from your local projects directory.</p>
+<p>It is useful when you want to declutter your projects directory but don't want to pass lots of arguments to <a href="remove.html">remove</a>, with <code>keep</code> you can tell pytoil the projects you want to keep, and it will remove everything else for you!</p>
+<h2 id="help">Help<a class="headerlink" href="#help" title="Permanent link">&para;</a></h2>
 <div class="termy">
 
-<div class="highlight"><pre><span></span><code><span class="go">// Let&#39;s get some info about pytoil</span>
-<span class="gp">$ </span>pytoil info pytoil
+<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil keep --help
 
-<span class="go">Info for pytoil:</span>
+<span class="go">Usage: pytoil keep [OPTIONS] [PROJECTS]...</span>
 
-<span class="go">           Key   Value</span>
-<span class="go"> ────────────────────────────────────────────────────────────</span>
-<span class="go">         Name:   pytoil</span>
-<span class="go">  Description:   CLI to automate the development workflow 🤖</span>
-<span class="go">      Created:   11 months ago</span>
-<span class="go">      Updated:   7 days ago</span>
-<span class="go">         Size:   6.4 MB</span>
-<span class="go">      License:   Apache License 2.0</span>
-<span class="go">       Remote:   True</span>
-<span class="go">        Local:   True</span>
+<span class="go">  Remove all but the specified projects.</span>
+
+<span class="go">  The keep command lets you delete all projects from your local projects</span>
+<span class="go">  directory whilst keeping the specified ones untouched.</span>
+
+<span class="go">  It is effectively the inverse of `pytoil remove`.</span>
+
+<span class="go">  As with most programmatic deleting, the directories are deleted instantly</span>
+<span class="go">  and not sent to trash. As such, pytoil will prompt you for confirmation</span>
+<span class="go">  before doing anything.</span>
+
+<span class="go">  The &quot;--force/-f&quot; flag can be used to force deletion without the confirmation</span>
+<span class="go">  prompt. Use with caution!</span>
+
+<span class="go">  Examples:</span>
+
+<span class="gp">  $ </span>pytoil keep project1 project2 project3
+
+<span class="gp">  $ </span>pytoil keep project1 project2 project3 --force
+
+<span class="go">Options:</span>
+<span class="go">  -f, --force  Force delete without confirmation.</span>
+<span class="go">  --help       Show this message and exit.</span>
 </code></pre></div>
 
 </div>
 
-<p>What happens here is pytoil uses the GitHub personal access token we talked about in <a href="../config.html">config</a> and hits the GitHub API to find out some basic information about the repo you pass to it <img alt="✅" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2705.svg" title=":white_check_mark:" /></p>
-<p>pytoil will always prefer this way of doing it as we can get things like license information and description which is a bit more helpful to show. If however, the project you're asking for information about does not exist on GitHub yet, you'll still get some info back!</p>
+<h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
+<p>To use <code>keep</code> just pass the projects you want to keep as arguments.</p>
 <div class="termy">
 
-<div class="highlight"><pre><span></span><code><span class="go">// Some project that&#39;s not on GitHub yet</span>
-<span class="gp">$ </span>pytoil info my_local_project
+<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil keep project other_project another_project
 
-<span class="go">Info for testy:</span>
+<span class="gp"># </span>This will delete remove1, remove2, remove3 from your <span class="nb">local</span> filesystem. Are you sure? <span class="o">[</span>y/N<span class="o">]</span>:$ y
 
-<span class="go">       Key   Value</span>
-<span class="go"> ───────────────────────────</span>
-<span class="go">     Name:   testy</span>
-<span class="go">  Created:   23 seconds ago</span>
-<span class="go">  Updated:   23 seconds ago</span>
-<span class="go">    Local:   True</span>
-<span class="go">   Remote:   False</span>
+<span class="go">Deleted: remove1.</span>
+<span class="go">Deleted: remove2.</span>
+<span class="go">Deleted: remove3.</span>
 </code></pre></div>
 
 </div>
 
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>pytoil grabs this data from your operating system by using the <code>Path.stat()</code> method from <a href="https://docs.python.org/3/library/pathlib.html">pathlib</a> <img alt="💻" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4bb.svg" title=":computer:" /></p>
+<p>And if you say no...</p>
+<div class="termy">
+
+<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil keep project other_project another_project
+
+<span class="gp"># </span>This will delete remove1, remove2, remove3 from your <span class="nb">local</span> filesystem. Are you sure? <span class="o">[</span>y/N<span class="o">]</span>:$ n
+
+<span class="go">Aborted!</span>
+</code></pre></div>
+
+</div>
+
+<h2 id="force-deletion">Force Deletion<a class="headerlink" href="#force-deletion" title="Permanent link">&para;</a></h2>
+<p>If you're really sure what you're doing, you can get around the confirmation prompt by using the <code>--force/-f</code> flag.</p>
+<div class="termy">
+
+<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil keep project1 project2 --force
+
+<span class="go">Removed: remove1.</span>
+<span class="go">Removed: remove2.</span>
+<span class="go">Removed: remove3.</span>
+</code></pre></div>
+
 </div>
 
               
@@ -616,7 +719,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="keep.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Keep" rel="prev">
+        <a href="remove.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Remove" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -625,20 +728,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Keep
+              Remove
             </div>
           </div>
         </a>
       
       
         
-        <a href="find.html" class="md-footer__link md-footer__link--next" aria-label="Next: Find" rel="next">
+        <a href="info.html" class="md-footer__link md-footer__link--next" aria-label="Next: Info" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Find
+              Info
             </div>
           </div>
           <div class="md-footer__button md-icon">
