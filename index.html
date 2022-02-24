@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://FollowTheProcess.github.io/pytoil/index.html">
       
       <link rel="icon" href="assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.11">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.1">
     
     
       
@@ -23,7 +23,7 @@
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.50e68009.min.css">
+      <link rel="stylesheet" href="assets/stylesheets/main.e8d9bf0c.min.css">
       
         
         <link rel="stylesheet" href="assets/stylesheets/palette.e6a45f82.min.css">
@@ -330,15 +330,15 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#help" class="md-nav__link">
-    Help
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contributing" class="md-nav__link">
+    Contributing
+  </a>
   
 </li>
       
@@ -547,6 +547,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="commands/bug.html" class="md-nav__link">
+        Bug
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -703,15 +717,15 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#help" class="md-nav__link">
-    Help
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contributing" class="md-nav__link">
+    Contributing
+  </a>
   
 </li>
       
@@ -732,6 +746,7 @@
 </a>
 
 
+
   <h1>Home</h1>
 
 <p><img alt="logo" src="img/logo.png" /></p>
@@ -741,7 +756,7 @@
 <a href="https://github.com/FollowTheProcess/pytoil"><img alt="Code Style" src="https://img.shields.io/badge/code%20style-black-black" /></a>
 <a href="https://github.com/FollowTheProcess/pytoil/actions?query=workflow%3ACI"><img alt="CI" src="https://github.com/FollowTheProcess/pytoil/workflows/CI/badge.svg" /></a>
 <a href="https://codecov.io/gh/FollowTheProcess/pytoil"><img alt="codecov" src="https://codecov.io/gh/FollowTheProcess/pytoil/branch/main/graph/badge.svg?token=OLMR2P3J6N" /></a>
-<a href="https://pepy.tech/project/pytoil"><img alt="Downloads" src="https://static.pepy.tech/personalized-badge/pytoil?period=month&amp;units=international_system&amp;left_color=grey&amp;right_color=brightgreen&amp;left_text=Downloads/month" /></a></p>
+<a href="https://pepy.tech/project/pytoil"><img alt="Downloads" src="https://static.pepy.tech/personalized-badge/pytoil?period=total&amp;units=international_system&amp;left_color=grey&amp;right_color=green&amp;left_text=Downloads" /></a></p>
 <blockquote>
 <p><strong><em>toil</em></strong>
 <br/>
@@ -755,6 +770,7 @@
 <p><strong>Documentation</strong>: <a href="https://FollowTheProcess.github.io/pytoil/">https://FollowTheProcess.github.io/pytoil/</a></p>
 </li>
 </ul>
+<p><img alt="help" src="https://github.com/FollowTheProcess/pytoil/raw/main/docs/img/help.svg" /></p>
 <h2 id="what-is-it">What is it?<a class="headerlink" href="#what-is-it" title="Permanent link">&para;</a></h2>
 <p><em>pytoil is a small, helpful CLI to take the toil out of software development!</em></p>
 <p><code>pytoil</code> is a handy tool that helps you stay on top of all your projects, remote or local. It's primarily aimed at python developers but you could easily use it to manage any project!</p>
@@ -776,33 +792,9 @@
 <p>So I decided to make a robust CLI with the proper error handling and testability of python, and here it is! 🎉</p>
 <h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
 <p>As pytoil is a CLI program, I'd recommend installing with <a href="https://pipxproject.github.io/pipx/">pipx</a>.</p>
-<div class="termy">
-
-<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pipx install pytoil
-<span class="go">---&gt; 100%</span>
-<span class="go">Successfully installed pytoil</span>
-</code></pre></div>
-
-</div>
-
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>If you don't know what pipx is, go check it out! But basically it allows python CLI tools to be installed in their own sandboxed environments but you can still access the CLI as if it was installed globally!</p>
-</div>
+<p><img alt="pipx-install" src="https://github.com/FollowTheProcess/pytoil/raw/main/docs/img/pipx_install.svg" /></p>
 <p>You can always fall back to pip</p>
-<div class="termy">
-
-<div class="highlight"><pre><span></span><code><span class="gp">$ </span>python3 -m pip install pytoil
-<span class="go">---&gt; 100%</span>
-<span class="go">Successfully installed pytoil</span>
-</code></pre></div>
-
-</div>
-
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>keep in mind though, you'll have to install it globally for it to work so it might be better to use pipx</p>
-</div>
+<p><img alt="pip-install" src="https://github.com/FollowTheProcess/pytoil/raw/main/docs/img/pip_install.svg" /></p>
 <p>pytoil will install everything it needs <em>in python</em> to work. However, it's full feature set can only be accessed if you have the following external dependencies:</p>
 <ul>
 <li><a href="https://git-scm.com">git</a></li>
@@ -814,144 +806,32 @@
 <h2 id="quickstart">Quickstart<a class="headerlink" href="#quickstart" title="Permanent link">&para;</a></h2>
 <p><code>pytoil</code> is super easy to get started with.</p>
 <p>After you install pytoil, the first time you run it you'll get something like this.</p>
-<div class="termy">
-
-<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil &lt;any command&gt;
-
-<span class="go">No pytoil config file detected!</span>
-<span class="go">? Interactively configure pytoil? [y/n]</span>
-</code></pre></div>
-
-</div>
-
+<p><img alt="setup" src="https://github.com/FollowTheProcess/pytoil/raw/main/docs/img/setup.svg" /></p>
 <p>If you say yes, pytoil will walk you through a few questions and fill out your config file with the values you enter. If you'd rather not do this interactively, just say no and it will instead put a default config file in the right place for you to edit later.</p>
 <p>Once you've configured it properly, you can do things like...</p>
 <h4 id="see-your-local-and-remote-projects">See your local and remote projects<a class="headerlink" href="#see-your-local-and-remote-projects" title="Permanent link">&para;</a></h4>
-<div class="termy">
-
-<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil show <span class="nb">local</span>
-<span class="go">Local Projects</span>
-
-<span class="go">Showing 3 out of 3 local projects</span>
-
-<span class="go">  Name              Created          Modified</span>
-<span class="go"> ───────────────────────────────────────────────────</span>
-<span class="go">  project 1         13 days ago      9 days ago</span>
-<span class="go">  project 2         a day ago        a minute ago</span>
-<span class="go">  project 3         a month ago      a month ago</span>
-</code></pre></div>
-
-</div>
-
+<p><img alt="show-local" src="https://github.com/FollowTheProcess/pytoil/raw/main/docs/img/show_local.svg" /></p>
 <h4 id="see-which-ones-you-have-on-github-but-not-on-your-computer">See which ones you have on GitHub, but not on your computer<a class="headerlink" href="#see-which-ones-you-have-on-github-but-not-on-your-computer" title="Permanent link">&para;</a></h4>
-<div class="termy">
-
-<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil show diff
-<span class="go">Diff: Remote - Local</span>
-
-<span class="go">Showing 3 out of 3 projects</span>
-
-<span class="go">  Name             Size       Created                Modified</span>
-<span class="go"> ─────────────────────────────────────────────────────────────────────────</span>
-<span class="go">  remote 1         154.6 kB   a month ago            29 days ago</span>
-<span class="go">  remote 2         2.1 MB     1 year, 15 days ago    11 months ago</span>
-<span class="go">  remote 3         753.7 kB   1 year, 6 months ago   a month ago</span>
-</code></pre></div>
-
-</div>
-
+<p><img alt="show-diff" src="https://github.com/FollowTheProcess/pytoil/raw/main/docs/img/show_diff.svg" /></p>
 <h4 id="easily-grab-a-project-regardless-of-where-it-is">Easily grab a project, regardless of where it is<a class="headerlink" href="#easily-grab-a-project-regardless-of-where-it-is" title="Permanent link">&para;</a></h4>
-<div class="termy">
-
-<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil checkout myproject
-
-<span class="go">// Will now either open that project if local</span>
-<span class="go">// or clone it, then open it if not</span>
-</code></pre></div>
-
-</div>
-
+<p>This project is available on your local machine...</p>
+<p><img alt="checkout-local" src="https://github.com/FollowTheProcess/pytoil/raw/main/docs/img/checkout_local.svg" /></p>
+<p>This one is on GitHub...</p>
+<p><img alt="checkout-remote" src="https://github.com/FollowTheProcess/pytoil/raw/main/docs/img/checkout_remote.svg" /></p>
 <h4 id="create-a-new-project-and-virtual-environment-in-one-go">Create a new project and virtual environment in one go<a class="headerlink" href="#create-a-new-project-and-virtual-environment-in-one-go" title="Permanent link">&para;</a></h4>
-<div class="termy">
-
-<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil new myproject --venv venv
-
-<span class="go">Creating project: &#39;myproject&#39; at &#39;/Users/you/projects/myproject&#39;</span>
-
-<span class="go">Creating virtual environment for: &#39;myproject&#39;</span>
-</code></pre></div>
-
-</div>
-
+<p><img alt="new-venv" src="https://github.com/FollowTheProcess/pytoil/raw/main/docs/img/new_venv.svg" /></p>
+<p>(And include custom packages, see the <a href="https://FollowTheProcess.github.io/pytoil/">docs</a>)</p>
 <h4 id="and-even-do-this-from-a-cookiecutter-template">And even do this from a <a href="https://github.com/cookiecutter/cookiecutter">cookiecutter</a> template<a class="headerlink" href="#and-even-do-this-from-a-cookiecutter-template" title="Permanent link">&para;</a></h4>
-<div class="termy">
-
-<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil new myproject --venv venv --cookie https://github.com/some/cookie.git
-
-<span class="go">Creating project: &#39;myproject&#39; with cookiecutter template: &#39;https://github.com/some/cookie.git&#39;</span>
-
-<span class="go">// You&#39;ll then be asked all the cookiecutter questions defined in the template</span>
-<span class="go">// After which pytoil will take over and create the virtual environment as normal</span>
-</code></pre></div>
-
-</div>
-
+<p><img alt="new-cookie" src="https://github.com/FollowTheProcess/pytoil/raw/main/docs/img/new_cookie.svg" /></p>
 <p>And loads more!</p>
-<h3 id="help">Help<a class="headerlink" href="#help" title="Permanent link">&para;</a></h3>
-<p>Like all good CLI programs, pytoil (as well as all it's subcommands, and all <em>their</em> subcommands!) has a <code>--help</code> option to show you what to do.</p>
-<div class="termy">
-
-<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil --help
-
-<span class="go">Usage: pytoil [OPTIONS] COMMAND [ARGS]...</span>
-
-<span class="go">  Helpful CLI to automate the development workflow.</span>
-
-<span class="go">  - Create and manage your local and remote projects</span>
-
-<span class="go">  - Build projects from cookiecutter templates.</span>
-
-<span class="go">  - Easily create/manage virtual environments.</span>
-
-<span class="go">  - Minimal configuration required.</span>
-
-<span class="go">Options:</span>
-<span class="go">  --version  Show the version and exit.</span>
-<span class="go">  --help     Show this message and exit.</span>
-
-<span class="go">Commands:</span>
-<span class="go">  cache     Interact with pytoil&#39;s cache.</span>
-<span class="go">  checkout  Checkout an existing development project.</span>
-<span class="go">  config    Interact with pytoil&#39;s configuration.</span>
-<span class="go">  docs      Open pytoil&#39;s documentation in your browser.</span>
-<span class="go">  find      Quickly locate a project.</span>
-<span class="go">  gh        Open one of your projects on GitHub.</span>
-<span class="go">  info      Get useful info for a project.</span>
-<span class="go">  keep      Remove all but the specified projects.</span>
-<span class="go">  new       Create a new development project.</span>
-<span class="go">  pull      Pull down your remote projects.</span>
-<span class="go">  remove    Remove projects from your local filesystem.</span>
-<span class="go">  show      View your local/remote projects.</span>
-</code></pre></div>
-
-</div>
-
-<div class="admonition info">
-<p class="admonition-title">Info</p>
 <p>pytoil's CLI is designed such that if you don't specify any arguments, it won't do anything! just show you the <code>--help</code>. This is called being a 'well behaved' unix command line tool.</p>
-<p>This is true for any subcommand of pytoil so you won't accidentally break anything if you don't specify arguments <img alt="🎉" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f389.svg" title=":tada:" />.</p>
-</div>
+<p>This is true for any subcommand of pytoil so you won't accidentally break anything if you don't specify arguments 🎉</p>
 <p>And if you get truly stuck, you can quickly open pytoil's documentation with:</p>
-<div class="termy">
-
-<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil docs
-
-<span class="go">Opening pytoil&#39;s documentation in your browser...</span>
-
-<span class="go">// Now you&#39;ll be on this page in whatever your default browser is!</span>
-</code></pre></div>
-
-</div>
+<p><img alt="docs" src="https://github.com/FollowTheProcess/pytoil/raw/main/docs/img/docs.svg" /></p>
+<p>Check out the <a href="https://FollowTheProcess.github.io/pytoil/">docs</a> for more 💥</p>
+<h2 id="contributing">Contributing<a class="headerlink" href="#contributing" title="Permanent link">&para;</a></h2>
+<p><code>pytoil</code> is an open source project and, as such, welcomes contributions of all kinds 😃</p>
+<p>Your best bet is to check out the <a href="https://followtheprocess.github.io/pytoil/contributing/contributing.html">contributing guide</a> in the docs!</p>
 
               
             </article>
@@ -1002,10 +882,10 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": ".", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "assets/javascripts/workers/search.092fa1f6.min.js"}</script>
+    <script id="__config" type="application/json">{"base": ".", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
     
     
-      <script src="assets/javascripts/bundle.5a9542cf.min.js"></script>
+      <script src="assets/javascripts/bundle.8aa65030.min.js"></script>
       
         <script src="https://unpkg.com/mermaid@8.4.6/dist/mermaid.min.js"></script>
       

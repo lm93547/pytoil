@@ -12,14 +12,14 @@
         <meta name="author" content="Tom Fleet">
       
       
-        <link rel="canonical" href="https://FollowTheProcess.github.io/pytoil/commands/find.html">
+        <link rel="canonical" href="https://FollowTheProcess.github.io/pytoil/commands/bug.html">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.1">
     
     
       
-        <title>Find - pytoil</title>
+        <title>Bug - pytoil</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#find" class="md-skip">
+        <a href="#bug" class="md-skip">
           Skip to content
         </a>
       
@@ -105,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Find
+              Bug
             
           </span>
         </div>
@@ -377,66 +377,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Find
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="find.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="find.html" class="md-nav__link">
         Find
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#help" class="md-nav__link">
-    Help
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#searching-for-projects" class="md-nav__link">
-    Searching for Projects
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#404-project-not-found" class="md-nav__link">
-    404 - Project Not Found
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -502,11 +447,21 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="bug.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="bug.html" class="md-nav__link md-nav__link--active">
         Bug
       </a>
+      
     </li>
   
 
@@ -600,35 +555,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#help" class="md-nav__link">
-    Help
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#searching-for-projects" class="md-nav__link">
-    Searching for Projects
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#404-project-not-found" class="md-nav__link">
-    404 - Project Not Found
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -639,81 +565,21 @@
             <article class="md-content__inner md-typeset">
               
                 
-<a href="https://github.com/FollowTheProcess/pytoil/edit/master/docs/commands/find.md" title="Edit this page" class="md-content__button md-icon">
+<a href="https://github.com/FollowTheProcess/pytoil/edit/master/docs/commands/bug.md" title="Edit this page" class="md-content__button md-icon">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
 </a>
 
 
 
-<h1 id="find">Find<a class="headerlink" href="#find" title="Permanent link">&para;</a></h1>
-<p>The <code>find</code> command lets you easily search for one of your projects (even if you can't exactly remember it's name 🤔).</p>
-<h2 id="help">Help<a class="headerlink" href="#help" title="Permanent link">&para;</a></h2>
+<h1 id="bug">bug<a class="headerlink" href="#bug" title="Permanent link">&para;</a></h1>
+<p>If you find a bug in pytoil, want to submit a feature request, or just have a question to ask, you can easily open up pytoil's issues page with <code>pytoil bug</code>.</p>
 <div class="termy">
 
-<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil find --help
+<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil bug
 
-<span class="go">Usage: pytoil find [OPTIONS] PROJECT</span>
+<span class="go">Opening pytoil&#39;s issues in your browser...</span>
 
-<span class="go">  Quickly locate a project.</span>
-
-<span class="go">  The find command provides a fuzzy search for finding a project when you</span>
-<span class="go">  don&#39;t know where it is (local or on GitHub).</span>
-
-<span class="go">  It will perform a fuzzy search through all your local and remote projects,</span>
-<span class="go">  bring back the best matches and show you where they are.</span>
-
-<span class="go">  Useful if you have a lot of projects and you can&#39;t quite remember what the</span>
-<span class="go">  one you want is called!</span>
-
-<span class="go">  The &quot;-l/--limit&quot; flag can be used to alter the number of returned search</span>
-<span class="go">  results, but bare in mind that matches with sufficient match score are</span>
-<span class="go">  returned anyway so the results flag only limits the maximum number of</span>
-<span class="go">  results shown.</span>
-
-<span class="go">  Examples:</span>
-
-<span class="gp">  $ </span>pytoil find my
-
-<span class="gp">  $ </span>pytoil find proj --limit <span class="m">5</span>
-
-<span class="go">Options:</span>
-<span class="go">  -l, --limit INTEGER  Limit results to maximum number.  [default: 5]</span>
-<span class="go">  --help               Show this message and exit.</span>
-</code></pre></div>
-
-</div>
-
-<h2 id="searching-for-projects">Searching for Projects<a class="headerlink" href="#searching-for-projects" title="Permanent link">&para;</a></h2>
-<div class="termy">
-
-<div class="highlight"><pre><span></span><code><span class="go">// I swear it was called python... something</span>
-<span class="gp">$ </span>pytoil find python
-
-
-<span class="go">  Project           Similarity   Where</span>
-<span class="go"> ───────────────────────────────────────</span>
-<span class="go">  py                90           Remote</span>
-<span class="go">  python-launcher   90           Remote</span>
-</code></pre></div>
-
-</div>
-
-<p>What pytoil does here is it takes the argument you give it, fetches all your projects and does a fuzzy text match against
-all of them, wittles down the best matches and shows them to you (along with whether they are available locally or on GitHub).</p>
-<p>Isn't that useful! 🎉</p>
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p>Under the hood, pytoil uses the excellent <a href="https://github.com/seatgeek/thefuzz">thefuzz</a> library to do this, which implements the <a href="https://en.wikipedia.org/wiki/Levenshtein_distance">Levenshtein distance</a>
-algorithm to find the best matches 🚀</p>
-</div>
-<h2 id="404-project-not-found">404 - Project Not Found<a class="headerlink" href="#404-project-not-found" title="Permanent link">&para;</a></h2>
-<p>If <code>find</code> can't find a match in any of your projects, you'll get a helpful warning...</p>
-<div class="termy">
-
-<div class="highlight"><pre><span></span><code><span class="go">// Something that won&#39;t match</span>
-<span class="gp">$ </span>pytoil find dingledangledongle
-
-<span class="go">⚠ No matches found!</span>
+<span class="go">// Now you&#39;re at our issues page!</span>
 </code></pre></div>
 
 </div>
@@ -730,7 +596,7 @@ algorithm to find the best matches 🚀</p>
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="info.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Info" rel="prev">
+        <a href="cache.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Cache" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -739,20 +605,20 @@ algorithm to find the best matches 🚀</p>
               <span class="md-footer__direction">
                 Previous
               </span>
-              Info
+              Cache
             </div>
           </div>
         </a>
       
       
         
-        <a href="gh.html" class="md-footer__link md-footer__link--next" aria-label="Next: GH" rel="next">
+        <a href="../contributing/contributing.html" class="md-footer__link md-footer__link--next" aria-label="Next: Guide" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              GH
+              Guide
             </div>
           </div>
           <div class="md-footer__button md-icon">
