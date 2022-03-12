@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://FollowTheProcess.github.io/pytoil/commands/config.html">
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.1">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.5">
     
     
       
@@ -23,7 +23,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.e8d9bf0c.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.2d9f7617.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.e6a45f82.min.css">
@@ -34,8 +34,9 @@
     
       
         
+        
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CSF+Mono&display=fallback">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CSF+Mono:400,400i,700,700i&display=fallback">
         <style>:root{--md-text-font:"Roboto";--md-code-font:"SF Mono"}</style>
       
     
@@ -703,9 +704,9 @@
 <p><code>get</code> does what it says. It gets a valid config key-value pair from your file and shows it to you. Simple!</p>
 <div class="termy">
 
-<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil config get vscode
+<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil config get editor
 
-<span class="go">vscode: True</span>
+<span class="go">editor: code-insiders</span>
 </code></pre></div>
 
 </div>
@@ -719,10 +720,9 @@
 <span class="go">               Key   Value</span>
 <span class="go"> ─────────────────────────────────────────────────────────────</span>
 <span class="go">     projects_dir:   /Users/tomfleet/Development</span>
-<span class="go">            token:   lknskjb983e7g23hb8</span>
+<span class="go">            token:   skjdbakshbv82v27676cv</span>
 <span class="go">         username:   FollowTheProcess</span>
-<span class="go">           vscode:   True</span>
-<span class="go">         code_bin:   code-insiders</span>
+<span class="go">           editor:   code-insiders</span>
 <span class="go">        conda_bin:   mamba</span>
 <span class="go">  common_packages:   [&#39;black&#39;, &#39;mypy&#39;, &#39;isort&#39;, &#39;flake8&#39;]</span>
 <span class="go">    cache_timeout:   120</span>
@@ -744,61 +744,6 @@
 
 <h2 id="explain">Explain<a class="headerlink" href="#explain" title="Permanent link">&para;</a></h2>
 <p>The command <code>pytoil config explain</code> outputs a (hopefully) helpful description of the pytoil configuration schema.</p>
-<div class="termy">
-
-<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pytoil config explain
-
-<span class="go">======================= The &#39;.pytoil.yml&#39; config file =======================</span>
-
-
-<span class="go">- projects_dir (bool)</span>
-
-<span class="go">    The absolute path to where you keep your development projects</span>
-<span class="go">    (e.g. /Users/you/Projects)</span>
-
-<span class="go">- token (str)</span>
-
-<span class="go">    Your GitHub personal access token. This must have a minimum of repo</span>
-<span class="go">    read access. See the documentation here:</span>
-<span class="go">    https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token</span>
-
-<span class="go">    Pytoil will try and get this from the config file initially, then fall back to the $GITHUB_TOKEN environment</span>
-<span class="go">    variable. If neither of these places are set, you will not be able to use pytoil commands that rely on the</span>
-<span class="go">    GitHub API. Pytoil will notify you of this when any of these commands are called.</span>
-
-<span class="go">- username (str)</span>
-
-<span class="go">    Your GitHub username.</span>
-
-<span class="go">- vscode (bool)</span>
-
-<span class="go">    Whether you want pytoil to open projects up using VSCode. This will happen on &#39;new&#39; and &#39;checkout&#39;.</span>
-
-<span class="go">- code_bin (str)</span>
-
-<span class="go">    The name of the VSCode binary (&#39;code&#39; or &#39;code-insiders&#39;)</span>
-
-<span class="go">- conda_bin (str)</span>
-
-<span class="go">    The name of the conda binary (&#39;conda&#39; or &#39;mamba&#39;)</span>
-
-<span class="go">- common_packages (List[str])</span>
-
-<span class="go">    A list of python package names to inject into every virtual environment pytoil creates</span>
-<span class="go">    (e.g. linters, formatters and other dev dependencies).</span>
-
-<span class="go">- cache_timeout (int)</span>
-
-<span class="go">    The number of seconds pytoil keeps a cache of GitHub API requests for. Subsequent API calls</span>
-<span class="go">    within this window will be served from cache not from the API.</span>
-
-<span class="go">- git (bool)</span>
-
-<span class="go">    Whether or not you want pytoil to create an empty git repo when you make a new project with</span>
-<span class="go">    &#39;pytoil new&#39;. This can also be disabled on a per use basis using the &#39;--no-git&#39; flag.</span>
-</code></pre></div>
-
-</div>
 
               
             </article>
@@ -867,7 +812,7 @@
     <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
     
     
-      <script src="../assets/javascripts/bundle.8aa65030.min.js"></script>
+      <script src="../assets/javascripts/bundle.467223ff.min.js"></script>
       
         <script src="https://unpkg.com/mermaid@8.4.6/dist/mermaid.min.js"></script>
       

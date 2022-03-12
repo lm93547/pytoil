@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://FollowTheProcess.github.io/pytoil/config.html">
       
       <link rel="icon" href="assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.1">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.5">
     
     
       
@@ -23,7 +23,7 @@
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.e8d9bf0c.min.css">
+      <link rel="stylesheet" href="assets/stylesheets/main.2d9f7617.min.css">
       
         
         <link rel="stylesheet" href="assets/stylesheets/palette.e6a45f82.min.css">
@@ -34,8 +34,9 @@
     
       
         
+        
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CSF+Mono&display=fallback">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CSF+Mono:400,400i,700,700i&display=fallback">
         <style>:root{--md-text-font:"Roboto";--md-code-font:"SF Mono"}</style>
       
     
@@ -672,14 +673,9 @@
 <td align="center"><code>$HOME/Development</code></td>
 </tr>
 <tr>
-<td align="center"><code>vscode</code></td>
-<td align="center">Whether you want pytoil to open things in VSCode</td>
-<td align="center">False</td>
-</tr>
-<tr>
-<td align="center"><code>code_bin</code></td>
-<td align="center">The name of the VSCode binary (code or code-insiders)</td>
-<td align="center"><code>code</code></td>
+<td align="center"><code>editor</code></td>
+<td align="center">Name of the binary to use when opening projects.</td>
+<td align="center"><code>$EDITOR</code></td>
 </tr>
 <tr>
 <td align="center"><code>conda_bin</code></td>
@@ -714,11 +710,6 @@ API using your token to authenticate the requests. This is essential to pytoil's
 </ul>
 <p>In fact, the only permissions pytoil needs is repo and user access! <img alt="😃" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f603.svg" title=":smiley:" /></p>
 </div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>I used VSCode as the only configurable editor as it's the one I use and is therefore the only one I have experience with configuring programmatically and launching via the command line.</p>
-<p>If you want to help add support for more editors then PR's are always welcome!</p>
-</div>
 <h2 id="the-config-file">The Config File<a class="headerlink" href="#the-config-file" title="Permanent link">&para;</a></h2>
 <p>After you install pytoil, the first time you run it you'll get something like this.</p>
 <div class="termy">
@@ -741,14 +732,13 @@ API using your token to authenticate the requests. This is essential to pytoil's
 
 <span class="k">[pytoil]</span><span class="w"></span>
 <span class="n">cache_timeout</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">120</span><span class="w"></span>
-<span class="n">code_bin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;code&quot;</span><span class="w"></span>
-<span class="n">conda_bin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;conda&quot;</span><span class="w"></span>
 <span class="n">common_packages</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[]</span><span class="w"></span>
+<span class="n">conda_bin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;conda&quot;</span><span class="w"></span>
+<span class="n">editor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;code-insiders&quot;</span><span class="w"></span>
 <span class="n">git</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="w"></span>
-<span class="n">projects_dir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;/Users/you/Development&quot;</span><span class="w"></span>
-<span class="n">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Your GitHub personal access token&quot;</span><span class="w"></span>
-<span class="n">username</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Your GitHub username&quot;</span><span class="w"></span>
-<span class="n">vscode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="w"></span>
+<span class="n">projects_dir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;/Users/tomfleet/Development&quot;</span><span class="w"></span>
+<span class="n">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Your github personal access token&quot;</span><span class="w"></span>
+<span class="n">username</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Your github username&quot;</span><span class="w"></span>
 </code></pre></div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -759,15 +749,14 @@ API using your token to authenticate the requests. This is essential to pytoil's
 <div class="highlight"><pre><span></span><code><span class="c1"># ~/.pytoil.toml</span><span class="w"></span>
 
 <span class="k">[pytoil]</span><span class="w"></span>
-<span class="n">cache_timeout</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">500</span><span class="w"></span>
-<span class="n">code_bin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;code&quot;</span><span class="w"></span>
-<span class="n">conda_bin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;mamba&quot;</span><span class="w"></span>
+<span class="n">cache_timeout</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">120</span><span class="w"></span>
 <span class="n">common_packages</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;black&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;mypy&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;isort&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;flake8&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="n">conda_bin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;mamba&quot;</span><span class="w"></span>
+<span class="n">editor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;code-insiders&quot;</span><span class="w"></span>
 <span class="n">git</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="w"></span>
-<span class="n">projects_dir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;/Users/you/Development&quot;</span><span class="w"></span>
-<span class="n">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;asljas98ghefiub29e8b&quot;</span><span class="w"> </span><span class="c1"># I&#39;ve made this up</span><span class="w"></span>
+<span class="n">projects_dir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;/Users/tomfleet/Development&quot;</span><span class="w"></span>
+<span class="n">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;ljbsxu9uqwd978&quot;</span><span class="w"> </span><span class="c1"># This isn&#39;t real</span><span class="w"></span>
 <span class="n">username</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;FollowTheProcess&quot;</span><span class="w"></span>
-<span class="n">vscode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="w"></span>
 </code></pre></div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -841,7 +830,7 @@ API using your token to authenticate the requests. This is essential to pytoil's
     <script id="__config" type="application/json">{"base": ".", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
     
     
-      <script src="assets/javascripts/bundle.8aa65030.min.js"></script>
+      <script src="assets/javascripts/bundle.467223ff.min.js"></script>
       
         <script src="https://unpkg.com/mermaid@8.4.6/dist/mermaid.min.js"></script>
       
